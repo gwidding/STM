@@ -136,12 +136,10 @@ int main(void)
 		  HAL_Delay(300);
 		  HAL_GPIO_WritePin(GPIOB, LD1_Pin, 0);
 		  }
-	  HAL_GPIO_WritePin(GPIOE, led_G_Pin, GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(GPIOE, led_P_Pin, GPIO_PIN_RESET);
-	  HAL_Delay(300);
-	  HAL_GPIO_WritePin(GPIOE, led_P_Pin, GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(GPIOE, led_G_Pin, GPIO_PIN_RESET);
-	  HAL_Delay(300);
+	  HAL_GPIO_WritePin(GPIOE, led_G|led_P, GPIO_PIN_SET);
+	  HAL_Delay(500);
+	  HAL_GPIO_WritePin(GPIOE, led_G|led_P, GPIO_PIN_RESET);
+	  HAL_Delay(500);
 	  //	  HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_SET);
 	  //	  HAL_Delay(500);
 	  //	  HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
