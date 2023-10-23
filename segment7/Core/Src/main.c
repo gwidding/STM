@@ -136,15 +136,15 @@ int main(void)
 //		  HAL_GPIO_WritePin(GPIOE, segA_Pin, numberCode[n][7]);
 	  }
 	  if (HAL_GPIO_ReadPin(GPIOC, user_btn_Pin) == GPIO_PIN_SET) {
-		  seg_print(count);
 		  count++;
 		  if (count==10) count=0;
+		  seg_print(count);
 		  HAL_Delay(200);
 	  }
 	  if (HAL_GPIO_ReadPin(GPIOF, down_btn_Pin) == 0) {
-		  seg_print(count);
 		  count--;
 		  if (count==-1) count=9;
+		  seg_print(count);
 		  HAL_Delay(200);
 	  }
 

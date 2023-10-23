@@ -41,13 +41,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_macro  00023c6f  00000000  00000000  00030f16  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_line   0000ca60  00000000  00000000  00054b85  2**0
+ 19 .debug_line   0000ca5c  00000000  00000000  00054b85  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_str    000d986e  00000000  00000000  000615e5  2**0
+ 20 .debug_str    000d986e  00000000  00000000  000615e1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_frame  00002ef4  00000000  00000000  0013ae54  2**2
+ 21 .debug_frame  00002ef4  00000000  00000000  0013ae50  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000066  00000000  00000000  0013dd48  2**0
+ 22 .debug_line_str 00000066  00000000  00000000  0013dd44  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -354,7 +354,7 @@ Disassembly of section .text:
  80004e6:	bf00      	nop
 
 080004e8 <seg_print.0>:
-	const int number0x[10] = {0x0080, 0xffcf, 0xff23, 0x0108, 0x004c, 0x0018, 0x0010, 0x01c8, 0x0000, 0x0008};
+	int count = 0;
 	GPIOE -> ODR = number0x[0];
 
   while (1)
@@ -404,19 +404,19 @@ int main(void)
  800052c:	f000 f904 	bl	8000738 <MX_USART3_UART_Init>
   MX_USB_OTG_FS_PCD_Init();
  8000530:	f000 f92c 	bl	800078c <MX_USB_OTG_FS_PCD_Init>
-  int count = 0;
- 8000534:	2300      	movs	r3, #0
- 8000536:	62fb      	str	r3, [r7, #44]	; 0x2c
 	const int number0x[10] = {0x0080, 0xffcf, 0xff23, 0x0108, 0x004c, 0x0018, 0x0010, 0x01c8, 0x0000, 0x0008};
- 8000538:	4b1f      	ldr	r3, [pc, #124]	; (80005b8 <main+0xa8>)
- 800053a:	463c      	mov	r4, r7
- 800053c:	461d      	mov	r5, r3
+ 8000534:	4b20      	ldr	r3, [pc, #128]	; (80005b8 <main+0xa8>)
+ 8000536:	463c      	mov	r4, r7
+ 8000538:	461d      	mov	r5, r3
+ 800053a:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+ 800053c:	c40f      	stmia	r4!, {r0, r1, r2, r3}
  800053e:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
  8000540:	c40f      	stmia	r4!, {r0, r1, r2, r3}
- 8000542:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
- 8000544:	c40f      	stmia	r4!, {r0, r1, r2, r3}
- 8000546:	e895 0003 	ldmia.w	r5, {r0, r1}
- 800054a:	e884 0003 	stmia.w	r4, {r0, r1}
+ 8000542:	e895 0003 	ldmia.w	r5, {r0, r1}
+ 8000546:	e884 0003 	stmia.w	r4, {r0, r1}
+	int count = 0;
+ 800054a:	2300      	movs	r3, #0
+ 800054c:	62fb      	str	r3, [r7, #44]	; 0x2c
 	GPIOE -> ODR = number0x[0];
  800054e:	683a      	ldr	r2, [r7, #0]
  8000550:	4b1a      	ldr	r3, [pc, #104]	; (80005bc <main+0xac>)
@@ -428,22 +428,21 @@ int main(void)
  800055e:	4603      	mov	r3, r0
  8000560:	2b01      	cmp	r3, #1
  8000562:	d10f      	bne.n	8000584 <main+0x74>
-		  seg_print(count);
- 8000564:	463b      	mov	r3, r7
- 8000566:	469c      	mov	ip, r3
- 8000568:	6af8      	ldr	r0, [r7, #44]	; 0x2c
- 800056a:	f7ff ffbd 	bl	80004e8 <seg_print.0>
 		  count++;
- 800056e:	6afb      	ldr	r3, [r7, #44]	; 0x2c
- 8000570:	3301      	adds	r3, #1
- 8000572:	62fb      	str	r3, [r7, #44]	; 0x2c
+ 8000564:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+ 8000566:	3301      	adds	r3, #1
+ 8000568:	62fb      	str	r3, [r7, #44]	; 0x2c
 		  if (count==10) count=0;
- 8000574:	6afb      	ldr	r3, [r7, #44]	; 0x2c
- 8000576:	2b0a      	cmp	r3, #10
- 8000578:	d101      	bne.n	800057e <main+0x6e>
- 800057a:	2300      	movs	r3, #0
- 800057c:	62fb      	str	r3, [r7, #44]	; 0x2c
-
+ 800056a:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+ 800056c:	2b0a      	cmp	r3, #10
+ 800056e:	d101      	bne.n	8000574 <main+0x64>
+ 8000570:	2300      	movs	r3, #0
+ 8000572:	62fb      	str	r3, [r7, #44]	; 0x2c
+		  seg_print(count);
+ 8000574:	463b      	mov	r3, r7
+ 8000576:	469c      	mov	ip, r3
+ 8000578:	6af8      	ldr	r0, [r7, #44]	; 0x2c
+ 800057a:	f7ff ffb5 	bl	80004e8 <seg_print.0>
 		  HAL_Delay(200);
  800057e:	20c8      	movs	r0, #200	; 0xc8
  8000580:	f000 fc90 	bl	8000ea4 <HAL_Delay>
@@ -455,22 +454,21 @@ int main(void)
  800058e:	4603      	mov	r3, r0
  8000590:	2b00      	cmp	r3, #0
  8000592:	d1df      	bne.n	8000554 <main+0x44>
-		  seg_print(count);
- 8000594:	463b      	mov	r3, r7
- 8000596:	469c      	mov	ip, r3
- 8000598:	6af8      	ldr	r0, [r7, #44]	; 0x2c
- 800059a:	f7ff ffa5 	bl	80004e8 <seg_print.0>
 		  count--;
- 800059e:	6afb      	ldr	r3, [r7, #44]	; 0x2c
- 80005a0:	3b01      	subs	r3, #1
- 80005a2:	62fb      	str	r3, [r7, #44]	; 0x2c
+ 8000594:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+ 8000596:	3b01      	subs	r3, #1
+ 8000598:	62fb      	str	r3, [r7, #44]	; 0x2c
 		  if (count==-1) count=9;
- 80005a4:	6afb      	ldr	r3, [r7, #44]	; 0x2c
- 80005a6:	f1b3 3fff 	cmp.w	r3, #4294967295
- 80005aa:	d101      	bne.n	80005b0 <main+0xa0>
- 80005ac:	2309      	movs	r3, #9
- 80005ae:	62fb      	str	r3, [r7, #44]	; 0x2c
-
+ 800059a:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+ 800059c:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 80005a0:	d101      	bne.n	80005a6 <main+0x96>
+ 80005a2:	2309      	movs	r3, #9
+ 80005a4:	62fb      	str	r3, [r7, #44]	; 0x2c
+		  seg_print(count);
+ 80005a6:	463b      	mov	r3, r7
+ 80005a8:	469c      	mov	ip, r3
+ 80005aa:	6af8      	ldr	r0, [r7, #44]	; 0x2c
+ 80005ac:	f7ff ff9c 	bl	80004e8 <seg_print.0>
 		  HAL_Delay(200);
  80005b0:	20c8      	movs	r0, #200	; 0xc8
  80005b2:	f000 fc77 	bl	8000ea4 <HAL_Delay>

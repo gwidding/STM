@@ -1,0 +1,10 @@
+16:50:45 **** Incremental Build of configuration Debug for project segment7_exti ****
+make -j8 all 
+arm-none-eabi-size   segment7_exti.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13052	     20	   3492	  16564	   40b4	segment7_exti.elf
+Finished building: default.size.stdout
+ 
+
+16:50:45 Build Finished. 0 errors, 0 warnings. (took 256ms)
+

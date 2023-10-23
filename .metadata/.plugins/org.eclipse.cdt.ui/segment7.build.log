@@ -1,17 +1,10 @@
-09:19:07 **** Incremental Build of configuration Debug for project segment7 ****
+16:12:54 **** Incremental Build of configuration Debug for project segment7 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: segment7.elf
- 
 arm-none-eabi-size   segment7.elf 
-arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
    text	   data	    bss	    dec	    hex	filename
   12908	     20	   3492	  16420	   4024	segment7.elf
 Finished building: default.size.stdout
  
-Finished building: segment7.list
- 
 
-09:19:08 Build Finished. 0 errors, 0 warnings. (took 1s.32ms)
+16:12:54 Build Finished. 0 errors, 0 warnings. (took 257ms)
 
