@@ -1797,3 +1797,210 @@ Finished building: default.size.stdout
  
 Finished building: segment7.list
  
+20:27:27 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:106: warning: excess elements in array initializer
+  122 |         const int number0x[9] = {0x0080, 0x0030, 0xff23, 0x0180, 0x008c, 0x0018, 0x0010, 0x0188, 0x0000, 0x0008
+      |                                                                                                          ^~~~~~
+../Core/Src/main.c:122:106: note: (near initialization for 'number0x')
+../Core/Src/main.c:112:13: warning: unused variable 'numberCode' [-Wunused-variable]
+  112 |   const int numberCode[10][8]={{1,1,0,0,0,0,0,0}, //0
+      |             ^~~~~~~~~~
+At top level:
+../Core/Src/main.c:112:13: warning: 'numberCode' defined but not used [-Wunused-const-variable=]
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12924	     20	   3492	  16436	   4034	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+20:33:15 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:106: warning: excess elements in array initializer
+  122 |         const int number0x[9] = {0x0080, 0xffcf, 0xff23, 0x0118, 0x000c, 0x0018, 0x0010, 0x0188, 0x0000, 0x0008
+      |                                                                                                          ^~~~~~
+../Core/Src/main.c:122:106: note: (near initialization for 'number0x')
+../Core/Src/main.c:112:13: warning: unused variable 'numberCode' [-Wunused-variable]
+  112 |   const int numberCode[10][8]={{1,1,0,0,0,0,0,0}, //0
+      |             ^~~~~~~~~~
+At top level:
+../Core/Src/main.c:112:13: warning: 'numberCode' defined but not used [-Wunused-const-variable=]
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12924	     20	   3492	  16436	   4034	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+20:35:30 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:106: warning: excess elements in array initializer
+  122 |         const int number0x[9] = {0x0080, 0xffcf, 0xff23, 0x0108, 0x000c, 0x0018, 0x0010, 0x0188, 0x0000, 0x0008
+      |                                                                                                          ^~~~~~
+../Core/Src/main.c:122:106: note: (near initialization for 'number0x')
+../Core/Src/main.c:112:13: warning: unused variable 'numberCode' [-Wunused-variable]
+  112 |   const int numberCode[10][8]={{1,1,0,0,0,0,0,0}, //0
+      |             ^~~~~~~~~~
+At top level:
+../Core/Src/main.c:112:13: warning: 'numberCode' defined but not used [-Wunused-const-variable=]
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12924	     20	   3492	  16436	   4034	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+20:38:11 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:106: warning: excess elements in array initializer
+  122 |         const int number0x[9] = {0x0080, 0xffcf, 0xff23, 0x0108, 0x010c, 0x0018, 0x0010, 0x01c8, 0x0000, 0x0008
+      |                                                                                                          ^~~~~~
+../Core/Src/main.c:122:106: note: (near initialization for 'number0x')
+../Core/Src/main.c:112:13: warning: unused variable 'numberCode' [-Wunused-variable]
+  112 |   const int numberCode[10][8]={{1,1,0,0,0,0,0,0}, //0
+      |             ^~~~~~~~~~
+At top level:
+../Core/Src/main.c:112:13: warning: 'numberCode' defined but not used [-Wunused-const-variable=]
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12924	     20	   3492	  16436	   4034	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+20:41:20 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:112:13: warning: unused variable 'numberCode' [-Wunused-variable]
+  112 |   const int numberCode[10][8]={{1,1,0,0,0,0,0,0}, //0
+      |             ^~~~~~~~~~
+At top level:
+../Core/Src/main.c:112:13: warning: 'numberCode' defined but not used [-Wunused-const-variable=]
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12932	     20	   3492	  16444	   403c	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+20:42:23 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12924	     20	   3492	  16436	   4034	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+20:42:51 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+20:45:17 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-size   segment7.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	segment7.elf
+Finished building: default.size.stdout
+ 
+20:46:03 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12916	     20	   3492	  16428	   402c	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+20:46:37 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12924	     20	   3492	  16436	   4034	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+09:17:49 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12900	     20	   3492	  16412	   401c	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 
+09:19:07 **** Incremental Build of configuration Debug for project segment7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "segment7.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\segment7\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="segment7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: segment7.elf
+ 
+arm-none-eabi-size   segment7.elf 
+arm-none-eabi-objdump -h -S  segment7.elf  > "segment7.list"
+   text	   data	    bss	    dec	    hex	filename
+  12908	     20	   3492	  16420	   4024	segment7.elf
+Finished building: default.size.stdout
+ 
+Finished building: segment7.list
+ 

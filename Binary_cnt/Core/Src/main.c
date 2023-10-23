@@ -117,19 +117,20 @@ int main(void)
 			  arr[i] = n % 2;
 			  n /= 2;
 		  }
-		  if (arr[0] == 1) HAL_GPIO_WritePin(GPIOE, Bi0_Pin, 1);
-		  else HAL_GPIO_WritePin(GPIOE, Bi0_Pin, 0);
-		  if (arr[1] == 1) HAL_GPIO_WritePin(GPIOE, Bi1_Pin, 1);
-		  else HAL_GPIO_WritePin(GPIOE, Bi1_Pin, 0);
-		  if (arr[2] == 1) HAL_GPIO_WritePin(GPIOE, Bi2_Pin, 1);
-		  else HAL_GPIO_WritePin(GPIOE, Bi2_Pin, 0);
-		  if (arr[3] == 1) HAL_GPIO_WritePin(GPIOE, Bi3_Pin, 1);
-		  else HAL_GPIO_WritePin(GPIOE, Bi3_Pin, 0);
+		  HAL_GPIO_WritePin(GPIOE, Bi0_Pin, arr[0]);
+		  HAL_GPIO_WritePin(GPIOE, Bi0_Pin, arr[1]);
+		  HAL_GPIO_WritePin(GPIOE, Bi0_Pin, arr[2]);
+		  HAL_GPIO_WritePin(GPIOE, Bi0_Pin, arr[3]);
+
+//		  if (arr[0] == 1) HAL_GPIO_WritePin(GPIOE, Bi0_Pin, 1);
+//		  else HAL_GPIO_WritePin(GPIOE, Bi0_Pin, 0);
+//		  if (arr[1] == 1) HAL_GPIO_WritePin(GPIOE, Bi1_Pin, 1);
+//		  else HAL_GPIO_WritePin(GPIOE, Bi1_Pin, 0);
+//		  if (arr[2] == 1) HAL_GPIO_WritePin(GPIOE, Bi2_Pin, 1);
+//		  else HAL_GPIO_WritePin(GPIOE, Bi2_Pin, 0);
+//		  if (arr[3] == 1) HAL_GPIO_WritePin(GPIOE, Bi3_Pin, 1);
+//		  else HAL_GPIO_WritePin(GPIOE, Bi3_Pin, 0);
 		  HAL_Delay(200);
-//		  HAL_GPIO_WritePin(GPIOE, Bi0_Pin, arr[0]);
-//		  HAL_GPIO_WritePin(GPIOE, Bi0_Pin, arr[1]);
-//		  HAL_GPIO_WritePin(GPIOE, Bi0_Pin, arr[2]);
-//		  HAL_GPIO_WritePin(GPIOE, Bi0_Pin, arr[3]);
 	  }
 
 	  if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) == GPIO_PIN_SET) {

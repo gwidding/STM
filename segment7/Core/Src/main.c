@@ -108,44 +108,46 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int count = 0;
-  const int numberCode[10][8]={{1,1,0,0,0,0,0,0}, //0
-							  {1,1,1,1,1,0,0,1}, //1
-							  {1,0,1,0,0,1,0,0}, //2
-							  {1,0,1,1,0,0,0,0}, //3
-							  {1,0,0,1,1,0,0,1}, //4
-							  {1,0,0,1,0,0,1,0}, //5
-							  {1,0,0,0,0,0,1,0}, //6
-							  {1,1,0,1,1,0,0,0}, //7
-							  {1,0,0,0,0,0,0,0}, //8
-							  {1,0,0,1,0,0,0,0}}; //9
+
+//  const int numberCode[10][8]={{1,1,0,0,0,0,0,0}, //0
+//							  {1,1,1,1,1,0,0,1}, //1
+//							  {1,0,1,0,0,1,0,0}, //2
+//							  {1,0,1,1,0,0,0,0}, //3
+//							  {1,0,0,1,1,0,0,1}, //4
+//							  {1,0,0,1,0,0,1,0}, //5
+//							  {1,0,0,0,0,0,1,0}, //6
+//							  {1,1,0,1,1,0,0,0}, //7
+//							  {1,0,0,0,0,0,0,0}, //8
+//							  {1,0,0,1,0,0,0,0}}; //9
+	const int number0x[10] = {0x0080, 0xffcf, 0xff23, 0x0108, 0x004c, 0x0018, 0x0010, 0x01c8, 0x0000, 0x0008};
+	int count = 0;
+	GPIOE -> ODR = number0x[0];
 
   while (1)
   {
 	  void seg_print(int n) {
-		  HAL_GPIO_WritePin(GPIOE, segG_Pin, numberCode[n][1]);
-		  HAL_GPIO_WritePin(GPIOE, segF_Pin, numberCode[n][2]);
-		  HAL_GPIO_WritePin(GPIOE, segE_Pin, numberCode[n][3]);
-		  HAL_GPIO_WritePin(GPIOE, segD_Pin, numberCode[n][4]);
-		  HAL_GPIO_WritePin(GPIOE, segC_Pin, numberCode[n][5]);
-		  HAL_GPIO_WritePin(GPIOE, segB_Pin, numberCode[n][6]);
-		  HAL_GPIO_WritePin(GPIOE, segA_Pin, numberCode[n][7]);
+		  GPIOE -> ODR = number0x[n];
+//		  HAL_GPIO_WritePin(GPIOE, segG_Pin, numberCode[n][1]);
+//		  HAL_GPIO_WritePin(GPIOE, segF_Pin, numberCode[n][2]);
+//		  HAL_GPIO_WritePin(GPIOE, segE_Pin, numberCode[n][3]);
+//		  HAL_GPIO_WritePin(GPIOE, segD_Pin, numberCode[n][4]);
+//		  HAL_GPIO_WritePin(GPIOE, segC_Pin, numberCode[n][5]);
+//		  HAL_GPIO_WritePin(GPIOE, segB_Pin, numberCode[n][6]);
+//		  HAL_GPIO_WritePin(GPIOE, segA_Pin, numberCode[n][7]);
 	  }
 	  if (HAL_GPIO_ReadPin(GPIOC, user_btn_Pin) == GPIO_PIN_SET) {
-		  HAL_GPIO_WritePin(GPIOE, LD1_Pin, 1);
-		  HAL_GPIO_WritePin(GPIOE, LD2_Pin, GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOE, LD2_Pin, GPIO_PIN_RESET);
+		  seg_print(count);
 		  count++;
 		  if (count==10) count=0;
-		  seg_print(count);
 		  HAL_Delay(200);
 	  }
 	  if (HAL_GPIO_ReadPin(GPIOF, down_btn_Pin) == 0) {
+		  seg_print(count);
 		  count--;
 		  if (count==-1) count=9;
-		  seg_print(count);
 		  HAL_Delay(200);
 	  }
+
 
     /* USER CODE END WHILE */
 
