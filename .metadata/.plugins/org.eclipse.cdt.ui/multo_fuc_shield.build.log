@@ -1,0 +1,10 @@
+14:50:51 **** Incremental Build of configuration Debug for project multo_fuc_shield ****
+make -j8 all 
+arm-none-eabi-size   multo_fuc_shield.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10984	     20	   2932	  13936	   3670	multo_fuc_shield.elf
+Finished building: default.size.stdout
+ 
+
+14:50:51 Build Finished. 0 errors, 0 warnings. (took 255ms)
+
