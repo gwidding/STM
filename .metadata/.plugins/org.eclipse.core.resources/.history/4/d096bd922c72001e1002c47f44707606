@@ -28,7 +28,6 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-uint8_t rx_data;
 
 /* USER CODE END PTD */
 
@@ -55,7 +54,6 @@ UART_HandleTypeDef huart3;
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
-char uart_buf[30];
 
 /* USER CODE END PV */
 
@@ -121,7 +119,6 @@ int main(void)
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
 //  int count = 0;
-  HAL_UART_Receive_IT(&huart3, (uint8_t *)&rx_data, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -130,22 +127,10 @@ int main(void)
   {
 //	  printf("USART print test count=%d\r\n", count++);
 //	  HAL_Delay(500);
-
-	  //echo -> 출력
-	  // 조건이 항상 1이어서 반복 출력되는데, 이는 정상적인 코드는 아님
-//	  if(HAL_UART_Receive(&huart3, (uint8_t *)&data, sizeof(data), 500)) {
-//		  HAL_UART_Transmit(&huart3, (uint8_t *)&data, sizeof(data), 500);
-//		  HAL_GPIO_TogglePin(GPIOB, LD1_Pin|LD2_Pin|LD3_Pin);
-//	  }
-
-	  //Polling Mode 입출력 확인
-	  // 글자 하나하나가 잘 받아졌으면
-//	  if(HAL_UART_Receive(&huart3, (uint8_t *)&uart_buf, 1, 1000) == HAL_OK) {
-//		  //transmit 호출해서 console에 보여줌
-//		  HAL_UART_Transmit(&huart3, (uint8_t *)&uart_buf, 1, 1000);
-//	  }
-
-
+	  if(HAL_UART_Receive(&huart3, (uint8_t *)%data, sizeof(data), 500)) {
+		  HAL_UART_Transmit(&huart3, (uint8_t *)&data, sizeof(data), 500);
+		  HAL_GPIO_TogglePin(GPIOB, LD1_Pin|LD2_Pin|LD3_Pin);
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -382,12 +367,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	if (huart->Instance == USART3) {
-		HAL_UART_Receive_IT(&huart3, (uint8_t *)&rx_data, 1);
-		HAL_UART_Transmit(&huart3, (uint8_t *)&rx_data, 1, 500);
-	}
-}
+
 /* USER CODE END 4 */
 
 /**

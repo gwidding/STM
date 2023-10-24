@@ -132,7 +132,6 @@ int main(void)
 //	  HAL_Delay(500);
 
 	  //echo -> 출력
-	  // 조건이 항상 1이어서 반복 출력되는데, 이는 정상적인 코드는 아님
 //	  if(HAL_UART_Receive(&huart3, (uint8_t *)&data, sizeof(data), 500)) {
 //		  HAL_UART_Transmit(&huart3, (uint8_t *)&data, sizeof(data), 500);
 //		  HAL_GPIO_TogglePin(GPIOB, LD1_Pin|LD2_Pin|LD3_Pin);
