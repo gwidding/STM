@@ -22,7 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -69,20 +70,45 @@ uint8_t ttl7447(uint8_t num);
 void counter0to9999(uint8_t num[4], uint32_t tick);
 void count_time(uint8_t num[4], uint32_t tick);
 
+int _write(int file, char *ptr, int len) {
+	HAL_UART_Transmit(&huart3, (uint8_t *)ptr, len, 500);
+	return len;
+}
+
+int __io_putchar(int ch) {
+	HAL_UART_Transmit(&huart3, (uint8_t *)&ch, 1, 1000);
+	return ch;
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
 int cnt = 0;
+uint32_t current_tick_1;
+uint32_t current_tick_2;
+uint32_t old_tick_1;
+uint32_t old_tick_2;
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	if (GPIO_Pin == GPIO_PIN_0) {
-		HAL_GPIO_WritePin(GPIOB, LD1_Pin, 1);
-		cnt++;
+		current_tick_1 = HAL_GetTick();
 	}
 	if (GPIO_Pin == GPIO_PIN_3) {
+		current_tick_2 = HAL_GetTick();
+	}
+
+	if (GPIO_Pin == GPIO_PIN_0 && (current_tick_1 - old_tick_1 > 300)) {
+		HAL_GPIO_WritePin(GPIOB, LD1_Pin, 1);
+		cnt++;
+		printf("USART print test count=%d\r\n", cnt);
+		old_tick_1 = current_tick_1;
+	}
+	if (GPIO_Pin == GPIO_PIN_3 && (current_tick_2 - old_tick_2 > 300)) {
 		HAL_GPIO_WritePin(GPIOB, LD2_Pin, 1);
 		cnt--;
+		printf("USART print test count=%d\r\n", cnt);
+		old_tick_2 = current_tick_2;
 	}
 }
 
@@ -124,7 +150,6 @@ int main(void)
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
 
-	uint8_t count[4] = { 0, };
 	uint8_t ttl7447(uint8_t num) {
 		// for anode type
 		switch (num) {
@@ -183,17 +208,18 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
-		if (cnt == 10)
+		if (cnt > 9999)
 			cnt = 0;
-		if (cnt == -1)
-			cnt = 9;
+		if (cnt < 0)
+			cnt = 9999;
 
 		//	  counter0to9999(count, tick);
 
-		DisplayFND(ttl7447(count[0]), 1);	// thousands
-		DisplayFND(ttl7447(count[1]), 2);	// hundreds
-		DisplayFND(ttl7447(count[2]), 3);	// tens
-		DisplayFND(ttl7447(cnt), 4);	// ones
+		DisplayFND(ttl7447(cnt/1000), 1);	// thousands
+		DisplayFND(ttl7447(cnt/100%10), 2);	// hundreds
+		DisplayFND(ttl7447(cnt/10%10), 3);	// tens
+		DisplayFND(ttl7447(cnt%10), 4);	// ones
+
 
     /* USER CODE END WHILE */
 
@@ -262,6 +288,9 @@ static void MX_NVIC_Init(void)
   /* EXTI15_10_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+  /* USART3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(USART3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(USART3_IRQn);
 }
 
 /**
@@ -464,10 +493,10 @@ static void MX_GPIO_Init(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-		/* User can add his own implementation to report the HAL error return state */
-		__disable_irq();
-		while (1) {
-		}
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1) {
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 

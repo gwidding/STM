@@ -9,6 +9,7 @@
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
 			<item value="begin 4"/>
+			<item value="call"/>
 			<item value="pfp"/>
 			<item value="gpio_config"/>
 		</list>
