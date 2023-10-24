@@ -74,15 +74,15 @@ static void MX_ADC1_Init(void);
 char uart_buf[30];
 int adc_value;
 
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
-	if (hadc ->Instance == ADC1) {
-		memset(uart_buf, 0, sizeof(uart_buf));
-		adc_value = HAL_ADC_GetValue(&hadc1);
-		sprintf(uart_buf, "ADC Value : %d \r\n", adc_value);
-		HAL_UART_Transmit(&huart3, (uint8_t *)uart_buf, sizeof(uart_buf), 1000);
-		HAL_ADC_Start_IT(&hadc1);
-	}
-}
+//void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+//	if (hadc ->Instance == ADC1) {
+//		memset(uart_buf, 0, sizeof(uart_buf));
+//		adc_value = HAL_ADC_GetValue(&hadc1);
+//		sprintf(uart_buf, "ADC Value : %d \r\n", adc_value);
+//		HAL_UART_Transmit(&huart3, (uint8_t *)uart_buf, sizeof(uart_buf), 1000);
+//		HAL_ADC_Start_IT(&hadc1);
+//	}
+//}
 
 /* USER CODE END 0 */
 
@@ -126,15 +126,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	  HAL_ADC_Start(&hadc1);
-//	  HAL_ADC_PollForConversion(&hadc1, 10);
-//	  adc_value = HAL_ADC_GetValue(&hadc1);
-//	  HAL_ADC_Stop(&hadc1);
-//
-//	  memset(uart_buf, 0, sizeof(uart_buf));
-//	  sprintf(uart_buf, "ADC Value : %d \r\n", adc_value);
-//	  HAL_UART_Transmit(&huart3, (uint8_t *)uart_buf, sizeof(uart_buf), 100);
-//	  HAL_Delay(1000);
+	  HAL_ADC_Start(&hadc1);
+	  HAL_ADC_PollForConversion(&hadc1, 10);
+	  adc_value = HAL_ADC_GetValue(&hadc1);
+	  HAL_ADC_Stop(&hadc1);
+
+	  memset(uart_buf, 0, sizeof(uart_buf));
+	  sprintf(uart_buf, "ADC Value : %d \r\n", adc_value);
+	  HAL_UART_Transmit(&huart3, (uint8_t *)uart_buf, sizeof(uart_buf), 100);
+	  HAL_Delay(1000);
 
     /* USER CODE END WHILE */
 

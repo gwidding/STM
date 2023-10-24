@@ -1,0 +1,29 @@
+17:04:10 **** Incremental Build of configuration Debug for project UART_ADC ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:162:11: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  162 |           printf("count : %d, ADC : %d \r\n", count, adc_value);
+      |           ^~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   21 | #include "string.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:162:11: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  162 |           printf("count : %d, ADC : %d \r\n", count, adc_value);
+      |           ^~~~~~
+../Core/Src/main.c:162:11: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "UART_ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\UART_ADC\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_ADC.elf
+ 
+arm-none-eabi-size   UART_ADC.elf 
+arm-none-eabi-objdump -h -S  UART_ADC.elf  > "UART_ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  23388	    112	   3952	  27452	   6b3c	UART_ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_ADC.list
+ 
+
+17:04:11 Build Finished. 0 errors, 2 warnings. (took 1s.29ms)
+
