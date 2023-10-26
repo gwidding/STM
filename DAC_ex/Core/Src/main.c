@@ -137,7 +137,7 @@ int main(void)
 	  else {
 		  dac_value_2 = 0;
 	  }
-	  HAL_Delay(1); // 끝나는 거 기다리는 용도
+	  HAL_Delay(5); // 끝나는 거 기다리는 용도
 
 
 //	  for(dac_value=0; dac_value<=255; dac_value++) {

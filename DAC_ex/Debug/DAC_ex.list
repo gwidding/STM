@@ -457,8 +457,8 @@ int main(void)
  800055e:	2300      	movs	r3, #0
  8000560:	603b      	str	r3, [r7, #0]
 	  }
-	  HAL_Delay(1); // 끝나는 거 기다리는 용도
- 8000562:	2001      	movs	r0, #1
+	  HAL_Delay(5); // 끝나는 거 기다리는 용도
+ 8000562:	2005      	movs	r0, #5
  8000564:	f000 fca8 	bl	8000eb8 <HAL_Delay>
 	  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dac_value_1);
  8000568:	e7db      	b.n	8000522 <main+0x3a>
