@@ -1,8 +1,3 @@
-connections/org.eclipse.remote.serial.core.connectionType/6/serial.baudRate=11
-connections/org.eclipse.remote.serial.core.connectionType/6/serial.byteSize=3
-connections/org.eclipse.remote.serial.core.connectionType/6/serial.parity=0
-connections/org.eclipse.remote.serial.core.connectionType/6/serial.portName=COM6
-connections/org.eclipse.remote.serial.core.connectionType/6/serial.stopBits=0
 connections/org.eclipse.remote.serial.core.connectionType/UART_Test/serial.baudRate=11
 connections/org.eclipse.remote.serial.core.connectionType/UART_Test/serial.byteSize=3
 connections/org.eclipse.remote.serial.core.connectionType/UART_Test/serial.parity=0
