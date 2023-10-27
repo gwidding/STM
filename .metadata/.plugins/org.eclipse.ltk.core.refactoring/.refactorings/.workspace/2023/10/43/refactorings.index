@@ -2,3 +2,4 @@
 1698047508029	Delete resource 'segment_exti'
 1698047512060	Delete resource 'segment7_exti'
 1698296996530	Delete resource 'timer'
+1698381010035	Rename resource 'lcd_timer'

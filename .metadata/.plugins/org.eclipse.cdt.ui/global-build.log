@@ -1650,3 +1650,1209 @@ Finished building: default.size.stdout
  
 Finished building: RTC.list
  
+13:41:53 **** Clean-only build of configuration Debug for project lcd_time ****
+make -j8 clean 
+rm -rf ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o
+rm -rf ./Core/Startup/startup_stm32f429zitx.d ./Core/Startup/startup_stm32f429zitx.o
+rm -rf ./Core/Src/lcd.cyclo ./Core/Src/lcd.d ./Core/Src/lcd.o ./Core/Src/lcd.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su
+rm -rf ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.su
+rm -rf default.size.stdout i2c_LCD.elf i2c_LCD.list i2c_LCD.map
+ 
+13:41:53 **** Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f429zitx.d" -MT"Core/Startup/startup_stm32f429zitx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f429zitx.o" "../Core/Startup/startup_stm32f429zitx.s"
+arm-none-eabi-gcc "../Core/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/adc.d" -MT"Core/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/adc.o"
+arm-none-eabi-gcc "../Core/Src/dac.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/dac.d" -MT"Core/Src/dac.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/dac.o"
+arm-none-eabi-gcc "../Core/Src/eth.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/eth.d" -MT"Core/Src/eth.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/eth.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/i2c.d" -MT"Core/Src/i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/i2c.o"
+arm-none-eabi-gcc "../Core/Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/lcd.d" -MT"Core/Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lcd.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rtc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rtc.d" -MT"Core/Src/rtc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/rtc.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+../Core/Src/lcd.c: In function 'I2C_Scan':
+../Core/Src/lcd.c:26:13: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+   26 |             snprintf(msg, sizeof(msg), "0x%02X", i);
+      |             ^~~~~~~~
+../Core/Src/lcd.c:3:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+    2 | #include <string.h>
+  +++ |+#include <stdio.h>
+    3 | 
+../Core/Src/lcd.c:26:13: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+   26 |             snprintf(msg, sizeof(msg), "0x%02X", i);
+      |             ^~~~~~~~
+../Core/Src/lcd.c:26:13: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../Core/Src/main.c: In function 'get_time':
+../Core/Src/main.c:85:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   85 |         sprintf((char *)showTime, "%02d:%02d:%02d\t\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |         ^~~~~~~
+../Core/Src/main.c:29:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   28 | #include "gpio.h"
+  +++ |+#include <stdio.h>
+   29 | 
+../Core/Src/main.c:85:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   85 |         sprintf((char *)showTime, "%02d:%02d:%02d\t\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |         ^~~~~~~
+../Core/Src/main.c:85:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  161 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:171:60: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   28 | #include "gpio.h"
+  +++ |+#include <string.h>
+   29 | 
+../Core/Src/main.c:171:60: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:171:60: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:178:20: error: assignment to expression with array type
+  178 |           lcd_buf1 = showDate;
+      |                    ^
+../Core/Src/main.c:179:20: error: assignment to expression with array type
+  179 |           lcd_buf2 = showTime;
+      |                    ^
+../Core/Src/main.c:185:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  185 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:186:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  186 |         LCD_SendString(LCD_ADDR, lcd_buf1);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+make: *** [Core/Src/subdir.mk:61: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:42:18 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc "../Core/Src/usb_otg.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usb_otg.d" -MT"Core/Src/usb_otg.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usb_otg.o"
+../Core/Src/main.c: In function 'get_time':
+../Core/Src/main.c:85:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   85 |         sprintf((char *)showTime, "%02d:%02d:%02d\t\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |         ^~~~~~~
+../Core/Src/main.c:29:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   28 | #include "gpio.h"
+  +++ |+#include <stdio.h>
+   29 | 
+../Core/Src/main.c:85:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   85 |         sprintf((char *)showTime, "%02d:%02d:%02d\t\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |         ^~~~~~~
+../Core/Src/main.c:85:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  161 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:171:60: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   28 | #include "gpio.h"
+  +++ |+#include <string.h>
+   29 | 
+../Core/Src/main.c:171:60: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:171:60: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:178:20: error: assignment to expression with array type
+  178 |           lcd_buf1 = &showDate;
+      |                    ^
+../Core/Src/main.c:179:20: error: assignment to expression with array type
+  179 |           lcd_buf2 = &showTime;
+      |                    ^
+../Core/Src/main.c:185:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  185 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:186:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  186 |         LCD_SendString(LCD_ADDR, lcd_buf1);
+      |         ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:61: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:42:29 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'get_time':
+../Core/Src/main.c:85:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   85 |         sprintf((char *)showTime, "%02d:%02d:%02d\t\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |         ^~~~~~~
+../Core/Src/main.c:29:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   28 | #include "gpio.h"
+  +++ |+#include <stdio.h>
+   29 | 
+../Core/Src/main.c:85:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   85 |         sprintf((char *)showTime, "%02d:%02d:%02d\t\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |         ^~~~~~~
+../Core/Src/main.c:85:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  161 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:171:60: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   28 | #include "gpio.h"
+  +++ |+#include <string.h>
+   29 | 
+../Core/Src/main.c:171:60: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:171:60: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:178:20: error: assignment to expression with array type
+  178 |           lcd_buf1 = *showDate;
+      |                    ^
+../Core/Src/main.c:179:20: error: assignment to expression with array type
+  179 |           lcd_buf2 = *showTime;
+      |                    ^
+../Core/Src/main.c:185:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  185 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:186:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  186 |         LCD_SendString(LCD_ADDR, lcd_buf1);
+      |         ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:61: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:44:09 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'get_time':
+../Core/Src/main.c:85:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   85 |         sprintf((char *)showTime, "%02d:%02d:%02d\t\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |         ^~~~~~~
+../Core/Src/main.c:29:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   28 | #include "gpio.h"
+  +++ |+#include <stdio.h>
+   29 | 
+../Core/Src/main.c:85:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   85 |         sprintf((char *)showTime, "%02d:%02d:%02d\t\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+      |         ^~~~~~~
+../Core/Src/main.c:85:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  161 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:171:60: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   28 | #include "gpio.h"
+  +++ |+#include <string.h>
+   29 | 
+../Core/Src/main.c:171:60: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:171:60: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:183:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  183 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:184:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  184 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+../Core/Src/main.c:154:8: warning: unused variable 'lcd_buf2' [-Wunused-variable]
+  154 |   char lcd_buf2[30];
+      |        ^~~~~~~~
+../Core/Src/main.c:153:8: warning: unused variable 'lcd_buf1' [-Wunused-variable]
+  153 |   char lcd_buf1[30];
+      |        ^~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  25936	    108	   4092	  30136	   75b8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+13:44:51 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:161:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  161 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:171:60: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:33:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   32 | #include "stdio.h"
+  +++ |+#include <string.h>
+   33 | /* USER CODE END Includes */
+../Core/Src/main.c:171:60: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  171 |           HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+      |                                                            ^~~~~~
+../Core/Src/main.c:171:60: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:183:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  183 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:184:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  184 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+../Core/Src/main.c:154:8: warning: unused variable 'lcd_buf2' [-Wunused-variable]
+  154 |   char lcd_buf2[30];
+      |        ^~~~~~~~
+../Core/Src/main.c:153:8: warning: unused variable 'lcd_buf1' [-Wunused-variable]
+  153 |   char lcd_buf1[30];
+      |        ^~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  25936	    108	   4092	  30136	   75b8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+13:45:13 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:162:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  162 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:184:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  184 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:185:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  185 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+../Core/Src/main.c:155:8: warning: unused variable 'lcd_buf2' [-Wunused-variable]
+  155 |   char lcd_buf2[30];
+      |        ^~~~~~~~
+../Core/Src/main.c:154:8: warning: unused variable 'lcd_buf1' [-Wunused-variable]
+  154 |   char lcd_buf1[30];
+      |        ^~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  25936	    108	   4092	  30136	   75b8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+13:45:26 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:182:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  182 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:183:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  183 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  25936	    108	   4092	  30136	   75b8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+13:45:42 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-size   lcd_time.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25936	    108	   4092	  30136	   75b8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+13:47:36 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-size   lcd_time.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25936	    108	   4092	  30136	   75b8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+13:48:32 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:182:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  182 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:183:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  183 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  25928	    108	   4092	  30128	   75b0	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:02:19 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/adc.d" -MT"Core/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/adc.o"
+arm-none-eabi-gcc "../Core/Src/dac.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/dac.d" -MT"Core/Src/dac.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/dac.o"
+arm-none-eabi-gcc "../Core/Src/eth.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/eth.d" -MT"Core/Src/eth.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/eth.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/i2c.d" -MT"Core/Src/i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/i2c.o"
+arm-none-eabi-gcc "../Core/Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/lcd.d" -MT"Core/Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lcd.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rtc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rtc.d" -MT"Core/Src/rtc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/rtc.o"
+../Core/Src/lcd.c: In function 'I2C_Scan':
+../Core/Src/lcd.c:26:13: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+   26 |             snprintf(msg, sizeof(msg), "0x%02X", i);
+      |             ^~~~~~~~
+../Core/Src/lcd.c:3:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+    2 | #include <string.h>
+  +++ |+#include <stdio.h>
+    3 | 
+../Core/Src/lcd.c:26:13: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+   26 |             snprintf(msg, sizeof(msg), "0x%02X", i);
+      |             ^~~~~~~~
+../Core/Src/lcd.c:26:13: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:177:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  177 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:178:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  178 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc "../Core/Src/usb_otg.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usb_otg.d" -MT"Core/Src/usb_otg.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usb_otg.o"
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  25984	    108	   4092	  30184	   75e8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:10:34 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:186:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  186 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:187:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  187 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26140	    108	   4092	  30340	   7684	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:13:26 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:186:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  186 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:187:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  187 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26136	    108	   4092	  30336	   7680	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:15:49 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:190:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  190 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:191:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  191 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26164	    108	   4092	  30364	   769c	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:19:46 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:172:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  172 |                 if (setmode=1) sTime.Hours++;
+      |                     ^~~~~~~
+../Core/Src/main.c:173:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  173 |                 if (setmode=2) sTime.Minutes++;
+      |                     ^~~~~~~
+../Core/Src/main.c:174:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  174 |                 if (setmode=3) sTime.Seconds++;
+      |                     ^~~~~~~
+../Core/Src/main.c:195:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  195 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:196:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  196 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26212	    108	   4092	  30412	   76cc	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:20:25 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:191:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  191 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:192:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  192 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26216	    108	   4092	  30416	   76d0	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:22:36 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:191:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  191 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:192:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  192 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26296	    108	   4092	  30496	   7720	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:26:31 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:191:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  191 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:192:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  192 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26320	    108	   4092	  30520	   7738	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:27:43 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:190:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  190 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:191:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  191 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26320	    108	   4092	  30520	   7738	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:29:57 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:191:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  191 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:192:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  192 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26324	    108	   4092	  30524	   773c	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:30:37 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:191:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  191 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:192:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  192 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26324	    108	   4092	  30524	   773c	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:34:02 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:183:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  183 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:184:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  184 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26328	    108	   4092	  30528	   7740	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:41:51 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:197:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  197 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:198:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  198 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26400	    108	   4092	  30600	   7788	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:44:25 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:197:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  197 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:198:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  198 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26404	    108	   4092	  30604	   778c	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:45:29 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:197:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  197 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:198:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  198 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26404	    108	   4092	  30604	   778c	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:49:58 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rtc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rtc.d" -MT"Core/Src/rtc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/rtc.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:201:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  201 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  28320	    120	   4096	  32536	   7f18	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:50:25 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:201:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  201 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  28320	    120	   4096	  32536	   7f18	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:51:04 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:201:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  201 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  28508	    120	   4096	  32724	   7fd4	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:51:27 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:201:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  201 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  29080	    120	   4096	  33296	   8210	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+14:58:19 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:201:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  201 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  28508	    120	   4096	  32724	   7fd4	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:04:06 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:159:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  159 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:199:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  199 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  28516	    120	   4096	  32732	   7fdc	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:04:13 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:159:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  159 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:199:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  199 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  28488	    120	   4096	  32704	   7fc0	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:08:41 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:199:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  199 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  29076	    120	   4096	  33292	   820c	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:12:04 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:199:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  199 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  29076	    120	   4096	  33292	   820c	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:16:02 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:199:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  199 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:200:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  200 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  29112	    120	   4096	  33328	   8230	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:22:26 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:195:24: error: 'setMode' undeclared (first use in this function); did you mean 'setmode'?
+  195 |           setModeCheck(setMode);
+      |                        ^~~~~~~
+      |                        setmode
+../Core/Src/main.c:195:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:220:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  220 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:221:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  221 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:61: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:22:37 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:220:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  220 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:221:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  221 |                 LCD_SendString(LCD_ADDR, showDate);
+      |                 ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  28500	    120	   4096	  32716	   7fcc	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:26:08 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:234:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  234 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:235:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  235 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  28464	    120	   4096	  32680	   7fa8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:34:16 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rtc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/rtc.d" -MT"Core/Src/rtc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/rtc.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:197:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  197 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:198:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  198 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26408	    108	   4092	  30608	   7790	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:39:21 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:197:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  197 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:198:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  198 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26432	    108	   4092	  30632	   77a8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:40:50 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:197:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  197 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:198:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  198 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26432	    108	   4092	  30632	   77a8	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:43:54 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:160:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  160 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:197:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  197 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:198:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  198 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26368	    108	   4092	  30568	   7768	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
+15:47:00 **** Incremental Build of configuration Debug for project lcd_time ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  158 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c:195:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  195 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:196:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  196 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lcd_time.elf
+ 
+arm-none-eabi-size   lcd_time.elf 
+arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
+   text	   data	    bss	    dec	    hex	filename
+  26396	    108	   4116	  30620	   779c	lcd_time.elf
+Finished building: default.size.stdout
+ 
+Finished building: lcd_time.list
+ 
