@@ -1,4 +1,4 @@
-16:10:53 **** Build of configuration Debug for project segment7_exit ****
+20:03:27 **** Build of configuration Debug for project segment7_exit ****
 make -j8 all 
 arm-none-eabi-size   segment7_exit.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   segment7_exit.elf
 Finished building: default.size.stdout
  
 
-16:10:53 Build Finished. 0 errors, 0 warnings. (took 255ms)
+20:03:27 Build Finished. 0 errors, 0 warnings. (took 307ms)
 

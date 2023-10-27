@@ -1,27 +1,28 @@
-15:47:00 **** Incremental Build of configuration Debug for project lcd_time ****
+21:02:44 **** Incremental Build of configuration Debug for project lcd_time ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:158:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
-  158 |         LCD_Init(LCD_ADDR);
-      |         ^~~~~~~~
-../Core/Src/main.c:195:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
-  195 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+../Core/Src/main.c: In function 'Display_Temp':
+../Core/Src/main.c:149:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  149 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
       |         ^~~~~~~~~~~~~~~
-../Core/Src/main.c:196:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
-  196 |         LCD_SendString(LCD_ADDR, showDate);
+../Core/Src/main.c:150:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  150 |         LCD_SendString(LCD_ADDR, str);
       |         ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:240:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  240 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+arm-none-eabi-gcc -o "lcd_time.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\lcd_time\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd_time.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: lcd_time.elf
  
 arm-none-eabi-size   lcd_time.elf 
 arm-none-eabi-objdump -h -S  lcd_time.elf  > "lcd_time.list"
    text	   data	    bss	    dec	    hex	filename
-  26396	    108	   4116	  30620	   779c	lcd_time.elf
+  42352	    484	   4212	  47048	   b7c8	lcd_time.elf
 Finished building: default.size.stdout
  
 Finished building: lcd_time.list
  
 
-15:47:01 Build Finished. 0 errors, 3 warnings. (took 1s.224ms)
+21:02:45 Build Finished. 0 errors, 3 warnings. (took 1s.857ms)
 

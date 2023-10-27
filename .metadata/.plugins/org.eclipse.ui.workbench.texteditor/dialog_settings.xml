@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="HAL_TIM_Period"/>
+		<item key="selection" value="htim2"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="hal_tim_period"/>
-			<item value="HAL_Tim"/>
-			<item value="header"/>
-			<item value="sys"/>
-			<item value="hal_inc"/>
-			<item value="Using"/>
-			<item value="over"/>
-			<item value="init"/>
-			<item value="using"/>
-			<item value="bus"/>
-			<item value="i2c"/>
-			<item value="lcd"/>
-			<item value="kcd"/>
+			<item value="htim2"/>
+			<item value="#define LCD_ADDR"/>
+			<item value="delay"/>
+			<item value="LCD_Init"/>
 			<item value="begin 4"/>
-			<item value="call"/>
+			<item value="init"/>
+			<item value="htim3"/>
+			<item value="Display_Temp"/>
+			<item value="temp"/>
+			<item value="lcd_clear"/>
+			<item value="lcd_init"/>
+			<item value="base"/>
+			<item value="htim"/>
+			<item value="set_time"/>
+			<item value="monday"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="645"/>
-		<item key="DIALOG_Y_ORIGIN" value="164"/>
+		<item key="DIALOG_X_ORIGIN" value="895"/>
+		<item key="DIALOG_Y_ORIGIN" value="129"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="389"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

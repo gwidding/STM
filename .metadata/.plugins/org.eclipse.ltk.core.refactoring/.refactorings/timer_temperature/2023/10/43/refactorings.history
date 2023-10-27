@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;timer_temperature/i2c_LCD.ioc&apos; to &apos;timer_temperature.ioc&apos;" description="Rename resource &apos;i2c_LCD.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="i2c_LCD.ioc" name="timer_temperature.ioc" stamp="1698404818668" updateReferences="true"/>
+</session>

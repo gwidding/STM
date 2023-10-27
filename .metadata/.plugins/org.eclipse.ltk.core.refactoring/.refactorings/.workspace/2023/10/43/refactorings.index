@@ -3,3 +3,5 @@
 1698047512060	Delete resource 'segment7_exti'
 1698296996530	Delete resource 'timer'
 1698381010035	Rename resource 'lcd_timer'
+1698404772964	Delete resource 'timer_temperature'
+1698405700990	Delete resource 'timer_temperature'

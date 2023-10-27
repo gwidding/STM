@@ -23,6 +23,7 @@
 #include "eth.h"
 #include "i2c.h"
 #include "rtc.h"
+#include "tim.h"
 #include "usart.h"
 #include "usb_otg.h"
 #include "gpio.h"
@@ -75,6 +76,86 @@ int __io_putchar(int ch) {
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void delay(uint16_t time) {
+	__HAL_TIM_SET_COUNTER(&htim2, 0);
+	while ((__HAL_TIM_GET_COUNTER(&htim2)) < time);
+}
+
+uint8_t Rh_byte1, Rh_byte2, Temp_byte1, Temp_byte2;
+uint16_t SUM, RH, TEMP;
+
+float Temperature = 0;
+float Humidity = 0;
+uint8_t Presence = 0;
+
+void Set_Pin_Output(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+	GPIO_InitStruct.Pin = GPIO_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
+}
+void Set_Pin_Input(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+	GPIO_InitStruct.Pin = GPIO_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
+}
+
+#define DHT11_PORT GPIOC
+#define DHT11_PIN GPIO_PIN_0
+
+void DHT11_Start (void)
+{
+	Set_Pin_Output(DHT11_PORT, DHT11_PIN);  // set the pin as output
+	HAL_GPIO_WritePin (DHT11_PORT, DHT11_PIN, 0);   // pull the pin low
+	delay (18000);   // wait for 18ms
+	Set_Pin_Input(GPIOC, DHT11_Pin);    // set as input
+}
+uint8_t DHT11_Check_Response (void) {
+	uint8_t Response = 0;
+	delay(40);
+	if (!(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN))) {
+		delay(80);
+		if ((HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN))) Response = 1;
+		else Response = -1; // 255
+	}
+	while ((HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN)));
+
+	return Response;
+}
+
+uint8_t DHT11_Read(void) {
+	uint8_t i, j;
+	for (j = 0; j < 8; j++) {
+		while (!(HAL_GPIO_ReadPin(GPIOC, DHT11_PIN)));
+		delay(20);
+		if (!(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN))) // if the pin is low
+		{
+			i &= ~(1 << (7 - j));   // write 0
+		} else
+			i |= (1 << (7 - j));  // if the pin is high, write 1
+		while ((HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN)));
+	}
+	return i;
+}
+
+#define LCD_ADDR (0x27 << 1)
+
+void Display_Temp (float Temp) {
+	char str[20] = {0};
+	sprintf(str, "TEMP:- %.2f C", Temp);
+	LCD_SendCommand(LCD_ADDR, 0b10000000);
+	LCD_SendString(LCD_ADDR, str);
+}
+
+void Display_Rh (float Rh) {
+	char str[20] = {0};
+	sprintf(str, "RH:- %.2f %%", Rh);
+	LCD_SendCommand(LCD_ADDR, 0b11000000);
+	LCD_SendString(LCD_ADDR, str);
+}
 void get_time(void) {
 //	RTC_DateTypeDef sDate;
 //	RTC_TimeTypeDef sTime;
@@ -145,6 +226,7 @@ int main(void)
   MX_ADC1_Init();
   MX_DAC_Init();
   MX_RTC_Init();
+  MX_TIM2_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
@@ -153,7 +235,7 @@ int main(void)
   set_Date(RTC_WEEKDAY_MONDAY, 10, 27, 23);
 //	init();
 
-#define LCD_ADDR (0x27 << 1)
+
 	I2C_Scan();
 	LCD_Init(LCD_ADDR);
 	int setmode = 0;
@@ -183,13 +265,7 @@ int main(void)
 			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 0);
 		}
 	}
-	void DHT11_Start (void)
-	{
-		Set_Pin_Output (DHT11_PORT, DHT11_PIN);  // set the pin as output
-		HAL_GPIO_WritePin (DHT11_PORT, DHT11_PIN, 0);   // pull the pin low
-		delay (18000);   // wait for 18ms
-		Set_Pin_Input(DHT11_PORT, DHT11_PIN);    // set as input
-	}
+	HAL_TIM_Base_Start(&htim2);
 
   /* USER CODE END 2 */
 
@@ -197,6 +273,26 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		Display_Temp(Temperature);
+		Display_Rh(Humidity);
+
+		/**************** DHT 11 *********************/
+		DHT11_Start();
+		Presence = DHT11_Check_Response();
+		Rh_byte1 = DHT11_Read();
+		Rh_byte2 = DHT11_Read();
+		Temp_byte1 = DHT11_Read();
+		Temp_byte2 = DHT11_Read();
+		SUM = DHT11_Read();
+
+		TEMP = Temp_byte1;
+		RH = Rh_byte1;
+
+		Temperature = (float) TEMP;
+		Humidity = (float) RH;
+
+		HAL_Delay(1000);
+
 	setModeCheck(setmode);
 	get_time();
 	// set address to 0x00
@@ -257,13 +353,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
-  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 4;
-  RCC_OscInitStruct.PLL.PLLN = 168;
+  RCC_OscInitStruct.PLL.PLLM = 25;
+  RCC_OscInitStruct.PLL.PLLN = 336;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -295,6 +391,9 @@ static void MX_NVIC_Init(void)
   /* RTC_Alarm_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(RTC_Alarm_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn);
+  /* TIM2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(TIM2_IRQn);
 }
 
 /* USER CODE BEGIN 4 */
