@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;temp_LCD_time/temp_LCD.ioc&apos; to &apos;temp_LCD_time.ioc&apos;" description="Rename resource &apos;temp_LCD.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="temp_LCD.ioc" name="temp_LCD_time.ioc" stamp="1698651462357" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;temp_LCD_Time/temp_LCD.ioc&apos; to &apos;temp_LCD_Time.ioc&apos;" description="Rename resource &apos;temp_LCD.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="temp_LCD.ioc" name="temp_LCD_Time.ioc" stamp="1698652462438" updateReferences="true"/>
+</session>

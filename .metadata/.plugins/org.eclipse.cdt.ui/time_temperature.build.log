@@ -1,0 +1,43 @@
+14:43:57 **** Incremental Build of configuration Debug for project time_temperature ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc "../Core/Src/usb_otg.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usb_otg.d" -MT"Core/Src/usb_otg.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usb_otg.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
+  158 |         LCD_Init(LCD_ADDR);
+      |         ^~~~~~~~
+../Core/Src/main.c: In function 'DHT11_Start':
+../Core/Src/main.c:188:17: warning: implicit declaration of function 'Set_Pin_Output' [-Wimplicit-function-declaration]
+  188 |                 Set_Pin_Output (DHT11_PORT, DHT11_PIN);  // set the pin as output
+      |                 ^~~~~~~~~~~~~~
+../Core/Src/main.c:188:33: error: 'DHT11_PORT' undeclared (first use in this function)
+  188 |                 Set_Pin_Output (DHT11_PORT, DHT11_PIN);  // set the pin as output
+      |                                 ^~~~~~~~~~
+../Core/Src/main.c:188:33: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:188:45: error: 'DHT11_PIN' undeclared (first use in this function)
+  188 |                 Set_Pin_Output (DHT11_PORT, DHT11_PIN);  // set the pin as output
+      |                                             ^~~~~~~~~
+../Core/Src/main.c:190:17: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+  190 |                 delay (18000);   // wait for 18ms
+      |                 ^~~~~
+../Core/Src/main.c:191:17: warning: implicit declaration of function 'Set_Pin_Input' [-Wimplicit-function-declaration]
+  191 |                 Set_Pin_Input(DHT11_PORT, DHT11_PIN);    // set as input
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:203:9: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
+  203 |         LCD_SendCommand(LCD_ADDR, 0b10000000);
+      |         ^~~~~~~~~~~~~~~
+../Core/Src/main.c:204:9: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
+  204 |         LCD_SendString(LCD_ADDR, showDate);
+      |         ^~~~~~~~~~~~~~
+At top level:
+../Core/Src/main.c:186:14: warning: 'DHT11_Start' defined but not used [-Wunused-function]
+  186 |         void DHT11_Start (void)
+      |              ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:61: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+14:43:58 Build Failed. 4 errors, 7 warnings. (took 716ms)
+
