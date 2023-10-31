@@ -218,7 +218,7 @@ int main(void)
   MX_TIM1_Init();
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
-
+  printf("Test\r\n");
 //	I2C_Scan();
 	LCD_Init(LCD_ADDR);
 	HAL_TIM_Base_Start(&htim1);
@@ -265,10 +265,9 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	printf("Test\r\n");
+
 
 	while (1) {
-
 
 			DHT11_Start();
 			Presence = DHT11_Check_Response();
@@ -295,7 +294,7 @@ int main(void)
 //
 //			LCD_SendCommand(LCD_ADDR, 0b11000000);
 //			LCD_SendString(LCD_ADDR, humidStirng);
-			HAL_Delay(10);
+
 			setModeCheck(setmode);
 			get_time();
 
@@ -305,13 +304,13 @@ int main(void)
 			// set address to 0x00
 			LCD_SendCommand(LCD_ADDR, 0b10000000);
 			LCD_SendString(LCD_ADDR, line1);
-	//			LCD_SendString(LCD_ADDR, showDate + temperString);
+//			LCD_SendString(LCD_ADDR, showDate + temperString);
 
 			// set address to 0x40
 			LCD_SendCommand(LCD_ADDR, 0b11000000);
 			LCD_SendString(LCD_ADDR, line2);
-	//			LCD_SendString(LCD_ADDR, showTime + humidStirng);
-
+//			LCD_SendString(LCD_ADDR, showTime + humidStirng);
+			HAL_Delay(10);
 
 			if (HAL_GPIO_ReadPin(GPIOF, setBtn_Pin) == 0) {
 				current_tick_1 = HAL_GetTick();
@@ -327,7 +326,7 @@ int main(void)
 			}
 
 			if (setmode == 0) {
-//				HAL_Delay(1000);
+				HAL_Delay(490);
 			}
 			else if (HAL_GPIO_ReadPin(GPIOF, upBtn_Pin) == 0 && (current_tick_2 - old_tick_2 > 300)) {
 				if (setmode == 1) sTime.Hours = (sTime.Hours + 1) % 13;
@@ -337,8 +336,6 @@ int main(void)
 				HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 				old_tick_2 = current_tick_2;
 		   }
-
-
 	}
 
   /* USER CODE END 3 */
