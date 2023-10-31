@@ -1,4 +1,4 @@
-14:43:49 **** Incremental Build of configuration Debug for project Binary_cnt ****
+09:14:42 **** Build of configuration Debug for project Binary_cnt ****
 make -j8 all 
 arm-none-eabi-size   Binary_cnt.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   Binary_cnt.elf
 Finished building: default.size.stdout
  
 
-14:43:49 Build Finished. 0 errors, 0 warnings. (took 256ms)
+09:14:42 Build Finished. 0 errors, 0 warnings. (took 317ms)
 

@@ -1,10 +1,17 @@
-19:44:38 **** Incremental Build of configuration Debug for project temp_LCD ****
+09:40:35 **** Incremental Build of configuration Debug for project temp_LCD ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "temp_LCD.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\temp_LCD\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="temp_LCD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: temp_LCD.elf
+ 
 arm-none-eabi-size   temp_LCD.elf 
+arm-none-eabi-objdump -h -S  temp_LCD.elf  > "temp_LCD.list"
    text	   data	    bss	    dec	    hex	filename
-  34968	    476	   4068	  39512	   9a58	temp_LCD.elf
+  34960	    476	   4068	  39504	   9a50	temp_LCD.elf
 Finished building: default.size.stdout
  
+Finished building: temp_LCD.list
+ 
 
-19:44:39 Build Finished. 0 errors, 0 warnings. (took 310ms)
+09:40:37 Build Finished. 0 errors, 0 warnings. (took 1s.330ms)
 

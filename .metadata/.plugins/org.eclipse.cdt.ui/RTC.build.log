@@ -1,4 +1,4 @@
-14:43:50 **** Incremental Build of configuration Debug for project RTC ****
+09:14:43 **** Build of configuration Debug for project RTC ****
 make -j8 all 
 arm-none-eabi-size   RTC.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   RTC.elf
 Finished building: default.size.stdout
  
 
-14:43:50 Build Finished. 0 errors, 0 warnings. (took 256ms)
+09:14:43 Build Finished. 0 errors, 0 warnings. (took 319ms)
 

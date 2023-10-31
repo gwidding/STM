@@ -1,4 +1,4 @@
-14:43:48 **** Incremental Build of configuration Debug for project ADC_DAC ****
+09:14:41 **** Build of configuration Debug for project ADC_DAC ****
 make -j8 all 
 arm-none-eabi-size   ADC_DAC.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   ADC_DAC.elf
 Finished building: default.size.stdout
  
 
-14:43:48 Build Finished. 0 errors, 0 warnings. (took 305ms)
+09:14:41 Build Finished. 0 errors, 0 warnings. (took 848ms)
 
