@@ -62,9 +62,9 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 RTC_DateTypeDef sDate;
 RTC_TimeTypeDef sTime;
 
-char showTime[30] = {0};
-char showDate[30] = {0};
-char ampm[2][3] = {"AM", "PM"};
+extern void I2C_Scan(void);
+void init();
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,7 +91,18 @@ int _io_putchar(int ch) {
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-void I2C_Scan();
+char showTime[30] = {0};
+char showDate[30] = {0};
+char ampm[2][3] = {"AM", "PM"};
+
+void get_time(void) {
+	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
+	sprintf((char *)showTime, "%s %02d:%02d:%02d", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
+	sprintf((char *)showDate, "%04d-%02d-%02d", 2000 + sDate.Year, sDate.Month, sDate.Date);
+}
+
 void LCD_Init(uint8_t lcd_addr);
 void LCD_SendString(uint8_t lcd_addr, char *str);
 void LCD_SendCommand(uint8_t lcd_addr, uint8_t cmd);
@@ -105,8 +116,7 @@ uint8_t Presence = 0;
 
 void delay_us(uint16_t time) {
 	__HAL_TIM_SET_COUNTER(&htim1, 0);           // ????��?��?��?��몌옙?? 0??��?��?��?��????????? ?��?���????????��?��?��
-	while ((__HAL_TIM_GET_COUNTER(&htim1)) < time)
-		;   // ??��?��?��??��?��?��??��?��?�� ??��?��?��媛꾧?��?��????????? ???��?????????
+	while ((__HAL_TIM_GET_COUNTER(&htim1)) < time);   // ??��?��?��??��?��?��??��?��?�� ??��?��?��媛꾧?��?��????????? ???��?????????
 }
 void Set_Pin_Output(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
 	GPIO_InitTypeDef GPIO_InitStruct = { 0 };
@@ -161,26 +171,6 @@ uint8_t DHT11_Read(void) {
 	return i;
 }
 
-char temperString[30];
-char humidStirng[30];
-
-void get_time(void) {
-	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-
-	sprintf((char *)showTime, "%s %02d:%02d:%02d", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
-	sprintf((char *)showDate, "%04d-%02d-%02d", 2000 + sDate.Year, sDate.Month, sDate.Date);
-}
-void set_Date(uint8_t ww, uint8_t mm, uint8_t dd, uint8_t yy) {
-	RTC_DateTypeDef sDate;
-
-	sDate.WeekDay = ww; // date RTC_WEEKDAY_THURSDAY
-	sDate.Month = mm; // month RTC_MONTH_FEBRUARY
-	sDate.Date = dd; // date
-	sDate.Year = yy; // year
-
-	HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-}
 /* USER CODE END 0 */
 
 /**
@@ -219,11 +209,10 @@ int main(void)
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
   printf("Test\r\n");
-//	I2C_Scan();
-	LCD_Init(LCD_ADDR);
+
 	HAL_TIM_Base_Start(&htim1);
 
-	set_Date(RTC_WEEKDAY_MONDAY, 10, 27, 23);
+	init();
 
 	int setmode = 0;
 
@@ -252,8 +241,6 @@ int main(void)
 			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 0);
 		}
 	}
-	char line1[60];
-	char line2[60];
 
   /* USER CODE END 2 */
 
@@ -283,11 +270,25 @@ int main(void)
 			Temperature = (float) TEMP;
 			Humidity = (float) RH;
 
-			printf("%.2f, %.2f \r\n", Temperature, Humidity);
-			HAL_Delay(500);
+			char line1[60];
+			char line2[60];
+
+			char temperString[30];
+			char humidStirng[30];
 
 			sprintf(temperString, " %.1fC", Temperature);
 			sprintf(humidStirng, "%.1f%%", Humidity);
+
+			printf("%.2f, %.2f", Temperature, Humidity);
+			printf("\r\n");
+			HAL_Delay(500);
+
+		  HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, 1);
+		  delay_us(10);
+		  HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, 0);
+		  delay_us(10);
+
+
 
 //			LCD_SendCommand(LCD_ADDR, 0b10000000);
 //			LCD_SendString(LCD_ADDR, temperString);
@@ -310,7 +311,6 @@ int main(void)
 			LCD_SendCommand(LCD_ADDR, 0b11000000);
 			LCD_SendString(LCD_ADDR, line2);
 //			LCD_SendString(LCD_ADDR, showTime + humidStirng);
-			HAL_Delay(10);
 
 			if (HAL_GPIO_ReadPin(GPIOF, setBtn_Pin) == 0) {
 				current_tick_1 = HAL_GetTick();
@@ -326,7 +326,7 @@ int main(void)
 			}
 
 			if (setmode == 0) {
-				HAL_Delay(490);
+//				HAL_Delay(490);
 			}
 			else if (HAL_GPIO_ReadPin(GPIOF, upBtn_Pin) == 0 && (current_tick_2 - old_tick_2 > 300)) {
 				if (setmode == 1) sTime.Hours = (sTime.Hours + 1) % 13;

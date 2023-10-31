@@ -422,7 +422,6 @@ int main(void)
  800052c:	2300      	movs	r3, #0
  800052e:	80fb      	strh	r3, [r7, #6]
 
-//	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, value);
 	  HAL_Delay(50);
  8000530:	2032      	movs	r0, #50	; 0x32
  8000532:	f000 fd03 	bl	8000f3c <HAL_Delay>

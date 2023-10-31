@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="RTC_DateTypeDef"/>
+		<item key="selection" value="BEGIN 4"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="begin 4"/>
+			<item value="setmode"/>
+			<item value="typedef"/>
+			<item value="type"/>
+			<item value="htim2"/>
+			<item value="i2c"/>
+			<item value="lcd"/>
+			<item value="seq"/>
 			<item value="RTC_DateTypeDef"/>
 			<item value="\"/>
 			<item value="Temperature"/>
-			<item value="begin 4"/>
-			<item value="setmode"/>
 			<item value="TEMP"/>
 			<item value="prinf"/>
 			<item value="htim1"/>
-			<item value="htim2"/>
 			<item value="showDate"/>
-			<item value="delay"/>
-			<item value="i2c_scan();\"/>
-			<item value="i2c_scan();"/>
-			<item value="init();"/>
-			<item value="init"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

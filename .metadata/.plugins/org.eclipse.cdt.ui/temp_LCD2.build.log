@@ -1,30 +1,10 @@
-09:24:13 **** Incremental Build of configuration Debug for project temp_LCD2 ****
+17:29:38 **** Incremental Build of configuration Debug for project temp_LCD2 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:233:18: warning: unused variable 'old_tick_2' [-Wunused-variable]
-  233 |         uint32_t old_tick_2;
-      |                  ^~~~~~~~~~
-../Core/Src/main.c:232:18: warning: unused variable 'old_tick_1' [-Wunused-variable]
-  232 |         uint32_t old_tick_1;
-      |                  ^~~~~~~~~~
-../Core/Src/main.c:231:18: warning: unused variable 'current_tick_2' [-Wunused-variable]
-  231 |         uint32_t current_tick_2;
-      |                  ^~~~~~~~~~~~~~
-../Core/Src/main.c:230:18: warning: unused variable 'current_tick_1' [-Wunused-variable]
-  230 |         uint32_t current_tick_1;
-      |                  ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "temp_LCD2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\temp_LCD2\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="temp_LCD2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: temp_LCD2.elf
- 
 arm-none-eabi-size   temp_LCD2.elf 
-arm-none-eabi-objdump -h -S  temp_LCD2.elf  > "temp_LCD2.list"
    text	   data	    bss	    dec	    hex	filename
-  38096	    484	   4188	  42768	   a710	temp_LCD2.elf
+  38832	    484	   4124	  43440	   a9b0	temp_LCD2.elf
 Finished building: default.size.stdout
  
-Finished building: temp_LCD2.list
- 
 
-09:24:14 Build Finished. 0 errors, 4 warnings. (took 1s.127ms)
+17:29:38 Build Finished. 0 errors, 0 warnings. (took 308ms)
 

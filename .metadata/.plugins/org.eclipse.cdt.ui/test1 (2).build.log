@@ -1,0 +1,16 @@
+16:04:02 **** Build of configuration Debug for project test1 (2) ****
+make -j8 all 
+arm-none-eabi-gcc -o "test1 (2).elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\test1 (2)\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test1 (2).map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test1 (2).elf
+ 
+arm-none-eabi-size   test1\ (2).elf 
+arm-none-eabi-objdump -h -S  test1\ (2).elf  > "test1 (2).list"
+c:/st/stm32cubeide_1.13.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.make.win32_2.1.0.202305091550/tools/bin/sh: syntax error: unexpected "("
+make: *** [makefile:69: default.size.stdout] Error 2
+make: *** Waiting for unfinished jobs....
+c:/st/stm32cubeide_1.13.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.make.win32_2.1.0.202305091550/tools/bin/sh: syntax error: unexpected "("
+make: *** [makefile:74: test1 (2).list] Error 2
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+16:04:03 Build Failed. 3 errors, 0 warnings. (took 665ms)
+

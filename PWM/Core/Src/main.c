@@ -119,7 +119,6 @@ int main(void)
 	  value += 1;
 	  if (value>TIM3->ARR) value = 0;
 
-//	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, value);
 	  HAL_Delay(50);
 
     /* USER CODE END WHILE */
