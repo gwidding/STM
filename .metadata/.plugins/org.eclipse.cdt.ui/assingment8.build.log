@@ -1,0 +1,10 @@
+16:34:45 **** Incremental Build of configuration Debug for project assingment8 ****
+make -j8 all 
+arm-none-eabi-size   assingment8.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39548	    476	   4052	  44076	   ac2c	assingment8.elf
+Finished building: default.size.stdout
+ 
+
+16:34:45 Build Finished. 0 errors, 0 warnings. (took 309ms)
+
