@@ -339,9 +339,9 @@ int main(void)
 	  		if (setmode == 1) sTime.Hours--;
 	  		if (setmode == 2) sTime.Minutes--;
 	  		if (setmode == 3) sTime.Seconds--;
-	  		if (sTime.Hours <= 0) sTime.Hours = 12;
-	  		if (sTime.Minutes <= 0) sTime.Minutes = 59;
-	  		if (sTime.Seconds <= 0) sTime.Seconds = 59;
+	  		if (sTime.Hours < 0) sTime.Hours = 12;
+	  		if (sTime.Minutes < 0) sTime.Minutes = 59;
+	  		if (sTime.Seconds < 0) sTime.Seconds = 59;
 	  		HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 	  		old_tick_3 = current_tick_3;
 	  	}
