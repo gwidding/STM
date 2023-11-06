@@ -22,7 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#define LCD_ADDR (0x27 << 1)
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,6 +49,10 @@ ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptor
 
 ETH_HandleTypeDef heth;
 
+I2C_HandleTypeDef hi2c1;
+
+RTC_HandleTypeDef hrtc;
+
 UART_HandleTypeDef huart3;
 
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
@@ -62,13 +67,73 @@ static void MX_GPIO_Init(void);
 static void MX_ETH_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
+static void MX_I2C1_Init(void);
+static void MX_RTC_Init(void);
 /* USER CODE BEGIN PFP */
+int _write(int file, char *ptr, int len) {
+	HAL_UART_Transmit(&huart3, (uint8_t *)ptr, len, 500);
+	return len;
+}
 
+int __io_putchar(int ch) {
+	HAL_UART_Transmit(&huart3, (uint8_t *)&ch, 1, 1000);
+	return ch;
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+extern void I2C_Scan(void);
+void LCD_Init(uint8_t lcd_addr);
+void LCD_SendCommand(uint8_t lcd_addr, uint8_t cmd);
+void LCD_SendString(uint8_t lcd_addr, char *str);
 
+
+char showTime[30] = {0};
+char showDate[30] = {0};
+char ampm[2][3] = {"AM", "PM"};
+int display_flag = 0;
+
+RTC_TimeTypeDef sTime;
+RTC_DateTypeDef sDate;
+
+void get_time(void)
+{
+	HAL_RTC_GetTime(&hrtc,&sTime, RTC_FORMAT_BIN);
+	HAL_RTC_GetDate(&hrtc,&sDate, RTC_FORMAT_BIN);
+
+	sprintf((char*)showTime, "%s %02d : %02d : %02d      ", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
+	sprintf((char *)showDate, "%04d-%02d-%02d         ", 2000 + sDate.Year, sDate.Month, sDate.Date);
+}
+void set_time(uint8_t hh, uint8_t mm, uint8_t ss) {
+	RTC_TimeTypeDef sTime;
+
+	sTime.Hours = hh; // set hours
+	sTime.Minutes = mm; // set minutes
+	sTime.Seconds = ss; // set seconds
+
+	HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+}
+
+void set_Date(uint8_t ww, uint8_t mm, uint8_t dd, uint8_t yy) {
+	RTC_DateTypeDef sDate;
+
+	sDate.WeekDay = ww; // date RTC_WEEKDAY_THURSDAY
+	sDate.Month = mm; // month RTC_MONTH_FEBRUARY
+	sDate.Date = dd; // date
+	sDate.Year = yy; // year
+
+	HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+}
+
+int setmode = 0;
+
+uint32_t current_tick_1;
+uint32_t current_tick_2;
+uint32_t current_tick_3;
+uint32_t old_tick_1;
+uint32_t old_tick_2;
+uint32_t old_tick_3;
 /* USER CODE END 0 */
 
 /**
@@ -102,14 +167,51 @@ int main(void)
   MX_ETH_Init();
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
+  MX_I2C1_Init();
+  MX_RTC_Init();
   /* USER CODE BEGIN 2 */
 
+	I2C_Scan();
+	LCD_Init(LCD_ADDR);
+
+	char lcd_buf[30];
+	char lcd_buf2[30];
+
+	void setModeCheck(int n) {
+		if (n == 1) {
+			HAL_GPIO_WritePin(GPIOB, LD1_Pin, 1);
+			HAL_GPIO_WritePin(GPIOB, LD2_Pin, 0);
+			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 0);
+		}
+		else if (n == 2) {
+			HAL_GPIO_WritePin(GPIOB, LD1_Pin, 0);
+			HAL_GPIO_WritePin(GPIOB, LD2_Pin, 1);
+			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 0);
+		}
+		else if (n == 3) {
+			HAL_GPIO_WritePin(GPIOB, LD1_Pin, 0);
+			HAL_GPIO_WritePin(GPIOB, LD2_Pin, 0);
+			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 1);
+		}
+		else {
+			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 0);
+		}
+	}
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  get_time();
+	  HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
+	  HAL_UART_Transmit(&huart3, (uint8_t *)&showDate, strlen(showDate), 1000);
+
+	  LCD_SendCommand(LCD_ADDR, 0b10000000);
+	  LCD_SendString(LCD_ADDR, showDate);
+	  LCD_SendCommand(LCD_ADDR, 0b11000000);
+	  LCD_SendString(LCD_ADDR, showTime);
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -134,8 +236,9 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 4;
@@ -208,6 +311,117 @@ static void MX_ETH_Init(void)
   /* USER CODE BEGIN ETH_Init 2 */
 
   /* USER CODE END ETH_Init 2 */
+
+}
+
+/**
+  * @brief I2C1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_I2C1_Init(void)
+{
+
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Analogue filter
+  */
+  if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Digital filter
+  */
+  if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
+
+}
+
+/**
+  * @brief RTC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_RTC_Init(void)
+{
+
+  /* USER CODE BEGIN RTC_Init 0 */
+
+  /* USER CODE END RTC_Init 0 */
+
+  RTC_TimeTypeDef sTime = {0};
+  RTC_DateTypeDef sDate = {0};
+
+  /* USER CODE BEGIN RTC_Init 1 */
+
+  /* USER CODE END RTC_Init 1 */
+
+  /** Initialize RTC Only
+  */
+  hrtc.Instance = RTC;
+  hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
+  hrtc.Init.AsynchPrediv = 127;
+  hrtc.Init.SynchPrediv = 255;
+  hrtc.Init.OutPut = RTC_OUTPUT_DISABLE;
+  hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
+  hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
+  if (HAL_RTC_Init(&hrtc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /* USER CODE BEGIN Check_RTC_BKUP */
+
+  /* USER CODE END Check_RTC_BKUP */
+
+  /** Initialize RTC and set the Time and Date
+  */
+  sTime.Hours = 0x0;
+  sTime.Minutes = 0x0;
+  sTime.Seconds = 0x0;
+  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
+  sDate.Month = RTC_MONTH_NOVEMBER;
+  sDate.Date = 0x6;
+  sDate.Year = 0x23;
+
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN RTC_Init 2 */
+
+  /* USER CODE END RTC_Init 2 */
 
 }
 
