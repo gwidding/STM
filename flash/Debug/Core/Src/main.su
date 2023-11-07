@@ -1,0 +1,5 @@
+../Core/Src/main.c:60:5:main	8	static
+../Core/Src/main.c:182:17:GetSector	24	static
+../Core/Src/main.c:290:17:GetSectorSize	24	static
+../Core/Src/main.c:330:13:SystemClock_Config	88	static
+../Core/Src/main.c:383:6:Error_Handler	8	static

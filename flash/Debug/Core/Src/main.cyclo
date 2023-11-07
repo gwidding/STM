@@ -1,0 +1,5 @@
+../Core/Src/main.c:60:5:main	7
+../Core/Src/main.c:182:17:GetSector	46
+../Core/Src/main.c:290:17:GetSectorSize	11
+../Core/Src/main.c:330:13:SystemClock_Config	4
+../Core/Src/main.c:383:6:Error_Handler	1
