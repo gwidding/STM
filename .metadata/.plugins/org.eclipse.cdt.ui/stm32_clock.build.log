@@ -1,40 +1,10 @@
-15:16:14 **** Incremental Build of configuration Debug for project stm32_clock ****
+17:36:21 **** Incremental Build of configuration Debug for project stm32_clock ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:224:20: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  224 |           printf("%d %d\r\n",XY[0], XY[1]);
-      |                   ~^         ~~~~~
-      |                    |           |
-      |                    int         uint32_t {aka long unsigned int}
-      |                   %ld
-../Core/Src/main.c:224:23: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  224 |           printf("%d %d\r\n",XY[0], XY[1]);
-      |                      ~^             ~~~~~
-      |                       |               |
-      |                       int             uint32_t {aka long unsigned int}
-      |                      %ld
-../Core/Src/main.c:185:14: warning: unused variable 'lcd_buf2' [-Wunused-variable]
-  185 |         char lcd_buf2[30];
-      |              ^~~~~~~~
-../Core/Src/main.c:184:14: warning: unused variable 'lcd_buf' [-Wunused-variable]
-  184 |         char lcd_buf[30];
-      |              ^~~~~~~
-At top level:
-../Core/Src/main.c:187:14: warning: 'setModeCheck' defined but not used [-Wunused-function]
-  187 |         void setModeCheck(int n) {
-      |              ^~~~~~~~~~~~
-arm-none-eabi-gcc -o "stm32_clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\stm32_clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32_clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: stm32_clock.elf
- 
 arm-none-eabi-size   stm32_clock.elf 
-arm-none-eabi-objdump -h -S  stm32_clock.elf  > "stm32_clock.list"
    text	   data	    bss	    dec	    hex	filename
   30912	    120	   4200	  35232	   89a0	stm32_clock.elf
 Finished building: default.size.stdout
  
-Finished building: stm32_clock.list
- 
 
-15:16:15 Build Finished. 0 errors, 5 warnings. (took 1s.425ms)
+17:36:22 Build Finished. 0 errors, 0 warnings. (took 313ms)
 

@@ -19,6 +19,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\okeunji\STM32Cube\Repository\STM32Cube_FW_F4_V1.27.1\Projects\STM32F429ZI-Nucleo\Examples\BSP"/>
 			<item value="C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\test1(2)"/>
 			<item value="C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\time_temperature"/>
 			<item value="C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\i2c_LCD"/>

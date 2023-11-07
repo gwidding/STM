@@ -2,3 +2,5 @@
 1699255386587	Delete resource 'time_dht11_LCD'
 1699343291374	Delete 5 resources
 1699343889921	Delete resource 'BSP'
+1699344536056	Delete resource 'STM32429ZI_Nucleo'
+1699346250856	Delete resource 'flash_ex'

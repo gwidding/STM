@@ -132,16 +132,16 @@ int main(void)
 //	  HAL_Delay(500);
 
 	  //echo -> ì¶œë ¥
-	  // ì¡°ê±´ì´ í•­ìƒ 1ì´ì–´ì„œ ë°˜ë³µ ì¶œë ¥ë˜ëŠ”ë°, ì´ëŠ” ì •ìƒì ì¸ ì½”ë“œëŠ” ì•„ë‹˜
+	  // ì¡°ê±´?´ ?•­?ƒ 1?´?–´?„œ ë°˜ë³µ ì¶œë ¥?˜?Š”?°, ?´?Š” ? •?ƒ? ?¸ ì½”ë“œ?Š” ?•„?‹˜
 //	  if(HAL_UART_Receive(&huart3, (uint8_t *)&data, sizeof(data), 500)) {
 //		  HAL_UART_Transmit(&huart3, (uint8_t *)&data, sizeof(data), 500);
 //		  HAL_GPIO_TogglePin(GPIOB, LD1_Pin|LD2_Pin|LD3_Pin);
 //	  }
 
-	  //Polling Mode ì…ì¶œë ¥ í™•ì¸
-	  // ê¸€ì í•˜ë‚˜í•˜ë‚˜ê°€ ì˜ ë°›ì•„ì¡Œìœ¼ë©´
+	  //Polling Mode ?…ì¶œë ¥ ?™•?¸
+	  // ê¸?? ?•˜?‚˜?•˜?‚˜ê°? ?˜ ë°›ì•„ì¡Œìœ¼ë©?
 //	  if(HAL_UART_Receive(&huart3, (uint8_t *)&uart_buf, 1, 1000) == HAL_OK) {
-//		  //transmit í˜¸ì¶œí•´ì„œ consoleì— ë³´ì—¬ì¤Œ
+//		  //transmit ?˜¸ì¶œí•´?„œ console?— ë³´ì—¬ì¤?
 //		  HAL_UART_Transmit(&huart3, (uint8_t *)&uart_buf, 1, 1000);
 //	  }
 

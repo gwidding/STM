@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="erase from 1"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="float"/>
-			<item value="ufloat"/>
+			<item value="erase from 1"/>
+			<item value="erase"/>
+			<item value="MemoryProgramStatus"/>
+			<item value="DATA_32"/>
+			<item value="bsp_led_On"/>
+			<item value="Error_Handler"/>
+			<item value="flash"/>
+			<item value="RTC_FORMAT_BCD"/>
+			<item value="init"/>
+			<item value="255"/>
+			<item value="155"/>
+			<item value="127"/>
+			<item value="alarm"/>
 			<item value="begin 4"/>
-			<item value="setmode"/>
-			<item value="typedef"/>
-			<item value="type"/>
-			<item value="htim2"/>
-			<item value="i2c"/>
-			<item value="lcd"/>
-			<item value="seq"/>
-			<item value="RTC_DateTypeDef"/>
-			<item value="\"/>
-			<item value="Temperature"/>
-			<item value="TEMP"/>
-			<item value="prinf"/>
+			<item value="alarmaeventcallback"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
