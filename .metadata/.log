@@ -9602,3 +9602,70 @@ java.lang.NullPointerException: Cannot invoke "java.math.BigInteger.compareTo(ja
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-08 14:36:22.249
 !MESSAGE Existing sessions are:
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-08 15:48:14.544
+!MESSAGE Indexed 'lcd' (26 sources, 89 headers) in 4.03 sec: 6,635 declarations; 34,633 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0048%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-11-08 15:54:39.744
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2023-11-08 15:55:46.831
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+load C:\\Users\\okeunji\\STM32CubeIDE\\workspace_1.13.2\\lcd\\Debug\\lcd.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+load C:\\Users\\okeunji\\STM32CubeIDE\\workspace_1.13.2\\lcd\\Debug\\lcd.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:334)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:806)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1040)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Failed to execute MI command:
+load C:\\Users\\okeunji\\STM32CubeIDE\\workspace_1.13.2\\lcd\\Debug\\lcd.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+java.lang.Exception: Error finishing flash operation
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2023-11-08 15:55:46.831
+!MESSAGE Failed to execute MI command:
+load C:\\Users\\okeunji\\STM32CubeIDE\\workspace_1.13.2\\lcd\\Debug\\lcd.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2023-11-08 15:55:46.831
+!MESSAGE Failed to execute MI command:
+load C:\\Users\\okeunji\\STM32CubeIDE\\workspace_1.13.2\\lcd\\Debug\\lcd.elf 
+
+Error message from debugger back end:
+Error finishing flash operation
+!STACK 0
+java.lang.Exception: Error finishing flash operation
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-08 15:56:37.749
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 35 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-08 15:56:37.749
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-08 15:56:37.750
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 35 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-08 15:56:37.750
+!MESSAGE Existing sessions are:
