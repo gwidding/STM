@@ -1,10 +1,33 @@
-17:33:49 **** Incremental Build of configuration Debug for project flash_ex ****
+15:30:12 **** Incremental Build of configuration Debug for project flash_ex ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'readFlash':
+../Core/Src/main.c:102:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  102 |         sprintf(buf, "addr[%08x] = 0x%08x \r\n", addr, value);
+      |                 ^~~
+      |                 |
+      |                 unsigned char *
+In file included from ../Core/Src/main.c:27:
+C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdio.h:254:18: note: expected 'char * restrict' but argument is of type 'unsigned char *'
+  254 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+arm-none-eabi-gcc -o "flash_ex.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\flash_ex\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="flash_ex.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: flash_ex.elf
+ 
 arm-none-eabi-size   flash_ex.elf 
+arm-none-eabi-objdump -h -S  flash_ex.elf  > "flash_ex.list"
+arm-none-eabi-objcopy  -O ihex  flash_ex.elf  "flash_ex.hex"
    text	   data	    bss	    dec	    hex	filename
-   7476	     20	   1644	   9140	   23b4	flash_ex.elf
+  21896	    100	   2756	  24752	   60b0	flash_ex.elf
+arm-none-eabi-objcopy  -O binary  flash_ex.elf  "flash_ex.bin"
 Finished building: default.size.stdout
  
+Finished building: flash_ex.hex
+ 
+Finished building: flash_ex.bin
+ 
+Finished building: flash_ex.list
+ 
 
-17:33:50 Build Finished. 0 errors, 0 warnings. (took 259ms)
+15:30:13 Build Finished. 0 errors, 1 warnings. (took 1s.24ms)
 

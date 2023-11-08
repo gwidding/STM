@@ -25,4 +25,12 @@
 			<item value="C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\i2c_LCD"/>
 		</list>
 	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="654"/>
+		<item key="DIALOG_Y_ORIGIN" value="401"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
 </section>
