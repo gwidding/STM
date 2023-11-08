@@ -22432,3 +22432,10 @@ arm-none-eabi-size   lcd.elf
   19716	    100	   3908	  23724	   5cac	lcd.elf
 Finished building: default.size.stdout
  
+16:05:29 **** Build of configuration Debug for project stm32_clock ****
+make -j8 all 
+arm-none-eabi-size   stm32_clock.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30912	    120	   4200	  35232	   89a0	stm32_clock.elf
+Finished building: default.size.stdout
+ 

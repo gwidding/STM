@@ -213,13 +213,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
 	  get_time();
 	  HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
 	  HAL_UART_Transmit(&huart3, (uint8_t *)&showDate, strlen(showDate), 1000);
 	  printf("\r\n");
-
-
 
 	  printf("%d %d\r\n",XY[0], XY[1]);
 

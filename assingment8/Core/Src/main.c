@@ -175,7 +175,7 @@ int main(void)
 		}
 
 		sprintf(uart_buf, "ADC   deg  Duty");
-		sprintf(uart_buf2, "%4d  %.0f  %.1f%%",adc_value, (value*1.2)-90, value*0.1);
+		sprintf(uart_buf2, "%4d  %.0f  %.1f%%", adc_value, (value*1.2)-90, value*0.1);
 		printf("ADC: %4d, deg : %.0f, Duty : %.1f%%  \r\n", adc_value, (value*1.2)-90, value*0.1);
 
 
