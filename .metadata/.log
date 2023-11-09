@@ -9669,3 +9669,18 @@ java.lang.Exception: Error finishing flash operation
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-08 15:56:37.750
 !MESSAGE Existing sessions are:
+!SESSION 2023-11-09 09:26:20.321 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-09 09:26:44.331
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-09 09:26:44.339
+!MESSAGE Log4j2 initialized with config file C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-09 09:27:08.239
+!MESSAGE Started RMI Server, listening on port 41337
