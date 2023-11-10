@@ -33,7 +33,72 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define DOWN_KEY 66
+#define RIGHT_KEY 67
+#define LEFT_KEY  68
+#define SEL_KEY  13
 
+#define LONG_CLICK_MIN 20
+#define LONG_CLICK_MAX 50
+#define LONG_CLICK_COUNT 30
+
+#define DOUBLE_CLICK_MIN 100
+#define DOUBLE_CLICK_MAX 200
+
+#define NORMAL_CLICK_MIN 500
+
+enum CLOCK_MODE{
+	NORMAL_STATE,
+	TIME_SETTING,
+	ALARM_TIME_SETTING,
+	MUSIC_SELECT
+};
+
+struct clock_state{
+	enum CLOCK_MODE mode;
+	int music_num;
+};
+
+struct clock_state current_state;
+
+typedef struct {
+  int8_t music_num;
+  char music_title[16];
+}MusicTypeDef;
+
+MusicTypeDef alarm_music[] =
+{
+  {0,"Three Bears"},
+  {1,"Spring Water"},
+  {2,"Bicycle"},
+  {3,"Home town"},
+  {4,"Mom"},
+};
+
+#define MAGIC_NUM 0xdeadbeef
+
+typedef struct {
+  int8_t hours;
+  int8_t minutes;
+  int8_t seconds;
+}TimeTypeDef;
+
+typedef struct {
+  uint32_t music_num;
+  TimeTypeDef setting_time;
+  TimeTypeDef alarm_time;
+  int8_t alarm_music_num;
+}NVitemTypeDef;
+
+#define nv_items  ((NVitemTypeDef *) ADDR_FLASH_SECTOR_23)
+
+NVitemTypeDef default_nvitem =
+{
+  MAGIC_NUM,
+  {0,0,0},
+  {0,0,0},
+  0
+};
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -74,6 +139,7 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_RTC_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 int _write(int file, char *ptr, int len) {
 	HAL_UART_Transmit(&huart3, (uint8_t *)ptr, len, 500);
@@ -95,49 +161,55 @@ void LCD_SendString(uint8_t lcd_addr, char *str);
 
 char showTime[30] = {0};
 char showDate[30] = {0};
+char alarmTime[30] = {0};
 char ampm[2][3] = {"AM", "PM"};
-int display_flag = 0;
+
+int hourMinSec = 0;
+
+uint32_t current_tick,old_tick, time_interval, last_time_interval;
 
 RTC_TimeTypeDef sTime;
 RTC_DateTypeDef sDate;
+RTC_AlarmTypeDef aTime;
+
+void set_alarm(uint8_t hh, uint8_t mm, uint8_t ss)
+{
+	aTime.AlarmTime.Hours = hh; // set hours
+	aTime.AlarmTime.Minutes = mm; // set minutes
+	aTime.AlarmTime.Seconds = ss; // set seconds
+	HAL_RTC_SetAlarm(&hrtc, &aTime, RTC_FORMAT_BIN);
+}
+void get_alarm(void)
+{
+	HAL_RTC_GetAlarm(&hrtc, &aTime, RTC_CR_ALRAE, RTC_FORMAT_BIN);
+	sprintf((char*)alarmTime, "%s %02d : %02d : %02d      ", ampm[aTime.AlarmTime.TimeFormat], aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
+}
 
 void get_time(void)
 {
 	HAL_RTC_GetTime(&hrtc,&sTime, RTC_FORMAT_BIN);
 	HAL_RTC_GetDate(&hrtc,&sDate, RTC_FORMAT_BIN);
-
 	sprintf((char*)showTime, "%s %02d : %02d : %02d      ", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
 	sprintf((char *)showDate, "%04d-%02d-%02d         ", 2000 + sDate.Year, sDate.Month, sDate.Date);
 }
 void set_time(uint8_t hh, uint8_t mm, uint8_t ss) {
-	RTC_TimeTypeDef sTime;
-
+//	RTC_TimeTypeDef sTime;
 	sTime.Hours = hh; // set hours
 	sTime.Minutes = mm; // set minutes
 	sTime.Seconds = ss; // set seconds
-
 	HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 }
 
 void set_Date(uint8_t ww, uint8_t mm, uint8_t dd, uint8_t yy) {
-	RTC_DateTypeDef sDate;
-
+//	RTC_DateTypeDef sDate;
 	sDate.WeekDay = ww; // date RTC_WEEKDAY_THURSDAY
 	sDate.Month = mm; // month RTC_MONTH_FEBRUARY
 	sDate.Date = dd; // date
 	sDate.Year = yy; // year
-
 	HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 }
 
-int hourMinSec = 0;
 
-uint32_t current_tick_1;
-uint32_t current_tick_2;
-uint32_t current_tick_3;
-uint32_t old_tick_1;
-uint32_t old_tick_2;
-uint32_t old_tick_3;
 /* USER CODE END 0 */
 
 /**
@@ -175,41 +247,60 @@ int main(void)
   MX_I2C1_Init();
   MX_RTC_Init();
   MX_ADC1_Init();
+
+  /* Initialize interrupts */
+  MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
+  I2C_Scan();
+  LCD_Init(LCD_ADDR);
 
-	I2C_Scan();
-	LCD_Init(LCD_ADDR);
+  char lcd_buf[30];
+  char lcd_buf2[30];
 
-	char lcd_buf[30];
-	char lcd_buf2[30];
+  void updown(uint8_t timePos) {
 
-	void setModeCheck(int n) {
-		if (n == 1) {
-			HAL_GPIO_WritePin(GPIOB, LD1_Pin, 1);
-			HAL_GPIO_WritePin(GPIOB, LD2_Pin, 0);
-			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 0);
-		}
-		else if (n == 2) {
-			HAL_GPIO_WritePin(GPIOB, LD1_Pin, 0);
-			HAL_GPIO_WritePin(GPIOB, LD2_Pin, 1);
-			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 0);
-		}
-		else if (n == 3) {
-			HAL_GPIO_WritePin(GPIOB, LD1_Pin, 0);
-			HAL_GPIO_WritePin(GPIOB, LD2_Pin, 0);
-			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 1);
-		}
-		else {
-			HAL_GPIO_WritePin(GPIOB, LD3_Pin, 0);
-		}
+
+  }
+
+  void setTime(int n) {
+	if (hourMinSec == 1) {
+		printf("Hour controlling \r\n");
+		HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
+		updown(sTime.Hours);
+	} else if (hourMinSec == 2) {
+		printf("Minute controlling  \r\n");
+		HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
+		updown(sTime.Minutes);
+	} else if (hourMinSec == 3) {
+		printf("Seconds controlling \r\n");
+		HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
+		updown(sTime.Seconds);
 	}
+  }
 
-	void setClock(int n) {
-		setModeCheck(hourMinSec);
-		if (hourMinSec == 1) {
+  void modeChange(int n) {
+  }
 
-		}
-	}
+  void time_display(void) {
+	  if (current_state.mode == NORMAL_STATE) {
+		  LCD_SendCommand(LCD_ADDR, 0b10000000);
+		  LCD_SendString(LCD_ADDR, showDate);
+		  LCD_SendCommand(LCD_ADDR, 0b11000000);
+		  LCD_SendString(LCD_ADDR, showTime);
+	  }
+	  else if (current_state.mode == TIME_SETTING){
+		  LCD_SendCommand(LCD_ADDR, 0b10000000);
+		  LCD_SendString(LCD_ADDR, "Time Setting      ");
+		  LCD_SendCommand(LCD_ADDR, 0b11000000);
+		  LCD_SendString(LCD_ADDR, showTime);
+	  }
+	  else if (current_state.mode == ALARM_TIME_SETTING) {
+		  LCD_SendCommand(LCD_ADDR, 0b10000000);
+		  LCD_SendString(LCD_ADDR, "Alarm Setting       ");
+		  LCD_SendCommand(LCD_ADDR, 0b11000000);
+		  LCD_SendString(LCD_ADDR, alarmTime);
+	  }
+  }
 	uint32_t XY[2];
 
 	HAL_ADC_Start_DMA(&hadc1, XY, 2);
@@ -220,16 +311,18 @@ int main(void)
   while (1)
   {
 	  get_time();
+	  get_alarm();
 	  HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
 	  HAL_UART_Transmit(&huart3, (uint8_t *)&showDate, strlen(showDate), 1000);
 	  printf("\r\n");
 
 	  printf("%d %d\r\n",XY[0], XY[1]);
 
-	  LCD_SendCommand(LCD_ADDR, 0b10000000);
-	  LCD_SendString(LCD_ADDR, showDate);
-	  LCD_SendCommand(LCD_ADDR, 0b11000000);
-	  LCD_SendString(LCD_ADDR, showTime);
+	  if (HAL_GPIO_ReadPin(GPIOF, setBtn_Pin) == 0) {
+		  current_tick = HAL_GetTick();
+	  }
+
+
 	  HAL_Delay(600);
     /* USER CODE END WHILE */
 
@@ -282,6 +375,17 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief NVIC Configuration.
+  * @retval None
+  */
+static void MX_NVIC_Init(void)
+{
+  /* EXTI9_5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 }
 
 /**
@@ -623,6 +727,7 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
@@ -640,6 +745,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(USER_Btn_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : setBtn_Pin */
+  GPIO_InitStruct.Pin = setBtn_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(setBtn_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LD1_Pin LD3_Pin LD2_Pin */
   GPIO_InitStruct.Pin = LD1_Pin|LD3_Pin|LD2_Pin;
@@ -666,10 +777,24 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+uint32_t current_tick, old_tick, time_interval, last_time_interval;
+uint32_t long_key_cnt;
+/*
+ * Double click : time_interval = 100~200ms
+ * Long Key : time_interval = 20~50ms in 30 consecutive times
+ */
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
   printf("alarm~! \r\n");
 
+}
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	if (GPIO_Pin == GPIO_PIN_7) {
+		switch(current_state.mode) {
+		case NORMAL_STATE:
+
+		}
+	}
 }
 /* USER CODE END 4 */
 
