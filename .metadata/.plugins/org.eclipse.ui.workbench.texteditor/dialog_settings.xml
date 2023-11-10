@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="readFlash"/>
+		<item key="selection" value="BEGIN 4"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="begin 4"/>
+			<item value="begon 4"/>
+			<item value="sTime"/>
+			<item value="bein 4"/>
 			<item value="readFlash"/>
 			<item value="FLASH_USER_END_ADDR"/>
 			<item value="read"/>
@@ -19,17 +23,13 @@
 			<item value="bsp_led_On"/>
 			<item value="Error_Handler"/>
 			<item value="flash"/>
-			<item value="RTC_FORMAT_BCD"/>
-			<item value="init"/>
-			<item value="255"/>
-			<item value="155"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1042"/>
+		<item key="DIALOG_X_ORIGIN" value="920"/>
 		<item key="DIALOG_Y_ORIGIN" value="241"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="389"/>

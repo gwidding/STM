@@ -1,4 +1,4 @@
-17:29:26 **** Build of configuration Debug for project ADC_ex ****
+11:19:29 **** Build of configuration Debug for project ADC_ex ****
 make -j8 all 
 arm-none-eabi-size   ADC_ex.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   ADC_ex.elf
 Finished building: default.size.stdout
  
 
-17:29:26 Build Finished. 0 errors, 0 warnings. (took 319ms)
+11:19:30 Build Finished. 0 errors, 0 warnings. (took 408ms)
 

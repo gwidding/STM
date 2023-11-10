@@ -1,4 +1,4 @@
-17:29:38 **** Incremental Build of configuration Debug for project temp_LCD2 ****
+11:19:45 **** Build of configuration Debug for project temp_LCD2 ****
 make -j8 all 
 arm-none-eabi-size   temp_LCD2.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   temp_LCD2.elf
 Finished building: default.size.stdout
  
 
-17:29:38 Build Finished. 0 errors, 0 warnings. (took 308ms)
+11:19:45 Build Finished. 0 errors, 0 warnings. (took 407ms)
 
