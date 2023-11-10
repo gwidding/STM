@@ -1783,7 +1783,7 @@ int main(void)
  80012b2:	4941      	ldr	r1, [pc, #260]	; (80013b8 <main+0x248>)
  80012b4:	4618      	mov	r0, r3
  80012b6:	f006 f867 	bl	8007388 <siprintf>
-		sprintf(uart_buf2, "%4d  %.0f  %.1f%%",adc_value, (value*1.2)-90, value*0.1);
+		sprintf(uart_buf2, "%4d  %.0f  %.1f%%", adc_value, (value*1.2)-90, value*0.1);
  80012ba:	f8b7 305e 	ldrh.w	r3, [r7, #94]	; 0x5e
  80012be:	4618      	mov	r0, r3
  80012c0:	f7ff f940 	bl	8000544 <__aeabi_i2d>
