@@ -10008,3 +10008,51 @@ C Model Exception: C Model Status [Element main.c does not exist.]
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-11-13 13:24:23.203
 !MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:04:46.189
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 175 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:04:46.189
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:04:46.190
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 175 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:04:46.191
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:15:40.554
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 180 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:15:40.555
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:15:40.555
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 180 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:15:40.556
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:54:55.346
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 188 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:54:55.346
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:54:55.347
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 188 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:54:55.347
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:56:46.300
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 189 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:56:46.300
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:56:46.301
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 189 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2023-11-13 18:56:46.301
+!MESSAGE Existing sessions are:
