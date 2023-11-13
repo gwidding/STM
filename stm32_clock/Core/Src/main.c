@@ -33,32 +33,16 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define DOWN_KEY 66
-#define RIGHT_KEY 67
-#define LEFT_KEY  68
-#define SEL_KEY  13
-
-#define LONG_CLICK_MIN 20
-#define LONG_CLICK_MAX 50
-#define LONG_CLICK_COUNT 30
-
-#define DOUBLE_CLICK_MIN 100
-#define DOUBLE_CLICK_MAX 200
-
-#define NORMAL_CLICK_MIN 500
-
 enum CLOCK_MODE{
 	NORMAL_STATE,
 	TIME_SETTING,
 	ALARM_TIME_SETTING,
 	MUSIC_SELECT
 };
-
 struct clock_state{
 	enum CLOCK_MODE mode;
 	int music_num;
 };
-
 struct clock_state current_state;
 
 typedef struct {
@@ -74,7 +58,6 @@ MusicTypeDef alarm_music[] =
   {3,"Home town"},
   {4,"Mom"},
 };
-
 #define MAGIC_NUM 0xdeadbeef
 
 typedef struct {
@@ -99,6 +82,7 @@ NVitemTypeDef default_nvitem =
   {0,0,0},
   0
 };
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -145,7 +129,6 @@ int _write(int file, char *ptr, int len) {
 	HAL_UART_Transmit(&huart3, (uint8_t *)ptr, len, 500);
 	return len;
 }
-
 int __io_putchar(int ch) {
 	HAL_UART_Transmit(&huart3, (uint8_t *)&ch, 1, 1000);
 	return ch;
@@ -159,6 +142,11 @@ void LCD_Init(uint8_t lcd_addr);
 void LCD_SendCommand(uint8_t lcd_addr, uint8_t cmd);
 void LCD_SendString(uint8_t lcd_addr, char *str);
 
+void setTime(int n);
+void time_display(void);
+
+void leftright();
+
 char showTime[30] = {0};
 char showDate[30] = {0};
 char alarmTime[30] = {0};
@@ -166,11 +154,10 @@ char ampm[2][3] = {"AM", "PM"};
 
 int hourMinSec = 0;
 
-uint32_t current_tick,old_tick, time_interval, last_time_interval;
-
 RTC_TimeTypeDef sTime;
 RTC_DateTypeDef sDate;
 RTC_AlarmTypeDef aTime;
+
 
 void set_alarm(uint8_t hh, uint8_t mm, uint8_t ss)
 {
@@ -187,8 +174,8 @@ void get_alarm(void)
 
 void get_time(void)
 {
-	HAL_RTC_GetTime(&hrtc,&sTime, RTC_FORMAT_BIN);
-	HAL_RTC_GetDate(&hrtc,&sDate, RTC_FORMAT_BIN);
+	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 	sprintf((char*)showTime, "%s %02d : %02d : %02d      ", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
 	sprintf((char *)showDate, "%04d-%02d-%02d         ", 2000 + sDate.Year, sDate.Month, sDate.Date);
 }
@@ -209,7 +196,103 @@ void set_Date(uint8_t ww, uint8_t mm, uint8_t dd, uint8_t yy) {
 	HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 }
 
+uint32_t XY[2];
+uint32_t ctime, ltime, interval;
+int level;
+uint32_t double_key_cnt;
 
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+if (GPIO_Pin == GPIO_PIN_7) {
+	ctime = HAL_GetTick();
+	interval = ctime - ltime;
+	ltime = ctime;
+	level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
+
+	if (level == 1) {
+//  			printf("interval = %u, cnt: %u ", (unsigned int)interval, double_key_cnt);
+		if (interval < 130) {
+			double_key_cnt++;
+		}
+		else if (interval >= 130 && interval <= 200) {
+			printf("One click \r\n");
+			if (current_state.mode == NORMAL_STATE) {
+				current_state.mode = TIME_SETTING;
+				setTime(hourMinSec);
+			}
+			else {
+				current_state.mode = NORMAL_STATE;
+			}
+			double_key_cnt = 0;
+		}
+		else if (interval >= 1000) {
+			printf("long \r\n");
+			current_state.mode = ALARM_TIME_SETTING;
+			double_key_cnt =0;
+		}
+		if (double_key_cnt >= 3) {
+			printf("double~~~~~~~~~\r\n");
+			current_state.mode = MUSIC_SELECT;
+			double_key_cnt = 0;
+		}
+	}
+	time_display();
+  }
+}
+void time_display(void) {
+  if (current_state.mode == NORMAL_STATE) {
+	  get_time();
+	  LCD_SendCommand(LCD_ADDR, 0b10000000);
+	  LCD_SendString(LCD_ADDR, showDate);
+	  LCD_SendCommand(LCD_ADDR, 0b11000000);
+	  LCD_SendString(LCD_ADDR, showTime);
+  }
+  else if (current_state.mode == TIME_SETTING){
+	  LCD_SendCommand(LCD_ADDR, 0b10000000);
+	  LCD_SendString(LCD_ADDR, "Time Setting      ");
+	  LCD_SendCommand(LCD_ADDR, 0b11000000);
+	  LCD_SendString(LCD_ADDR, showTime);
+  }
+  else if (current_state.mode == ALARM_TIME_SETTING) {
+	  get_alarm();
+	  LCD_SendCommand(LCD_ADDR, 0b10000000);
+	  LCD_SendString(LCD_ADDR, "Alarm Setting       ");
+	  LCD_SendCommand(LCD_ADDR, 0b11000000);
+	  LCD_SendString(LCD_ADDR, alarmTime);
+  }
+}
+void setTime(int hourMinSec) {
+	  leftright();
+	if (hourMinSec == 1) {
+		printf("Hour controlling \r\n");
+		HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
+		updown(sTime.Hours);
+	} else if (hourMinSec == 2) {
+		printf("Minute controlling  \r\n");
+		HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
+		updown(sTime.Minutes);
+	} else if (hourMinSec == 3) {
+		printf("Seconds controlling \r\n");
+		HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
+		updown(sTime.Seconds);
+	}
+}
+void updown(uint8_t timePosition) {
+  if (XY[1] < 100) {
+	  timePosition--;
+  } else if (XY[1] > 900) {
+	  timePosition++;
+  }
+}
+
+void leftright() {
+  if (XY[0] < 100) {
+	  hourMinSec++;
+  } else if (XY[0] > 900) {
+	  hourMinSec--;
+  }
+  hourMinSec %= 4;
+}
 /* USER CODE END 0 */
 
 /**
@@ -253,77 +336,22 @@ int main(void)
   /* USER CODE BEGIN 2 */
   I2C_Scan();
   LCD_Init(LCD_ADDR);
+  HAL_ADC_Start_DMA(&hadc1, XY, 2);
 
-  char lcd_buf[30];
-  char lcd_buf2[30];
-
-  void updown(uint8_t timePos) {
-
-
-  }
-
-  void setTime(int n) {
-	if (hourMinSec == 1) {
-		printf("Hour controlling \r\n");
-		HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
-		updown(sTime.Hours);
-	} else if (hourMinSec == 2) {
-		printf("Minute controlling  \r\n");
-		HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
-		updown(sTime.Minutes);
-	} else if (hourMinSec == 3) {
-		printf("Seconds controlling \r\n");
-		HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
-		updown(sTime.Seconds);
-	}
-  }
-
-  void modeChange(int n) {
-  }
-
-  void time_display(void) {
-	  if (current_state.mode == NORMAL_STATE) {
-		  LCD_SendCommand(LCD_ADDR, 0b10000000);
-		  LCD_SendString(LCD_ADDR, showDate);
-		  LCD_SendCommand(LCD_ADDR, 0b11000000);
-		  LCD_SendString(LCD_ADDR, showTime);
-	  }
-	  else if (current_state.mode == TIME_SETTING){
-		  LCD_SendCommand(LCD_ADDR, 0b10000000);
-		  LCD_SendString(LCD_ADDR, "Time Setting      ");
-		  LCD_SendCommand(LCD_ADDR, 0b11000000);
-		  LCD_SendString(LCD_ADDR, showTime);
-	  }
-	  else if (current_state.mode == ALARM_TIME_SETTING) {
-		  LCD_SendCommand(LCD_ADDR, 0b10000000);
-		  LCD_SendString(LCD_ADDR, "Alarm Setting       ");
-		  LCD_SendCommand(LCD_ADDR, 0b11000000);
-		  LCD_SendString(LCD_ADDR, alarmTime);
-	  }
-  }
-	uint32_t XY[2];
-
-	HAL_ADC_Start_DMA(&hadc1, XY, 2);
+  current_state.mode = NORMAL_STATE;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  get_time();
-	  get_alarm();
+	  time_display();
 	  HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
 	  HAL_UART_Transmit(&huart3, (uint8_t *)&showDate, strlen(showDate), 1000);
+
 	  printf("\r\n");
 
-	  printf("%d %d\r\n",XY[0], XY[1]);
-
-	  if (HAL_GPIO_ReadPin(GPIOF, setBtn_Pin) == 0) {
-		  current_tick = HAL_GetTick();
-	  }
-
-
-	  HAL_Delay(600);
+//	  printf("%d %d\r\n",XY[0], XY[1]);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -748,7 +776,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : setBtn_Pin */
   GPIO_InitStruct.Pin = setBtn_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(setBtn_GPIO_Port, &GPIO_InitStruct);
 
@@ -788,14 +816,7 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
   printf("alarm~! \r\n");
 
 }
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-	if (GPIO_Pin == GPIO_PIN_7) {
-		switch(current_state.mode) {
-		case NORMAL_STATE:
 
-		}
-	}
-}
 /* USER CODE END 4 */
 
 /**

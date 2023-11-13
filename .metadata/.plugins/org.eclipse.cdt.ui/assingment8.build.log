@@ -1,27 +1,10 @@
-11:19:33 **** Build of configuration Debug for project assingment8 ****
+10:21:30 **** Build of configuration Debug for project assingment8 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
 ../Core/Src/main.c:138:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
   138 |         LCD_Init(LCD_ADDR);
       |         ^~~~~~~~
-../Core/Src/main.c:177:17: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  177 |                 sprintf(uart_buf, "ADC   deg  Duty");
-      |                 ^~~~~~~
-../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   21 | #include "string.h"
-  +++ |+#include <stdio.h>
-   22 | 
-../Core/Src/main.c:177:17: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-  177 |                 sprintf(uart_buf, "ADC   deg  Duty");
-      |                 ^~~~~~~
-../Core/Src/main.c:177:17: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-../Core/Src/main.c:179:17: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  179 |                 printf("ADC: %4d, deg : %.0f, Duty : %.1f%%  \r\n", adc_value, (value*1.2)-90, value*0.1);
-      |                 ^~~~~~
-../Core/Src/main.c:179:17: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:179:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-../Core/Src/main.c:179:17: note: include '<stdio.h>' or provide a declaration of 'printf'
 ../Core/Src/main.c:182:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
   182 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
       |                 ^~~~~~~~~~~~~~~
@@ -40,5 +23,5 @@ Finished building: default.size.stdout
 Finished building: assingment8.list
  
 
-11:19:36 Build Finished. 0 errors, 7 warnings. (took 3s.42ms)
+10:21:32 Build Finished. 0 errors, 3 warnings. (took 1s.829ms)
 

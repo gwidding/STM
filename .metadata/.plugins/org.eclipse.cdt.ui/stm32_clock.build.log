@@ -1,10 +1,10 @@
-13:46:32 **** Incremental Build of configuration Debug for project stm32_clock ****
+14:38:32 **** Incremental Build of configuration Debug for project stm32_clock ****
 make -j8 all 
 arm-none-eabi-size   stm32_clock.elf 
    text	   data	    bss	    dec	    hex	filename
-  31432	    120	   4272	  35824	   8bf0	stm32_clock.elf
+  31656	    120	   4312	  36088	   8cf8	stm32_clock.elf
 Finished building: default.size.stdout
  
 
-13:46:32 Build Finished. 0 errors, 0 warnings. (took 396ms)
+14:38:33 Build Finished. 0 errors, 0 warnings. (took 308ms)
 

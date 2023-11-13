@@ -1,46 +1,10 @@
-11:19:46 **** Build of configuration Debug for project test2 ****
+10:23:57 **** Build of configuration Debug for project test2 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'get_time':
-../Core/Src/main.c:116:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  116 |         sprintf((char*)showTime, "%s %02d : %02d : %02d      ", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
-      |         ^~~~~~~
-../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   21 | #include "string.h"
-  +++ |+#include <stdio.h>
-   22 | 
-../Core/Src/main.c:116:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-  116 |         sprintf((char*)showTime, "%s %02d : %02d : %02d      ", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
-      |         ^~~~~~~
-../Core/Src/main.c:116:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:275:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  275 |   printf("Hello World !!\r\n");
-      |   ^~~~~~
-../Core/Src/main.c:275:3: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:275:3: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-../Core/Src/main.c:275:3: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:294:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-  294 |           sprintf(buf, " %3.1f    %2.1f   ", Temperature, Humidity);
-      |           ^~~~~~~
-../Core/Src/main.c:294:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-../Core/Src/main.c:351:21: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
-  351 |                     LCD_SendCommand(LCD_ADDR, 0b10000000);
-      |                     ^~~~~~~~~~~~~~~
-../Core/Src/main.c:352:21: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
-  352 |                     LCD_SendString(LCD_ADDR, showDate);
-      |                     ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "test2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\test2\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: test2.elf
- 
 arm-none-eabi-size   test2.elf 
-arm-none-eabi-objdump -h -S  test2.elf  > "test2.list"
    text	   data	    bss	    dec	    hex	filename
   42344	    484	   4324	  47152	   b830	test2.elf
 Finished building: default.size.stdout
  
-Finished building: test2.list
- 
 
-11:19:48 Build Finished. 0 errors, 7 warnings. (took 2s.334ms)
+10:23:57 Build Finished. 0 errors, 0 warnings. (took 304ms)
 
