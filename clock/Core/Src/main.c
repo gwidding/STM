@@ -22,8 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stdio.h"
 #define LCD_ADDR (0x27 << 1)
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -190,8 +190,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
                 	double_key_cnt = 0;
                 	if (current_state.mode == NORMAL_STATE) {
                 		current_state.mode = TIME_SETTING;
-
-//                		setTime_Position(hourMinSec);
                 	}
                 	else {
                 		current_state.mode = NORMAL_STATE;
@@ -216,6 +214,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 }
 
 void setTime_Position() {
+	char blink[30] = {0};
+//	uint
 	if (XY[0] < 1500) {
 		hourMinSec--;
 	}
@@ -229,27 +229,40 @@ void setTime_Position() {
 
 	switch(hourMinSec) {
 	case 0:
+		LCD_SendCommand(LCD_ADDR, 0b11000000);
+		sprintf(blink, "%s", ampm[sTime.TimeFormat]);
 		if (XY[1] < 1500 ) sTime.TimeFormat++;
 		if (XY[1] > 4000) sTime.TimeFormat--;
 		break;
 	case 1:
 		HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
+		LCD_SendCommand(LCD_ADDR, 0b11000011);
+		sprintf(blink, "%02d", sTime.Hours);
 		if (XY[1] < 1500 ) sTime.Hours++;
 		if (XY[1] > 4000) sTime.Hours--;
 		if (sTime.Hours > 59) sTime.Hours = 0;
 		break;
 	case 2:
 		HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
+		LCD_SendCommand(LCD_ADDR, 0b11001000);
+		sprintf(blink, "%02d", sTime.Minutes);
 		if (XY[1] < 1500 ) sTime.Minutes++;
 		if (XY[1] > 4000) sTime.Minutes--;
 		break;
 	case 3:
 		HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
+		LCD_SendCommand(LCD_ADDR, 0b11001101);
+		sprintf(blink, "%02d", sTime.Seconds);
 		if (XY[1] < 1500 ) sTime.Seconds++;
 		if (XY[1] > 4000) sTime.Seconds--;
 		break;
 	}
+	if (current_state.mode == TIME_SETTING) {
+//		sTime.
+	}
 	timeRange_check();
+	HAL_Delay(500);
+	LCD_SendString(LCD_ADDR, "  ");
 }
 void timeRange_check() {
 	if (sTime.Hours > 12) sTime.Hours = 0;
@@ -259,23 +272,6 @@ void timeRange_check() {
 	if (sTime.Seconds > 59) sTime.Seconds = 0;
 	if (sTime.Seconds < 0) sTime.Seconds = 59;
 	HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-}
-void updown(uint8_t timeset) {
-	if (XY[1] < 1500) {
-		timeset--;
-	}
-	else if (XY[1] > 4000) {
-		timeset++;
-	}
-
-	if (timeset == sTime.Hours) {
-		timeset %= 12;
-	}
-	else {
-		timeset %= 60;
-	}
-	HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-//	printf("%0d: %0d: %0d \r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
 }
 
 /* USER CODE END 0 */
