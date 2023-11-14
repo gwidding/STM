@@ -120,26 +120,11 @@ void get_time(void)
 	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 	sprintf((char*)showTime, "%s %02d : %02d : %02d      ", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
-//	HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
-}
-void set_time(uint8_t hh, uint8_t mm, uint8_t ss) {
-	sTime.Hours = hh;
-	sTime.Minutes = mm;
-	sTime.Seconds = ss;
-	HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-}
-void set_alarm(uint8_t hh, uint8_t mm, uint8_t ss)
-{
-	aTime.AlarmTime.Hours = hh;
-	aTime.AlarmTime.Minutes = mm;
-	aTime.AlarmTime.Seconds = ss;
-	HAL_RTC_SetAlarm(&hrtc, &aTime, RTC_FORMAT_BIN);
 }
 void get_alarm(void)
 {
 	HAL_RTC_GetAlarm(&hrtc, &aTime, RTC_CR_ALRAE, RTC_FORMAT_BIN);
 	sprintf((char*)alarmTime, "%s %02d : %02d : %02d      ", ampm[aTime.AlarmTime.TimeFormat], aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
-
 }
 
 void time_display(void) {
@@ -216,11 +201,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 void setTime_Position() {
 	char blink[30] = {0};
-	RTC_TimeTypeDef* selectedTime;
+		RTC_TimeTypeDef* selectedTime;
 	if (current_state.mode == TIME_SETTING) {
 		selectedTime = &sTime;
 	} else {
-		selectedTime = &aTime;
+		selectedTime = &(aTime.AlarmTime);
 	}
 
 	if (XY[0] < 1500) hourMinSec--;
@@ -244,34 +229,35 @@ void setTime_Position() {
 		if (XY[1] < 1500) selectedTime->Hours++;
 		if (XY[1] > 4000) selectedTime->Hours--;
 
-		if (selectedTime->Hours > 12) selectedTime->Hours = 0;
-		if (selectedTime->Hours < 0) selectedTime->Hours = 12;
+		if (selectedTime->Hours > 250) selectedTime->Hours = 12;
+		else if (selectedTime->Hours > 12) selectedTime->Hours = 0;
 		break;
 	case 2:
 		LCD_SendCommand(LCD_ADDR, 0b11001000);
 		sprintf(blink, "%02d", selectedTime->Minutes);
 		if (XY[1] < 1500) selectedTime->Minutes++;
 		if (XY[1] > 4000) selectedTime->Minutes--;
-		if (selectedTime->Minutes > 12) selectedTime->Minutes = 0;
-		if (selectedTime->Minutes < 0) selectedTime->Minutes = 12;
+		if (selectedTime->Minutes > 250) selectedTime->Minutes = 59;
+		else if (selectedTime->Minutes > 59) selectedTime->Minutes = 0;
 		break;
 	case 3:
 		LCD_SendCommand(LCD_ADDR, 0b11001101);
 		 sprintf(blink, "%02d", selectedTime->Seconds);
 		if (XY[1] < 1500) selectedTime->Seconds++;
 		if (XY[1] > 4000) selectedTime->Seconds--;
-		if (selectedTime->Seconds > 12) selectedTime->Seconds = 0;
-		if (selectedTime->Seconds < 0) selectedTime->Seconds = 12;
+		if (selectedTime->Seconds > 250) selectedTime->Seconds = 59;
+		else if (selectedTime->Seconds > 59) selectedTime->Seconds = 0;
 		break;
 	}
 //	timeRange_check();
-	HAL_Delay(500);
+	HAL_Delay(400);
 	LCD_SendString(LCD_ADDR, "  ");
 	if (current_state.mode == TIME_SETTING) {
 		HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 	}
 	else {
-		HAL_RTC_SetAlarm(&hrtc, &aTime, RTC_FORMAT_BIN);
+		HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
+		get_alarm();
 	}
 }
 //void timeRange_check() {
@@ -326,6 +312,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   I2C_Scan();
   LCD_Init(LCD_ADDR);
+
   current_state.mode = NORMAL_STATE;
   HAL_ADC_Start_DMA(&hadc1, XY, 2);
   /* USER CODE END 2 */
@@ -343,9 +330,6 @@ int main(void)
 		  printf("%d, %d \r\n", XY[0], XY[1]);
 		  printf("\r\n");
 	  }
-
-
-
 
     /* USER CODE END WHILE */
 
@@ -636,7 +620,7 @@ static void MX_RTC_Init(void)
   */
   sAlarm.AlarmTime.Hours = 0x1;
   sAlarm.AlarmTime.Minutes = 0x0;
-  sAlarm.AlarmTime.Seconds = 0x10;
+  sAlarm.AlarmTime.Seconds = 0x14;
   sAlarm.AlarmTime.SubSeconds = 0x0;
   sAlarm.AlarmTime.TimeFormat = RTC_HOURFORMAT12_AM;
   sAlarm.AlarmTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;

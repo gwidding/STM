@@ -31314,3 +31314,528 @@ Finished building: default.size.stdout
  
 Finished building: clock.list
  
+15:39:00 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:223:30: warning: assignment to 'RTC_TimeTypeDef *' from incompatible pointer type 'RTC_AlarmTypeDef *' [-Wincompatible-pointer-types]
+  223 |                 selectedTime = &aTime;
+      |                              ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  31172	    120	   2984	  34276	   85e4	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+15:41:32 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:223:30: warning: assignment to 'RTC_TimeTypeDef *' from incompatible pointer type 'RTC_AlarmTypeDef *' [-Wincompatible-pointer-types]
+  223 |                 selectedTime = &aTime;
+      |                              ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  31172	    120	   2984	  34276	   85e4	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+15:50:57 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-size   clock.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31172	    120	   2984	  34276	   85e4	clock.elf
+Finished building: default.size.stdout
+ 
+15:55:54 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:223:30: warning: assignment to 'RTC_TimeTypeDef *' from incompatible pointer type 'RTC_AlarmTypeDef *' [-Wincompatible-pointer-types]
+  223 |                 selectedTime = &aTime;
+      |                              ^
+../Core/Src/main.c:248:17: error: 'eles' undeclared (first use in this function)
+  248 |                 eles if (selectedTime->Hours > 12) selectedTime->Hours = 0;
+      |                 ^~~~
+../Core/Src/main.c:248:17: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:248:21: error: expected ';' before 'if'
+  248 |                 eles if (selectedTime->Hours > 12) selectedTime->Hours = 0;
+      |                     ^~~
+      |                     ;
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:56:06 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:223:30: warning: assignment to 'RTC_TimeTypeDef *' from incompatible pointer type 'RTC_AlarmTypeDef *' [-Wincompatible-pointer-types]
+  223 |                 selectedTime = &aTime;
+      |                              ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  31220	    120	   2984	  34324	   8614	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+15:56:47 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:223:30: warning: assignment to 'RTC_TimeTypeDef *' from incompatible pointer type 'RTC_AlarmTypeDef *' [-Wincompatible-pointer-types]
+  223 |                 selectedTime = &aTime;
+      |                              ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  31212	    120	   2984	  34316	   860c	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+15:58:36 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:223:30: warning: assignment to 'RTC_TimeTypeDef *' from incompatible pointer type 'RTC_AlarmTypeDef *' [-Wincompatible-pointer-types]
+  223 |                 selectedTime = &aTime;
+      |                              ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  31220	    120	   2984	  34324	   8614	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+16:03:21 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:220:34: warning: variable 'selectedTime' set but not used [-Wunused-but-set-variable]
+  220 |                 RTC_TimeTypeDef* selectedTime;
+      |                                  ^~~~~~~~~~~~
+../Core/Src/main.c:223:35: warning: variable 'selectedTime' set but not used [-Wunused-but-set-variable]
+  223 |                 RTC_AlarmTypeDef* selectedTime;
+      |                                   ^~~~~~~~~~~~
+../Core/Src/main.c:238:43: error: 'selectedTime' undeclared (first use in this function)
+  238 |                 sprintf(blink, "%s", ampm[selectedTime->TimeFormat]);
+      |                                           ^~~~~~~~~~~~
+../Core/Src/main.c:238:43: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:346:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  346 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:346:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  346 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:03:34 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:220:34: warning: variable 'selectedTime' set but not used [-Wunused-but-set-variable]
+  220 |                 RTC_TimeTypeDef* selectedTime;
+      |                                  ^~~~~~~~~~~~
+../Core/Src/main.c:223:35: warning: variable 'selectedTime' set but not used [-Wunused-but-set-variable]
+  223 |                 RTC_AlarmTypeDef* selectedTime;
+      |                                   ^~~~~~~~~~~~
+../Core/Src/main.c:238:43: error: 'selectedTime' undeclared (first use in this function)
+  238 |                 sprintf(blink, "%s", ampm[selectedTime->TimeFormat]);
+      |                                           ^~~~~~~~~~~~
+../Core/Src/main.c:238:43: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:346:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  346 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:346:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  346 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:04:28 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:223:35: warning: variable 'selectedTime' set but not used [-Wunused-but-set-variable]
+  223 |                 RTC_AlarmTypeDef* selectedTime;
+      |                                   ^~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:346:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  346 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:346:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  346 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  31216	    120	   2984	  34320	   8610	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+16:07:58 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:220:34: warning: variable 'selectedTime' set but not used [-Wunused-but-set-variable]
+  220 |                 RTC_TimeTypeDef* selectedTime;
+      |                                  ^~~~~~~~~~~~
+../Core/Src/main.c:223:17: error: 'selectedTime' undeclared (first use in this function)
+  223 |                 selectedTime = aTime.AlarmTime;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:223:17: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:08:13 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:220:34: warning: variable 'selectedTime' set but not used [-Wunused-but-set-variable]
+  220 |                 RTC_TimeTypeDef* selectedTime;
+      |                                  ^~~~~~~~~~~~
+../Core/Src/main.c:223:17: error: 'selectedTime' undeclared (first use in this function)
+  223 |                 selectedTime = &(aTime.AlarmTime);
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:223:17: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:08:28 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:345:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:345:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  345 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  31220	    120	   2984	  34324	   8614	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+16:28:43 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:184:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  184 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:273:41: warning: passing argument 2 of 'HAL_RTC_SetAlarm' from incompatible pointer type [-Wincompatible-pointer-types]
+  273 |                 HAL_RTC_SetAlarm(&hrtc, &aTime.AlarmTime, RTC_FORMAT_BIN);
+      |                                         ^~~~~~~~~~~~~~~~
+      |                                         |
+      |                                         RTC_TimeTypeDef *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:391,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h:719:79: note: expected 'RTC_AlarmTypeDef *' but argument is of type 'RTC_TimeTypeDef *'
+  719 | HAL_StatusTypeDef HAL_RTC_SetAlarm(RTC_HandleTypeDef *hrtc, RTC_AlarmTypeDef *sAlarm, uint32_t Format);
+      |                                                             ~~~~~~~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:344:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  344 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:344:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  344 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  31220	    120	   2984	  34324	   8614	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+16:43:12 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:184:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  184 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:344:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  344 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:344:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  344 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30624	    120	   2984	  33728	   83c0	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 

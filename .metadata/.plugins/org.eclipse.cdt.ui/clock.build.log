@@ -1,26 +1,22 @@
-13:39:07 **** Incremental Build of configuration Debug for project clock ****
+16:43:12 **** Incremental Build of configuration Debug for project clock ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
-../Core/Src/main.c:185:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  185 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+../Core/Src/main.c:184:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  184 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
       |                                                    ~^                       ~~~~~~~~
       |                                                     |                       |
       |                                                     unsigned int            uint32_t {aka long unsigned int}
       |                                                    %lu
-../Core/Src/main.c: In function 'setTime_Position':
-../Core/Src/main.c:223:30: warning: assignment to 'RTC_TimeTypeDef *' from incompatible pointer type 'RTC_AlarmTypeDef *' [-Wincompatible-pointer-types]
-  223 |                 selectedTime = &aTime;
-      |                              ^
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:343:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  343 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+../Core/Src/main.c:344:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  344 |                   printf("%d, %d \r\n", XY[0], XY[1]);
       |                           ~^            ~~~~~
       |                            |              |
       |                            int            uint32_t {aka long unsigned int}
       |                           %ld
-../Core/Src/main.c:343:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  343 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+../Core/Src/main.c:344:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  344 |                   printf("%d, %d \r\n", XY[0], XY[1]);
       |                               ~^               ~~~~~
       |                                |                 |
       |                                int               uint32_t {aka long unsigned int}
@@ -31,11 +27,11 @@ Finished building target: clock.elf
 arm-none-eabi-size   clock.elf 
 arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
    text	   data	    bss	    dec	    hex	filename
-  31168	    120	   2984	  34272	   85e0	clock.elf
+  30624	    120	   2984	  33728	   83c0	clock.elf
 Finished building: default.size.stdout
  
 Finished building: clock.list
  
 
-13:39:08 Build Finished. 0 errors, 4 warnings. (took 1s.71ms)
+16:43:13 Build Finished. 0 errors, 3 warnings. (took 1s.120ms)
 
