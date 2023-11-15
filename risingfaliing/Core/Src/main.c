@@ -70,38 +70,80 @@ static void MX_NVIC_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint32_t ctime, ltime, interval;
-int level;
 uint32_t double_key_cnt;
+int tmpcnt, click_flag, level;
+
+enum CLICK_STATE {
+	NO_CLICK,
+	FIRST_PUSH,
+	FIRST_PULL,
+	SECOND_PUSH,
+	SECOND_PULL
+} current_state;
+enum CLICK_STATE current_state = NO_CLICK;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == GPIO_PIN_7) {
-
-		ctime = HAL_GetTick();
-		interval = ctime - ltime;
-		ltime = ctime;
-
 		level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
+//		ctime = HAL_GetTick();
+//		interval = ctime - ltime;
+//		ltime = ctime;
 
-		if (level == 1) {
-			printf("interval = %u ", (unsigned int)interval);
-			if (interval < 100) {
-				double_key_cnt++;
+
+//		if (interval < 100) {
+//			double_key_cnt++;
+//			printf("cnt = %d \t", double_key_cnt);
+//		}
+
+
+//		if (level == 1) {
+//			printf("interval = %u", (unsigned int)interval);
+//			if (double_key_cnt >= 3) {
+//				printf("double~~~~~~~~~\r\n");
+//				double_key_cnt = 0;
+//			}
+//			 if (interval >= 100 && interval <= 200) {
+//				printf("One click \r\n");
+//				double_key_cnt = 0;
+//			}
+//			else if (interval >= 700) {
+//				printf("long \r\n");
+//				double_key_cnt =0;
+//			}
+//		}
+		if (level == 0 && (current_state == NO_CLICK || current_state == SECOND_PULL)) {
+			current_state = FIRST_PUSH;
+			ctime = HAL_GetTick();
+			printf("first push \r\n");
+		}
+		else if (level == 1 && current_state == FIRST_PUSH) {
+			current_state = FIRST_PULL;
+			ltime = HAL_GetTick();
+			if (ltime - ctime > 1000) {
+				printf("Long click~~~~~~~~\r\n");
+				current_state = NO_CLICK;
 			}
-			else if (interval >= 100 && interval <= 200) {
-				printf("One click \r\n");
-				double_key_cnt = 0;
-			}
-			else if (interval >= 700) {
-				printf("long \r\n");
-				double_key_cnt =0;
-			}
-			if (double_key_cnt >= 3) {
-				printf("double~~~~~~~~~\r\n");
-				double_key_cnt = 0;
+			else {
+				click_flag = 1;
+				printf("first pull \r\n");
 			}
 		}
+		else if (level == 0 && current_state == FIRST_PULL) {
+			current_state = SECOND_PUSH;
+			click_flag = 0;
+			printf("second_push \r\n");
+		}
+		else if (level == 1 && current_state == SECOND_PUSH) {
+			current_state = SECOND_PULL;
+			printf("second_pull \r\n");
+		}
 
+		if (tmpcnt < 50 && current_state == SECOND_PULL) {
+			printf("double click \r\n");
+			current_state = NO_CLICK;
+			click_flag = 0;
+		}
 	}
 }
 
@@ -148,6 +190,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  if (click_flag) {
+		  tmpcnt++;
+		  HAL_Delay(1);
+//		  printf("flow time %d \r\n", tmpcnt);
+	  }
+	  else {
+		  tmpcnt = 0;
+	  }
+	  if (current_state == FIRST_PULL && tmpcnt > 50) {
+		printf("one click \r\n");
+		current_state = NO_CLICK;
+		click_flag = 0;
+	 }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

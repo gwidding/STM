@@ -1,22 +1,22 @@
-16:43:12 **** Incremental Build of configuration Debug for project clock ****
+11:29:01 **** Incremental Build of configuration Debug for project clock ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
-../Core/Src/main.c:184:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  184 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
       |                                                    ~^                       ~~~~~~~~
       |                                                     |                       |
       |                                                     unsigned int            uint32_t {aka long unsigned int}
       |                                                    %lu
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:344:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  344 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+../Core/Src/main.c:329:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  329 |                   printf("%d, %d \r\n", XY[0], XY[1]);
       |                           ~^            ~~~~~
       |                            |              |
       |                            int            uint32_t {aka long unsigned int}
       |                           %ld
-../Core/Src/main.c:344:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  344 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+../Core/Src/main.c:329:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  329 |                   printf("%d, %d \r\n", XY[0], XY[1]);
       |                               ~^               ~~~~~
       |                                |                 |
       |                                int               uint32_t {aka long unsigned int}
@@ -33,5 +33,5 @@ Finished building: default.size.stdout
 Finished building: clock.list
  
 
-16:43:13 Build Finished. 0 errors, 3 warnings. (took 1s.120ms)
+11:29:02 Build Finished. 0 errors, 3 warnings. (took 1s.72ms)
 

@@ -228,9 +228,8 @@ void setTime_Position() {
 		sprintf(blink, "%02d", selectedTime->Hours);
 		if (XY[1] < 1500) selectedTime->Hours++;
 		if (XY[1] > 4000) selectedTime->Hours--;
-
-		if (selectedTime->Hours > 250) selectedTime->Hours = 12;
-		else if (selectedTime->Hours > 12) selectedTime->Hours = 0;
+		if (selectedTime -> Hours > 250) selectedTime->Hours = 12;
+		else if (selectedTime-> Hours > 12 ) selectedTime->Hours = 1;
 		break;
 	case 2:
 		LCD_SendCommand(LCD_ADDR, 0b11001000);

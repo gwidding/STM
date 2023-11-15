@@ -31839,3 +31839,2174 @@ Finished building: default.size.stdout
  
 Finished building: clock.list
  
+09:19:11 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:330:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:330:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30624	    120	   2984	  33728	   83c0	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+09:28:25 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt, interval);
+      |                                                    ~^                      ~~~~~~~~
+      |                                                     |                      |
+      |                                                     unsigned int           uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:330:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:330:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30624	    120	   2984	  33728	   83c0	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+09:31:47 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt, interval);
+      |                                                    ~^                      ~~~~~~~~
+      |                                                     |                      |
+      |                                                     unsigned int           uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:330:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:330:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30624	    120	   2984	  33728	   83c0	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+09:33:37 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:173:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  173 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt, interval);
+      |                                                    ~^                      ~~~~~~~~
+      |                                                     |                      |
+      |                                                     unsigned int           uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:330:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:330:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30624	    120	   2984	  33728	   83c0	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+10:07:06 **** Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15736	    112	   2552	  18400	   47e0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:07:53 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15736	    112	   2552	  18400	   47e0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:09:31 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15736	    112	   2552	  18400	   47e0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:09:53 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-size   risingfaliing.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15736	    112	   2552	  18400	   47e0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+10:11:44 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:87:55: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   87 |                         printf("interval = %u, cnt = %d ", (unsigned int)interval, double_key_cnt);
+      |                                                      ~^                            ~~~~~~~~~~~~~~
+      |                                                       |                            |
+      |                                                       int                          uint32_t {aka long unsigned int}
+      |                                                      %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15752	    112	   2552	  18416	   47f0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:13:51 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:87:55: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   87 |                         printf("interval = %u, cnt = %d ", (unsigned int)interval, double_key_cnt);
+      |                                                      ~^                            ~~~~~~~~~~~~~~
+      |                                                       |                            |
+      |                                                       int                          uint32_t {aka long unsigned int}
+      |                                                      %ld
+../Core/Src/main.c:90:42: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   90 |                                 printf("%d", double_key_cnt);
+      |                                         ~^   ~~~~~~~~~~~~~~
+      |                                          |   |
+      |                                          int uint32_t {aka long unsigned int}
+      |                                         %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15772	    112	   2552	  18436	   4804	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:15:04 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:87:55: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   87 |                         printf("interval = %u, cnt = %d ", (unsigned int)interval, double_key_cnt);
+      |                                                      ~^                            ~~~~~~~~~~~~~~
+      |                                                       |                            |
+      |                                                       int                          uint32_t {aka long unsigned int}
+      |                                                      %ld
+../Core/Src/main.c:90:42: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   90 |                                 printf("%d", double_key_cnt);
+      |                                         ~^   ~~~~~~~~~~~~~~
+      |                                          |   |
+      |                                          int uint32_t {aka long unsigned int}
+      |                                         %ld
+../Core/Src/main.c:95:33: error: break statement not within loop or switch
+   95 |                                 break;
+      |                                 ^~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:15:20 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:87:55: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   87 |                         printf("interval = %u, cnt = %d ", (unsigned int)interval, double_key_cnt);
+      |                                                      ~^                            ~~~~~~~~~~~~~~
+      |                                                       |                            |
+      |                                                       int                          uint32_t {aka long unsigned int}
+      |                                                      %ld
+../Core/Src/main.c:90:42: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   90 |                                 printf("%d", double_key_cnt);
+      |                                         ~^   ~~~~~~~~~~~~~~
+      |                                          |   |
+      |                                          int uint32_t {aka long unsigned int}
+      |                                         %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15772	    112	   2552	  18436	   4804	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:17:10 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:87:55: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   87 |                         printf("interval = %u, cnt = %d ", (unsigned int)interval, double_key_cnt);
+      |                                                      ~^                            ~~~~~~~~~~~~~~
+      |                                                       |                            |
+      |                                                       int                          uint32_t {aka long unsigned int}
+      |                                                      %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15752	    112	   2552	  18416	   47f0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:19:44 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:90:55: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   90 |                         printf("interval = %u, cnt = %d ", (unsigned int)interval, double_key_cnt);
+      |                                                      ~^                            ~~~~~~~~~~~~~~
+      |                                                       |                            |
+      |                                                       int                          uint32_t {aka long unsigned int}
+      |                                                      %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15752	    112	   2552	  18416	   47f0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:20:40 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15728	    112	   2552	  18392	   47d8	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+10:25:43 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:330:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:330:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  330 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30624	    120	   2984	  33728	   83c0	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+10:34:32 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:332:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  332 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:332:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  332 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30668	    120	   2984	  33772	   83ec	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+10:37:25 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:332:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  332 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:332:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  332 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30700	    120	   2984	  33804	   840c	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+10:38:06 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:332:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  332 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:332:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  332 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30700	    120	   2984	  33804	   840c	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+10:40:59 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:332:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  332 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:332:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  332 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30708	    120	   2984	  33812	   8414	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+10:48:38 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:236:32: warning: implicit declaration of function 'ampm_check' [-Wimplicit-function-declaration]
+  236 |                 selectedTime = ampm_check(selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c:236:30: warning: assignment to 'RTC_TimeTypeDef *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  236 |                 selectedTime = ampm_check(selectedTime);
+      |                              ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:266:18: error: conflicting types for 'ampm_check'; have 'RTC_TimeTypeDef *(RTC_TimeTypeDef *)'
+  266 | RTC_TimeTypeDef* ampm_check(RTC_TimeTypeDef* seltime) {
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:236:32: note: previous implicit declaration of 'ampm_check' with type 'int()'
+  236 |                 selectedTime = ampm_check(selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:339:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:339:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:49:00 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:236:32: warning: implicit declaration of function 'ampm_check' [-Wimplicit-function-declaration]
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c:236:30: warning: assignment to 'RTC_TimeTypeDef *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                              ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:266:18: error: conflicting types for 'ampm_check'; have 'RTC_TimeTypeDef *(RTC_TimeTypeDef *)'
+  266 | RTC_TimeTypeDef* ampm_check(RTC_TimeTypeDef* seltime) {
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:236:32: note: previous implicit declaration of 'ampm_check' with type 'int()'
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:339:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:339:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:49:53 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:236:32: warning: implicit declaration of function 'ampm_check' [-Wimplicit-function-declaration]
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c:236:30: warning: assignment to 'RTC_TimeTypeDef *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                              ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:266:18: error: conflicting types for 'ampm_check'; have 'RTC_TimeTypeDef *(RTC_TimeTypeDef)'
+  266 | RTC_TimeTypeDef* ampm_check(RTC_TimeTypeDef seltime) {
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:236:32: note: previous implicit declaration of 'ampm_check' with type 'int()'
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c: In function 'ampm_check':
+../Core/Src/main.c:268:20: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  268 |         if (seltime->TimeFormat == 0 || seltime->Hours == 12) seltime->Hours = 0;
+      |                    ^~
+../Core/Src/main.c:268:48: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  268 |         if (seltime->TimeFormat == 0 || seltime->Hours == 12) seltime->Hours = 0;
+      |                                                ^~
+../Core/Src/main.c:268:70: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  268 |         if (seltime->TimeFormat == 0 || seltime->Hours == 12) seltime->Hours = 0;
+      |                                                                      ^~
+../Core/Src/main.c:269:20: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  269 |         if (seltime->TimeFormat == 1 || seltime->Hours == 0) seltime->Hours = 12;
+      |                    ^~
+../Core/Src/main.c:269:48: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  269 |         if (seltime->TimeFormat == 1 || seltime->Hours == 0) seltime->Hours = 12;
+      |                                                ^~
+../Core/Src/main.c:269:69: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  269 |         if (seltime->TimeFormat == 1 || seltime->Hours == 0) seltime->Hours = 12;
+      |                                                                     ^~
+../Core/Src/main.c:270:16: error: incompatible types when returning type 'RTC_TimeTypeDef' but 'RTC_TimeTypeDef *' was expected
+  270 |         return seltime;
+      |                ^~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:339:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:339:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+../Core/Src/main.c: In function 'ampm_check':
+../Core/Src/main.c:271:1: warning: control reaches end of non-void function [-Wreturn-type]
+  271 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:51:59 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:236:32: warning: implicit declaration of function 'ampm_check' [-Wimplicit-function-declaration]
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c:236:30: warning: assignment to 'RTC_TimeTypeDef *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                              ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:266:18: error: conflicting types for 'ampm_check'; have 'RTC_TimeTypeDef *(RTC_TimeTypeDef *)'
+  266 | RTC_TimeTypeDef* ampm_check(RTC_TimeTypeDef* seltime) {
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:236:32: note: previous implicit declaration of 'ampm_check' with type 'int()'
+  236 |                 selectedTime = ampm_check(&selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:339:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:339:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:53:02 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:236:32: warning: implicit declaration of function 'ampm_check' [-Wimplicit-function-declaration]
+  236 |                 selectedTime = ampm_check(selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c:236:30: warning: assignment to 'RTC_TimeTypeDef *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  236 |                 selectedTime = ampm_check(selectedTime);
+      |                              ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:266:18: error: conflicting types for 'ampm_check'; have 'RTC_TimeTypeDef *(RTC_TimeTypeDef *)'
+  266 | RTC_TimeTypeDef* ampm_check(RTC_TimeTypeDef* seltime) {
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:236:32: note: previous implicit declaration of 'ampm_check' with type 'int()'
+  236 |                 selectedTime = ampm_check(selectedTime);
+      |                                ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:339:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:339:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:53:54 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:236:17: warning: implicit declaration of function 'ampm_check' [-Wimplicit-function-declaration]
+  236 |                 ampm_check(selectedTime);
+      |                 ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:266:18: error: conflicting types for 'ampm_check'; have 'RTC_TimeTypeDef *(RTC_TimeTypeDef *)'
+  266 | RTC_TimeTypeDef* ampm_check(RTC_TimeTypeDef* seltime) {
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:236:17: note: previous implicit declaration of 'ampm_check' with type 'int()'
+  236 |                 ampm_check(selectedTime);
+      |                 ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:339:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:339:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  339 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:55:09 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:236:17: warning: implicit declaration of function 'ampm_check' [-Wimplicit-function-declaration]
+  236 |                 ampm_check(selectedTime);
+      |                 ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:266:6: warning: conflicting types for 'ampm_check'; have 'void(RTC_TimeTypeDef *)'
+  266 | void ampm_check(RTC_TimeTypeDef* seltime) {
+      |      ^~~~~~~~~~
+../Core/Src/main.c:236:17: note: previous implicit declaration of 'ampm_check' with type 'void(RTC_TimeTypeDef *)'
+  236 |                 ampm_check(selectedTime);
+      |                 ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:338:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:338:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30772	    120	   2984	  33876	   8454	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+10:58:42 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'ampm_check':
+../Core/Src/main.c:269:16: warning: 'return' with a value, in function returning void [-Wreturn-type]
+  269 |         return seltime;
+      |                ^~~~~~~
+../Core/Src/main.c:265:6: note: declared here
+  265 | void ampm_check(RTC_TimeTypeDef* seltime) {
+      |      ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:338:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:338:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+../Core/Src/main.c:341:20: error: 'currnet_state' undeclared (first use in this function); did you mean 'current_state'?
+  341 |           else if (currnet_state.mode == NORMAL_STATE) {
+      |                    ^~~~~~~~~~~~~
+      |                    current_state
+../Core/Src/main.c:341:20: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:58:52 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'ampm_check':
+../Core/Src/main.c:269:16: warning: 'return' with a value, in function returning void [-Wreturn-type]
+  269 |         return seltime;
+      |                ^~~~~~~
+../Core/Src/main.c:265:6: note: declared here
+  265 | void ampm_check(RTC_TimeTypeDef* seltime) {
+      |      ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:338:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:338:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30796	    120	   2984	  33900	   846c	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+11:03:06 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'ampm_check':
+../Core/Src/main.c:269:17: error: incompatible types when assigning to type 'RTC_TimeTypeDef' from type 'RTC_TimeTypeDef *'
+  269 |         sTime = seltime;
+      |                 ^~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:338:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:338:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:03:18 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'ampm_check':
+../Core/Src/main.c:269:17: error: incompatible types when assigning to type 'RTC_TimeTypeDef' from type 'RTC_TimeTypeDef **'
+  269 |         sTime = &seltime;
+      |                 ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:338:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:338:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:03:29 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'ampm_check':
+../Core/Src/main.c:269:16: error: lvalue required as left operand of assignment
+  269 |         &sTime = seltime;
+      |                ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:338:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:338:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:04:05 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'ampm_check':
+../Core/Src/main.c:267:20: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  267 |         if (seltime->TimeFormat == 0 || seltime->Hours == 12) seltime->Hours = 0;
+      |                    ^~
+../Core/Src/main.c:267:48: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  267 |         if (seltime->TimeFormat == 0 || seltime->Hours == 12) seltime->Hours = 0;
+      |                                                ^~
+../Core/Src/main.c:267:70: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  267 |         if (seltime->TimeFormat == 0 || seltime->Hours == 12) seltime->Hours = 0;
+      |                                                                      ^~
+../Core/Src/main.c:268:20: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  268 |         if (seltime->TimeFormat == 1 || seltime->Hours == 0) seltime->Hours = 12;
+      |                    ^~
+../Core/Src/main.c:268:48: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  268 |         if (seltime->TimeFormat == 1 || seltime->Hours == 0) seltime->Hours = 12;
+      |                                                ^~
+../Core/Src/main.c:268:69: error: invalid type argument of '->' (have 'RTC_TimeTypeDef')
+  268 |         if (seltime->TimeFormat == 1 || seltime->Hours == 0) seltime->Hours = 12;
+      |                                                                     ^~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:337:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:337:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+../Core/Src/main.c:341:30: error: incompatible type for argument 1 of 'ampm_check'
+  341 |                   ampm_check(&sTime);
+      |                              ^~~~~~
+      |                              |
+      |                              RTC_TimeTypeDef *
+../Core/Src/main.c:265:33: note: expected 'RTC_TimeTypeDef' but argument is of type 'RTC_TimeTypeDef *'
+  265 | void ampm_check(RTC_TimeTypeDef seltime) {
+      |                 ~~~~~~~~~~~~~~~~^~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:04:35 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:337:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:337:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+../Core/Src/main.c:341:30: error: incompatible type for argument 1 of 'ampm_check'
+  341 |                   ampm_check(&sTime);
+      |                              ^~~~~~
+      |                              |
+      |                              RTC_TimeTypeDef *
+../Core/Src/main.c:265:33: note: expected 'RTC_TimeTypeDef' but argument is of type 'RTC_TimeTypeDef *'
+  265 | void ampm_check(RTC_TimeTypeDef seltime) {
+      |                 ~~~~~~~~~~~~~~~~^~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:04:48 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:337:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:337:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30792	    120	   2984	  33896	   8468	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+11:08:01 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:337:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:337:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30792	    120	   2984	  33896	   8468	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+11:09:42 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:337:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:337:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  337 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30792	    120	   2984	  33896	   8468	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+11:22:27 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'setTime_Position':
+../Core/Src/main.c:231:63: warning: assignment to 'RTC_TimeTypeDef *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  231 |                 if (selectedTime -> Hours > 250) selectedTime = 12;
+      |                                                               ^
+../Core/Src/main.c:232:67: warning: assignment to 'RTC_TimeTypeDef *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  232 |                 else if (selectedTime-> Hours > 12 ) selectedTime = 1;
+      |                                                                   ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:338:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:338:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30620	    120	   2984	  33724	   83bc	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+11:23:02 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:338:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:338:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  338 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30624	    120	   2984	  33728	   83c0	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+11:29:01 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:170:53: warning: format '%u' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  170 |                 printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+      |                                                    ~^                       ~~~~~~~~
+      |                                                     |                       |
+      |                                                     unsigned int            uint32_t {aka long unsigned int}
+      |                                                    %lu
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:329:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  329 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:329:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  329 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30624	    120	   2984	  33728	   83c0	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 
+13:01:43 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:87:40: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   87 |                         printf("cnt = %d", double_key_cnt);
+      |                                       ~^   ~~~~~~~~~~~~~~
+      |                                        |   |
+      |                                        int uint32_t {aka long unsigned int}
+      |                                       %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    112	   2552	  18428	   47fc	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:02:21 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:87:40: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   87 |                         printf("cnt = %d \t", double_key_cnt);
+      |                                       ~^      ~~~~~~~~~~~~~~
+      |                                        |      |
+      |                                        int    uint32_t {aka long unsigned int}
+      |                                       %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    112	   2552	  18428	   47fc	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:05:01 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:85:40: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   85 |                         printf("cnt = %d \t", double_key_cnt);
+      |                                       ~^      ~~~~~~~~~~~~~~
+      |                                        |      |
+      |                                        int    uint32_t {aka long unsigned int}
+      |                                       %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    112	   2552	  18428	   47fc	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:05:54 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:85:40: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   85 |                         printf("cnt = %d \t", double_key_cnt);
+      |                                       ~^      ~~~~~~~~~~~~~~
+      |                                        |      |
+      |                                        int    uint32_t {aka long unsigned int}
+      |                                       %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    112	   2552	  18428	   47fc	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:06:40 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:85:40: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   85 |                         printf("cnt = %d \t", double_key_cnt);
+      |                                       ~^      ~~~~~~~~~~~~~~
+      |                                        |      |
+      |                                        int    uint32_t {aka long unsigned int}
+      |                                       %ld
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    112	   2552	  18428	   47fc	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:24:33 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:79:9: warning: implicit declaration of function 'processClick' [-Wimplicit-function-declaration]
+   79 |         processClick(&clickState);
+      |         ^~~~~~~~~~~~
+../Core/Src/main.c:79:23: error: 'clickState' undeclared (first use in this function)
+   79 |         processClick(&clickState);
+      |                       ^~~~~~~~~~
+../Core/Src/main.c:79:23: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:117:6: warning: conflicting types for 'processClick'; have 'void(enum CLICK_STATE *)'
+  117 | void processClick(enum CLICK_STATE *clickState) {
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:79:9: note: previous implicit declaration of 'processClick' with type 'void(enum CLICK_STATE *)'
+   79 |         processClick(&clickState);
+      |         ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:24:58 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  10808	     20	   2204	  13032	   32e8	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:27:04 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'handleButtonClick':
+../Core/Src/main.c:89:26: error: 'LONG_PRESS_THRESHOLD' undeclared (first use in this function)
+   89 |     if (pressDuration >= LONG_PRESS_THRESHOLD) {
+      |                          ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:89:26: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:92:32: error: 'DOUBLE_CLICK_THRESHOLD' undeclared (first use in this function)
+   92 |     } else if (pressDuration < DOUBLE_CLICK_THRESHOLD) {
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:28:38 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'handleButtonClick':
+../Core/Src/main.c:96:29: error: expected ')' before ';' token
+   96 |         printf("double \r\n";)
+      |               ~             ^
+      |                             )
+../Core/Src/main.c:96:31: error: expected ';' before '}' token
+   96 |         printf("double \r\n";)
+      |                               ^
+      |                               ;
+   97 |     } else {
+      |     ~                          
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:28:46 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  13928	    112	   2544	  16584	   40c8	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:32:30 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15812	    112	   2568	  18492	   483c	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:34:55 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15836	    112	   2568	  18516	   4854	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:37:15 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15788	    112	   2568	  18468	   4824	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+13:57:04 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:92:50: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   92 |                         printf("level(1) time = %u", interval1);
+      |                                                 ~^   ~~~~~~~~~
+      |                                                  |   |
+      |                                                  |   uint32_t {aka long unsigned int}
+      |                                                  unsigned int
+      |                                                 %lu
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15768	    112	   2568	  18448	   4810	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:00:20 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:92:50: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   92 |                         printf("level(1) time = %u", interval1);
+      |                                                 ~^   ~~~~~~~~~
+      |                                                  |   |
+      |                                                  |   uint32_t {aka long unsigned int}
+      |                                                  unsigned int
+      |                                                 %lu
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15768	    112	   2568	  18448	   4810	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:01:54 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:92:50: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   92 |                         printf("level(1) time = %u", interval1);
+      |                                                 ~^   ~~~~~~~~~
+      |                                                  |   |
+      |                                                  |   uint32_t {aka long unsigned int}
+      |                                                  unsigned int
+      |                                                 %lu
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15760	    112	   2568	  18440	   4808	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:02:37 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:92:50: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   92 |                         printf("level(1) time = %u", interval1);
+      |                                                 ~^   ~~~~~~~~~
+      |                                                  |   |
+      |                                                  |   uint32_t {aka long unsigned int}
+      |                                                  unsigned int
+      |                                                 %lu
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    112	   2568	  18444	   480c	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:21:17 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14064	    112	   2568	  16744	   4168	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:21:53 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14072	    112	   2568	  16752	   4170	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:22:36 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14068	    112	   2568	  16748	   416c	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:23:15 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15796	    112	   2568	  18476	   482c	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:24:36 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15808	    112	   2568	  18488	   4838	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:37:56 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:83:1: warning: data definition has no type or storage class
+   83 | current_state = NO_CLICK;
+      | ^~~~~~~~~~~~~
+../Core/Src/main.c:83:1: warning: type defaults to 'int' in declaration of 'current_state' [-Wimplicit-int]
+../Core/Src/main.c:83:1: error: conflicting types for 'current_state'; have 'int'
+../Core/Src/main.c:82:3: note: previous declaration of 'current_state' with type 'enum CLICK_STATE'
+   82 | } current_state;
+      |   ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:130:38: error: 'FISRT_PULL' undeclared (first use in this function); did you mean 'FIRST_PULL'?
+  130 |                 if (current_state == FISRT_PULL && tmpcnt > 50) {
+      |                                      ^~~~~~~~~~
+      |                                      FIRST_PULL
+../Core/Src/main.c:130:38: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:38:13 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:83:1: warning: data definition has no type or storage class
+   83 | current_state = NO_CLICK;
+      | ^~~~~~~~~~~~~
+../Core/Src/main.c:83:1: warning: type defaults to 'int' in declaration of 'current_state' [-Wimplicit-int]
+../Core/Src/main.c:83:1: error: conflicting types for 'current_state'; have 'int'
+../Core/Src/main.c:82:3: note: previous declaration of 'current_state' with type 'enum CLICK_STATE'
+   82 | } current_state;
+      |   ^~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:38:43 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15772	    112	   2552	  18436	   4804	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:39:50 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:133:25: error: 'currnet_state' undeclared (first use in this function); did you mean 'current_state'?
+  133 |                         currnet_state = NO_CLCIK;
+      |                         ^~~~~~~~~~~~~
+      |                         current_state
+../Core/Src/main.c:133:25: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:133:41: error: 'NO_CLCIK' undeclared (first use in this function); did you mean 'NO_CLICK'?
+  133 |                         currnet_state = NO_CLCIK;
+      |                                         ^~~~~~~~
+      |                                         NO_CLICK
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:39:59 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:133:41: error: 'NO_CLCIK' undeclared (first use in this function); did you mean 'NO_CLICK'?
+  133 |                         current_state = NO_CLCIK;
+      |                                         ^~~~~~~~
+      |                                         NO_CLICK
+../Core/Src/main.c:133:41: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:40:15 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15784	    112	   2552	  18448	   4810	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:41:32 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15784	    112	   2552	  18448	   4810	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:43:28 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:115:35: error: 'cuurent_state' undeclared (first use in this function); did you mean 'current_state'?
+  115 |                 printf("%s \r\n", cuurent_state);
+      |                                   ^~~~~~~~~~~~~
+      |                                   current_state
+../Core/Src/main.c:115:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:43:38 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:115:26: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'int' [-Wformat=]
+  115 |                 printf("%s \r\n", current_state);
+      |                         ~^        ~~~~~~~~~~~~~
+      |                          |        |
+      |                          char *   int
+      |                         %d
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15776	    112	   2552	  18440	   4808	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:46:15 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14160	    112	   2552	  16824	   41b8	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:47:45 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:115:94: error: expected ')' before '{' token
+  115 |                 if (level == 0 && (current_state == NO_CLICK || current_state == SECOND_PULL) {
+      |                    ~                                                                         ^~
+      |                                                                                              )
+../Core/Src/main.c:145:9: error: expected expression before '}' token
+  145 |         }
+      |         ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:47:51 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14168	    112	   2552	  16832	   41c0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:49:43 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14172	    112	   2552	  16836	   41c4	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:50:30 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14172	    112	   2552	  16836	   41c4	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:51:04 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14180	    112	   2552	  16844	   41cc	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:51:13 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14188	    112	   2552	  16852	   41d4	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:51:59 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15916	    112	   2552	  18580	   4894	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:52:18 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15920	    112	   2552	  18584	   4898	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:52:48 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15924	    112	   2552	  18588	   489c	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:53:49 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15920	    112	   2552	  18584	   4898	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+14:57:47 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  15916	    112	   2552	  18580	   4894	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:02:50 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:87:17: error: 'level' undeclared (first use in this function)
+   87 |                 level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
+      |                 ^~~~~
+../Core/Src/main.c:87:17: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:123:25: error: 'click_flag' undeclared (first use in this function)
+  123 |                         click_flag = 1;
+      |                         ^~~~~~~~~~
+../Core/Src/main.c:128:25: error: 'tmpcnt' undeclared (first use in this function)
+  128 |                         tmpcnt = 0;
+      |                         ^~~~~~
+../Core/Src/main.c:142:21: error: 'lime' undeclared (first use in this function); did you mean 'ltime'?
+  142 |                 if (lime - ctime > 1000) {
+      |                     ^~~~
+      |                     ltime
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:194:15: error: 'click_flag' undeclared (first use in this function)
+  194 |           if (click_flag) {
+      |               ^~~~~~~~~~
+../Core/Src/main.c:195:19: error: 'tmpcnt' undeclared (first use in this function)
+  195 |                   tmpcnt++;
+      |                   ^~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:03:25 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:88:17: error: 'level' undeclared (first use in this function)
+   88 |                 level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
+      |                 ^~~~~
+../Core/Src/main.c:88:17: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:143:21: error: 'lime' undeclared (first use in this function); did you mean 'ltime'?
+  143 |                 if (lime - ctime > 1000) {
+      |                     ^~~~
+      |                     ltime
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:03:38 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:143:21: error: 'lime' undeclared (first use in this function); did you mean 'ltime'?
+  143 |                 if (lime - ctime > 1000) {
+      |                     ^~~~
+      |                     ltime
+../Core/Src/main.c:143:21: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:03:49 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  16004	    112	   2560	  18676	   48f4	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:05:24 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  16000	    112	   2560	  18672	   48f0	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:06:27 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14272	    112	   2560	  16944	   4230	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:09:42 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14276	    112	   2560	  16948	   4234	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:10:40 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  16004	    112	   2560	  18676	   48f4	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:11:30 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14276	    112	   2560	  16948	   4234	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:12:28 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14276	    112	   2560	  16948	   4234	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:13:05 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  16004	    112	   2560	  18676	   48f4	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:17:56 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14332	    112	   2560	  17004	   426c	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:19:08 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14332	    112	   2560	  17004	   426c	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:20:51 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14280	    112	   2560	  16952	   4238	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
+15:21:54 **** Incremental Build of configuration Debug for project risingfaliing ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "risingfaliing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\risingfaliing\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="risingfaliing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: risingfaliing.elf
+ 
+arm-none-eabi-size   risingfaliing.elf 
+arm-none-eabi-objdump -h -S  risingfaliing.elf  > "risingfaliing.list"
+   text	   data	    bss	    dec	    hex	filename
+  14268	    112	   2560	  16940	   422c	risingfaliing.elf
+Finished building: default.size.stdout
+ 
+Finished building: risingfaliing.list
+ 
