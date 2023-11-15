@@ -107,9 +107,6 @@ char alarmTime[30] = {0};
 char ampm[2][3] = {"AM", "PM"};
 
 uint32_t XY[2];
-uint32_t ctime, ltime, interval;
-int level;
-int double_key_cnt;
 
 RTC_TimeTypeDef sTime;
 RTC_DateTypeDef sDate;
@@ -156,46 +153,87 @@ void time_display(void) {
   }
 }
 
+uint32_t ctime, ltime, interval;
+uint32_t double_key_cnt, tmptime;
+int tmpcnt, click_flag, level;
+enum CLICK_STATE {
+	NO_CLICK,
+	FIRST_PUSH,
+	FIRST_PULL,
+	SECOND_PUSH,
+	SECOND_PULL
+} click_currentstate;
+enum CLICK_STATE click_currentstate = NO_CLICK;
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == GPIO_PIN_7) {
-        ctime = HAL_GetTick();
-        interval = ctime - ltime;
-        ltime = ctime;
-
-        if (interval > 90) {
-            level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
-
-            if (level == 1) {
-                printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
-                if (interval < 150) {
-                	double_key_cnt++;
-                }
-                else if (interval <= 230) {
-                	printf("one click \r\n");
-                	double_key_cnt = 0;
-                	if (current_state.mode == NORMAL_STATE) {
-                		current_state.mode = TIME_SETTING;
-                	}
-                	else {
-                		current_state.mode = NORMAL_STATE;
-                	}
-                }
-                else if (interval > 1000 && current_state.mode == NORMAL_STATE) {
-                	printf("long click \r\n");
-                	double_key_cnt = 0;
-                	current_state.mode = ALARM_TIME_SETTING;
-                }
-                if (double_key_cnt >= 2 && current_state.mode == NORMAL_STATE) {
-                	printf("double~~~");
-                	double_key_cnt = 0;
-                	current_state.mode = MUSIC_SELECT;
-                }
-                if (double_key_cnt > 2) {
-                	double_key_cnt = 0;
-                }
-            }
-        }
+        level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
+//        ctime = HAL_GetTick();
+//        interval = ctime - ltime;
+//        ltime = ctime;
+//
+//        if (interval > 90) {
+//
+//            if (level == 1) {
+//                printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+//                if (interval < 150) {
+//                	double_key_cnt++;
+//                }
+//                else if (interval <= 230) {
+//                	printf("one click \r\n");
+//                	double_key_cnt = 0;
+//                	if (current_state.mode == NORMAL_STATE) {
+//                		current_state.mode = TIME_SETTING;
+//                	}
+//                	else {
+//                		current_state.mode = NORMAL_STATE;
+//                	}
+//                }
+//                else if (interval > 1000 && current_state.mode == NORMAL_STATE) {
+//                	printf("long click \r\n");
+//                	double_key_cnt = 0;
+//                	current_state.mode = ALARM_TIME_SETTING;
+//                }
+//                if (double_key_cnt >= 2 && current_state.mode == NORMAL_STATE) {
+//                	printf("double~~~");
+//                	double_key_cnt = 0;
+//                	current_state.mode = MUSIC_SELECT;
+//                }
+//                if (double_key_cnt > 2) {
+//                	double_key_cnt = 0;
+//                }
+//            }
+//        }
+        if (level == 0 && (click_currentstate == NO_CLICK || click_currentstate == SECOND_PULL)) {
+        	click_currentstate = FIRST_PUSH;
+			ctime = HAL_GetTick();
+		}
+		else if (level == 1 && click_currentstate == FIRST_PUSH) {
+			click_currentstate = FIRST_PULL;
+			ltime = HAL_GetTick();
+			if (ltime - ctime > 1000 && current_state.mode == NORMAL_STATE) {
+				printf("Long click~~~~~~~~\r\n");
+				click_currentstate = NO_CLICK;
+				current_state.mode = ALARM_TIME_SETTING;
+			}
+			else {
+//				printf("first pull \r\n");
+			}
+		}
+		else if (level == 0 && click_currentstate == FIRST_PULL) {
+			click_currentstate = SECOND_PUSH;
+//			printf("second_push \r\n");
+		}
+		else if (level == 1 && click_currentstate == SECOND_PUSH) {
+			click_currentstate = SECOND_PULL;
+//			printf("second_pull \r\n");
+			printf("doubleeeeeeee \r\n");
+		    if (current_state.mode == NORMAL_STATE) {
+				current_state.mode = MUSIC_SELECT;
+		    }
+			click_currentstate = NO_CLICK;
+		}
     }
 }
 
@@ -221,14 +259,14 @@ void setTime_Position() {
 		LCD_SendCommand(LCD_ADDR, 0b11000000);
 		sprintf(blink, "%s", ampm[selectedTime->TimeFormat]);
 		if (XY[1] < 1500 ) selectedTime->TimeFormat++;
-		if (XY[1] > 4000) selectedTime->TimeFormat--;
+		if (XY[1] > 4000)  selectedTime->TimeFormat--;
 		break;
 	case 1:
 		LCD_SendCommand(LCD_ADDR, 0b11000011);
 		sprintf(blink, "%02d", selectedTime->Hours);
 		if (XY[1] < 1500) selectedTime->Hours++;
 		if (XY[1] > 4000) selectedTime->Hours--;
-		if (selectedTime -> Hours > 250) selectedTime->Hours = 12;
+		if (selectedTime -> Hours > 250)     selectedTime->Hours = 12;
 		else if (selectedTime-> Hours > 12 ) selectedTime->Hours = 1;
 		break;
 	case 2:
@@ -236,7 +274,7 @@ void setTime_Position() {
 		sprintf(blink, "%02d", selectedTime->Minutes);
 		if (XY[1] < 1500) selectedTime->Minutes++;
 		if (XY[1] > 4000) selectedTime->Minutes--;
-		if (selectedTime->Minutes > 250) selectedTime->Minutes = 59;
+		if (selectedTime->Minutes > 250)     selectedTime->Minutes = 59;
 		else if (selectedTime->Minutes > 59) selectedTime->Minutes = 0;
 		break;
 	case 3:
@@ -244,7 +282,7 @@ void setTime_Position() {
 		 sprintf(blink, "%02d", selectedTime->Seconds);
 		if (XY[1] < 1500) selectedTime->Seconds++;
 		if (XY[1] > 4000) selectedTime->Seconds--;
-		if (selectedTime->Seconds > 250) selectedTime->Seconds = 59;
+		if (selectedTime->Seconds > 250)     selectedTime->Seconds = 59;
 		else if (selectedTime->Seconds > 59) selectedTime->Seconds = 0;
 		break;
 	}
@@ -259,15 +297,6 @@ void setTime_Position() {
 		get_alarm();
 	}
 }
-//void timeRange_check() {
-//	if (sTime.Hours > 12) sTime.Hours = 0;
-//	if (sTime.Hours < 0) sTime.Hours = 12;
-//	if (sTime.Minutes > 59) sTime.Minutes = 0;
-//	if (sTime.Minutes < 0) sTime.Minutes = 59;
-//	if (sTime.Seconds > 59) sTime.Seconds = 0;
-//	if (sTime.Seconds < 0) sTime.Seconds = 59;
-//	HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-//}
 
 /* USER CODE END 0 */
 
@@ -324,11 +353,20 @@ int main(void)
 	  time_display();
 	  if (current_state.mode == TIME_SETTING || current_state.mode == ALARM_TIME_SETTING) {
 		  setTime_Position();
-		  HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
-		  HAL_UART_Transmit(&huart3, (uint8_t *)&alarmTime, strlen(alarmTime), 1000);
 		  printf("%d, %d \r\n", XY[0], XY[1]);
 		  printf("\r\n");
 	  }
+
+	  if (click_currentstate == FIRST_PULL && (HAL_GetTick()-ltime) > 100) {
+		printf("one click \r\n");
+		if (current_state.mode == NORMAL_STATE) {
+			current_state.mode = TIME_SETTING;
+		}
+		else {
+			current_state.mode = NORMAL_STATE;
+		}
+		click_currentstate = NO_CLICK;
+	 }
 
     /* USER CODE END WHILE */
 

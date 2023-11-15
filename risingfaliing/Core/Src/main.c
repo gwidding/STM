@@ -125,13 +125,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 				current_state = NO_CLICK;
 			}
 			else {
-				click_flag = 1;
 				printf("first pull \r\n");
 			}
 		}
 		else if (level == 0 && current_state == FIRST_PULL) {
 			current_state = SECOND_PUSH;
-			click_flag = 0;
 			printf("second_push \r\n");
 		}
 		else if (level == 1 && current_state == SECOND_PUSH) {
@@ -139,11 +137,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			printf("second_pull \r\n");
 		}
 
-		if (tmpcnt < 50 && current_state == SECOND_PULL) {
-			printf("double click \r\n");
-			current_state = NO_CLICK;
-			click_flag = 0;
-		}
 	}
 }
 
@@ -190,19 +183,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if (click_flag) {
-		  tmpcnt++;
-		  HAL_Delay(1);
-//		  printf("flow time %d \r\n", tmpcnt);
+	  if (current_state == FIRST_PULL && (HAL_GetTick()-ltime) > 100) {
+		  printf("one111111 \r\n");
+		  current_state = NO_CLICK;
 	  }
-	  else {
-		  tmpcnt = 0;
+	  else if (current_state == SECOND_PUSH && (HAL_GetTick()-ltime) < 100) {
+		  printf("doubleeeeeeee \r\n");
+		  current_state = NO_CLICK;
 	  }
-	  if (current_state == FIRST_PULL && tmpcnt > 50) {
-		printf("one click \r\n");
-		current_state = NO_CLICK;
-		click_flag = 0;
-	 }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -10448,3 +10448,6 @@ Binding(CTRL+INSERT,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.console.ConsoleView,,,system)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-11-15 15:58:21.031
+!MESSAGE Won't launch debug session since we failed to locate the binary.
