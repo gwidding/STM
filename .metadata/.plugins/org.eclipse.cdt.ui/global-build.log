@@ -34864,3 +34864,333 @@ Finished building: default.size.stdout
  
 Finished building: clock.list
  
+17:17:36 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:28:
+../Core/Inc/flash.h:15:1: error: unknown type name 'NVitemTypeDef'
+   15 | NVitemTypeDef default_nvitem =
+      | ^~~~~~~~~~~~~
+../Core/Inc/flash.h:18:3: warning: braces around scalar initializer
+   18 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:18:3: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:18:6: warning: excess elements in scalar initializer
+   18 |   {0,0,0},
+      |      ^
+../Core/Inc/flash.h:18:6: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:18:8: warning: excess elements in scalar initializer
+   18 |   {0,0,0},
+      |        ^
+../Core/Inc/flash.h:18:8: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:18:3: warning: excess elements in scalar initializer
+   18 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:18:3: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:19:3: warning: braces around scalar initializer
+   19 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:19:3: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:19:6: warning: excess elements in scalar initializer
+   19 |   {0,0,0},
+      |      ^
+../Core/Inc/flash.h:19:6: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:19:8: warning: excess elements in scalar initializer
+   19 |   {0,0,0},
+      |        ^
+../Core/Inc/flash.h:19:8: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:19:3: warning: excess elements in scalar initializer
+   19 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:19:3: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:20:3: warning: excess elements in scalar initializer
+   20 |   0
+      |   ^
+../Core/Inc/flash.h:20:3: note: (near initialization for 'default_nvitem')
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:132:26: error: 'NVitemTypeDef' undeclared (first use in this function)
+  132 |         for(i=0;i<sizeof(NVitemTypeDef);i++)
+      |                          ^~~~~~~~~~~~~
+../Core/Src/main.c:132:26: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Core/Src/main.c:28:
+../Core/Inc/flash.h:14:36: error: expected expression before ')' token
+   14 | #define nv_items  ((NVitemTypeDef *) ADDR_FLASH_SECTOR_23)
+      |                                    ^
+../Core/Src/main.c:134:37: note: in expansion of macro 'nv_items'
+  134 |                 Address = (uint8_t*)nv_items+i;
+      |                                     ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:403:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:403:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+In file included from ../Core/Src/main.c:28:
+../Core/Src/main.c: At top level:
+../Core/Inc/flash.h:75:17: warning: 'GetSector' declared 'static' but never defined [-Wunused-function]
+   75 | static uint32_t GetSector(uint32_t Address);
+      |                 ^~~~~~~~~
+../Core/Inc/flash.h:77:17: warning: 'GetSectorSize' declared 'static' but never defined [-Wunused-function]
+   77 | static uint32_t GetSectorSize(uint32_t Sector);
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:144:1: warning: control reaches end of non-void function [-Wreturn-type]
+  144 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:18:16 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:130:26: error: 'default_nvitem' undeclared (first use in this function)
+  130 |         ptr = (uint8_t*)&default_nvitem;
+      |                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:26: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:132:26: error: 'NVitemTypeDef' undeclared (first use in this function)
+  132 |         for(i=0;i<sizeof(NVitemTypeDef);i++)
+      |                          ^~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:28:
+../Core/Inc/flash.h:14:36: error: expected expression before ')' token
+   14 | #define nv_items  ((NVitemTypeDef *) ADDR_FLASH_SECTOR_23)
+      |                                    ^
+../Core/Src/main.c:134:37: note: in expansion of macro 'nv_items'
+  134 |                 Address = (uint8_t*)nv_items+i;
+      |                                     ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:403:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:403:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+In file included from ../Core/Src/main.c:28:
+../Core/Src/main.c: At top level:
+../Core/Inc/flash.h:75:17: warning: 'GetSector' declared 'static' but never defined [-Wunused-function]
+   75 | static uint32_t GetSector(uint32_t Address);
+      |                 ^~~~~~~~~
+../Core/Inc/flash.h:77:17: warning: 'GetSectorSize' declared 'static' but never defined [-Wunused-function]
+   77 | static uint32_t GetSectorSize(uint32_t Sector);
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:144:1: warning: control reaches end of non-void function [-Wreturn-type]
+  144 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:19:04 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:28:
+../Core/Inc/flash.h:14:1: error: unknown type name 'NVitemTypeDef'
+   14 | NVitemTypeDef default_nvitem =
+      | ^~~~~~~~~~~~~
+../Core/Inc/flash.h:17:3: warning: braces around scalar initializer
+   17 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:17:3: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:17:6: warning: excess elements in scalar initializer
+   17 |   {0,0,0},
+      |      ^
+../Core/Inc/flash.h:17:6: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:17:8: warning: excess elements in scalar initializer
+   17 |   {0,0,0},
+      |        ^
+../Core/Inc/flash.h:17:8: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:17:3: warning: excess elements in scalar initializer
+   17 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:17:3: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:18:3: warning: braces around scalar initializer
+   18 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:18:3: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:18:6: warning: excess elements in scalar initializer
+   18 |   {0,0,0},
+      |      ^
+../Core/Inc/flash.h:18:6: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:18:8: warning: excess elements in scalar initializer
+   18 |   {0,0,0},
+      |        ^
+../Core/Inc/flash.h:18:8: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:18:3: warning: excess elements in scalar initializer
+   18 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:18:3: note: (near initialization for 'default_nvitem')
+../Core/Inc/flash.h:19:3: warning: excess elements in scalar initializer
+   19 |   0
+      |   ^
+../Core/Inc/flash.h:19:3: note: (near initialization for 'default_nvitem')
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:132:26: error: 'NVitemTypeDef' undeclared (first use in this function)
+  132 |         for(i=0;i<sizeof(NVitemTypeDef);i++)
+      |                          ^~~~~~~~~~~~~
+../Core/Src/main.c:132:26: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Core/Src/main.c:28:
+../Core/Inc/flash.h:49:36: error: expected expression before ')' token
+   49 | #define nv_items  ((NVitemTypeDef *) ADDR_FLASH_SECTOR_23)
+      |                                    ^
+../Core/Src/main.c:134:37: note: in expansion of macro 'nv_items'
+  134 |                 Address = (uint8_t*)nv_items+i;
+      |                                     ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:403:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:403:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+In file included from ../Core/Src/main.c:28:
+../Core/Src/main.c: At top level:
+../Core/Inc/flash.h:76:17: warning: 'GetSector' declared 'static' but never defined [-Wunused-function]
+   76 | static uint32_t GetSector(uint32_t Address);
+      |                 ^~~~~~~~~
+../Core/Inc/flash.h:78:17: warning: 'GetSectorSize' declared 'static' but never defined [-Wunused-function]
+   78 | static uint32_t GetSectorSize(uint32_t Sector);
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:144:1: warning: control reaches end of non-void function [-Wreturn-type]
+  144 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:21:04 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:28:
+../Core/Inc/flash.h:15:3: error: unknown type name 'TimeTypeDef'
+   15 |   TimeTypeDef setting_time;
+      |   ^~~~~~~~~~~
+../Core/Inc/flash.h:16:3: error: unknown type name 'TimeTypeDef'
+   16 |   TimeTypeDef alarm_time;
+      |   ^~~~~~~~~~~
+../Core/Inc/flash.h:25:3: warning: braces around scalar initializer
+   25 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:25:3: note: (near initialization for 'default_nvitem.setting_time')
+../Core/Inc/flash.h:25:6: warning: excess elements in scalar initializer
+   25 |   {0,0,0},
+      |      ^
+../Core/Inc/flash.h:25:6: note: (near initialization for 'default_nvitem.setting_time')
+../Core/Inc/flash.h:25:8: warning: excess elements in scalar initializer
+   25 |   {0,0,0},
+      |        ^
+../Core/Inc/flash.h:25:8: note: (near initialization for 'default_nvitem.setting_time')
+../Core/Inc/flash.h:26:3: warning: braces around scalar initializer
+   26 |   {0,0,0},
+      |   ^
+../Core/Inc/flash.h:26:3: note: (near initialization for 'default_nvitem.alarm_time')
+../Core/Inc/flash.h:26:6: warning: excess elements in scalar initializer
+   26 |   {0,0,0},
+      |      ^
+../Core/Inc/flash.h:26:6: note: (near initialization for 'default_nvitem.alarm_time')
+../Core/Inc/flash.h:26:8: warning: excess elements in scalar initializer
+   26 |   {0,0,0},
+      |        ^
+../Core/Inc/flash.h:26:8: note: (near initialization for 'default_nvitem.alarm_time')
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:134:25: warning: assignment to 'uint32_t' {aka 'long unsigned int'} from 'uint8_t *' {aka 'unsigned char *'} makes integer from pointer without a cast [-Wint-conversion]
+  134 |                 Address = (uint8_t*)nv_items+i;
+      |                         ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:403:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:403:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+In file included from ../Core/Src/main.c:28:
+../Core/Src/main.c: At top level:
+../Core/Inc/flash.h:82:17: warning: 'GetSector' declared 'static' but never defined [-Wunused-function]
+   82 | static uint32_t GetSector(uint32_t Address);
+      |                 ^~~~~~~~~
+../Core/Inc/flash.h:84:17: warning: 'GetSectorSize' declared 'static' but never defined [-Wunused-function]
+   84 | static uint32_t GetSectorSize(uint32_t Sector);
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:144:1: warning: control reaches end of non-void function [-Wreturn-type]
+  144 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:22:13 **** Incremental Build of configuration Debug for project clock ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:28:
+../Core/Inc/flash.h:24:1: warning: missing braces around initializer [-Wmissing-braces]
+   24 | {
+      | ^
+......
+   27 |   {0,0,0},
+      |    {    }
+../Core/Inc/flash.h:24:1: warning: missing braces around initializer [-Wmissing-braces]
+   24 | {
+      | ^
+......
+   27 |   {0,0,0},
+      |    {    }
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:134:25: warning: assignment to 'uint32_t' {aka 'long unsigned int'} from 'uint8_t *' {aka 'unsigned char *'} makes integer from pointer without a cast [-Wint-conversion]
+  134 |                 Address = (uint8_t*)nv_items+i;
+      |                         ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:403:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                           ~^            ~~~~~
+      |                            |              |
+      |                            int            uint32_t {aka long unsigned int}
+      |                           %ld
+../Core/Src/main.c:403:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+      |                               ~^               ~~~~~
+      |                                |                 |
+      |                                int               uint32_t {aka long unsigned int}
+      |                               %ld
+In file included from ../Core/Src/main.c:28:
+../Core/Src/main.c: At top level:
+../Core/Inc/flash.h:83:17: warning: 'GetSector' declared 'static' but never defined [-Wunused-function]
+   83 | static uint32_t GetSector(uint32_t Address);
+      |                 ^~~~~~~~~
+../Core/Inc/flash.h:85:17: warning: 'GetSectorSize' declared 'static' but never defined [-Wunused-function]
+   85 | static uint32_t GetSectorSize(uint32_t Sector);
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'update_nvitems':
+../Core/Src/main.c:144:1: warning: control reaches end of non-void function [-Wreturn-type]
+  144 | }
+      | ^
+arm-none-eabi-gcc -o "clock.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: clock.elf
+ 
+arm-none-eabi-size   clock.elf 
+arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
+   text	   data	    bss	    dec	    hex	filename
+  30584	    120	   2984	  33688	   8398	clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: clock.list
+ 

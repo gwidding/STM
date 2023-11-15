@@ -24,6 +24,13 @@
 /* USER CODE BEGIN Includes */
 #define LCD_ADDR (0x27 << 1)
 #include "stdio.h"
+
+#include "flash.h"
+#include "stdio.h"
+#define FLASH_USER_START_ADDR   ADDR_FLASH_SECTOR_2   /* Start @ of user Flash area */
+#define FLASH_USER_END_ADDR     ADDR_FLASH_SECTOR_3  +  GetSectorSize(ADDR_FLASH_SECTOR_3) - 1 /* End @ of user Flash area : sector start address + sector size -1 */
+
+#define DATA_32                 ((uint32_t)0x99999999)
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,6 +102,46 @@ int __io_putchar(int ch) {
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+HAL_StatusTypeDef update_nvitems(void)
+{
+	uint32_t FirstSector,NbOfSectors,SECTORError;
+	FLASH_EraseInitTypeDef EraseInitStruct;
+	HAL_StatusTypeDef error= HAL_OK;
+    uint32_t Address,i;
+    uint64_t Data;
+    uint8_t *ptr;
+
+	HAL_FLASH_Unlock();
+	FirstSector = FLASH_SECTOR_23;
+	NbOfSectors = 1;
+
+	EraseInitStruct.TypeErase     = FLASH_TYPEERASE_SECTORS;
+	EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+	EraseInitStruct.Sector        = FirstSector;
+	EraseInitStruct.NbSectors     = NbOfSectors;
+
+	error = HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError);
+	if(error != HAL_OK)
+	{
+		return error;
+	}
+
+	ptr = (uint8_t*)&default_nvitem;
+
+	for(i=0;i<sizeof(NVitemTypeDef);i++)
+	{
+		Address = (uint8_t*)nv_items+i;
+		Data = *((uint8_t*)ptr+ i);
+		error = HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE,Address,Data);
+		if(error != HAL_OK)
+		{
+			return error;
+		}
+	}
+
+	HAL_FLASH_Lock();
+}
 extern void I2C_Scan(void);
 void LCD_Init(uint8_t lcd_addr);
 void LCD_SendCommand(uint8_t lcd_addr, uint8_t cmd);
