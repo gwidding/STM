@@ -203,8 +203,6 @@ void time_display(void) {
 uint32_t ctime, ltime, interval;
 uint32_t double_key_cnt, tmptime;
 int tmpcnt, click_flag, level;
-uint32_t currentTime, lastTime;
-
 enum CLICK_STATE {
 	NO_CLICK,
 	FIRST_PUSH,
@@ -218,9 +216,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == GPIO_PIN_7) {
         level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
-        currentTime = HAL_GetTick();
-        interval = currentTime - lastTime;
-        lastTime = currentTime;
+        ctime = HAL_GetTick();
+        interval = ctime - ltime;
+        ltime = ctime;
 
         if (interval > 50) {
 //

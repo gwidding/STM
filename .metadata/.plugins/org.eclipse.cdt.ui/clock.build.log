@@ -1,4 +1,4 @@
-17:22:13 **** Incremental Build of configuration Debug for project clock ****
+09:40:49 **** Incremental Build of configuration Debug for project clock ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 In file included from ../Core/Src/main.c:28:
@@ -19,14 +19,14 @@ In file included from ../Core/Src/main.c:28:
   134 |                 Address = (uint8_t*)nv_items+i;
       |                         ^
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:403:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+../Core/Src/main.c:405:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  405 |                   printf("%d, %d \r\n", XY[0], XY[1]);
       |                           ~^            ~~~~~
       |                            |              |
       |                            int            uint32_t {aka long unsigned int}
       |                           %ld
-../Core/Src/main.c:403:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  403 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+../Core/Src/main.c:405:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  405 |                   printf("%d, %d \r\n", XY[0], XY[1]);
       |                               ~^               ~~~~~
       |                                |                 |
       |                                int               uint32_t {aka long unsigned int}
@@ -49,11 +49,11 @@ Finished building target: clock.elf
 arm-none-eabi-size   clock.elf 
 arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
    text	   data	    bss	    dec	    hex	filename
-  30584	    120	   2984	  33688	   8398	clock.elf
+  30636	    120	   2992	  33748	   83d4	clock.elf
 Finished building: default.size.stdout
  
 Finished building: clock.list
  
 
-17:22:14 Build Finished. 0 errors, 8 warnings. (took 1s.125ms)
+09:40:50 Build Finished. 0 errors, 8 warnings. (took 1s.181ms)
 
