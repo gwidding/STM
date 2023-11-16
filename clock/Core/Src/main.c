@@ -24,13 +24,8 @@
 /* USER CODE BEGIN Includes */
 #define LCD_ADDR (0x27 << 1)
 #include "stdio.h"
-
 #include "flash.h"
-#include "stdio.h"
-#define FLASH_USER_START_ADDR   ADDR_FLASH_SECTOR_2   /* Start @ of user Flash area */
-#define FLASH_USER_END_ADDR     ADDR_FLASH_SECTOR_3  +  GetSectorSize(ADDR_FLASH_SECTOR_3) - 1 /* End @ of user Flash area : sector start address + sector size -1 */
 
-#define DATA_32                 ((uint32_t)0x99999999)
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,6 +46,45 @@ struct clock_state{
 	int music_num;
 };
 struct clock_state current_state;
+
+typedef struct {
+	int8_t music_num;
+	char music_title[16];
+}MusicTypeDef;
+
+MusicTypeDef alarm_music[] =
+{
+  {0,"Three Bears"},
+  {1,"Spring Water"}
+};
+typedef struct{
+	uint16_t freq;
+	uint16_t delay;
+}_BUZZER;
+
+#define REST 0
+#define C4 3822
+#define D4 3405
+#define E4 3033
+#define F4 2863
+#define G4 2551
+#define A4 2272
+#define B4 2024
+#define C5 1911
+#define D5 1702
+#define E5 1516
+#define F5 1431
+#define G5 1275
+#define A5 1136
+#define B5 1012
+#define C6 955
+#define D6 851
+#define E6 758
+#define F6 715
+#define G6 637
+#define A6 568
+#define B6 506
+#define C7 477
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -73,6 +107,9 @@ I2C_HandleTypeDef hi2c1;
 
 RTC_HandleTypeDef hrtc;
 
+TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim3;
+
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
@@ -88,6 +125,8 @@ static void MX_USART3_UART_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_RTC_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_TIM3_Init(void);
+static void MX_TIM2_Init(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 int _write(int file, char *ptr, int len) {
@@ -102,6 +141,35 @@ int __io_putchar(int ch) {
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+const unsigned int bell[] = {
+		E4, G4, C5, E4, G4, F4, A4, A4,
+		G4, B4, D5, F5, E5,D5, C5,
+
+		E4, G4, C5, E4, G4, F4, A4, A4,
+		G4, B4, D5, F5, E5, D5, C5,
+
+		C5, E5,G5,F5,E5,D5,
+		G4,B4,D5,F5,E5,D5,C5,
+
+		E4,G4,C5,E4,G4,F4,A4,A4,
+		G4,B4,D5,F5,E5,D5,C5,
+		REST
+};
+const unsigned int bell_interval[] = {
+		20,20,20,20,40,40,40,40,
+		20,20,20,20,20,20,80,
+
+		20,20,20,20,20,40,40,40,40,
+		20,20,20,20,20,20,80,
+
+		40,40,40,60,20,40,
+		40,20,20,40,60,20,40,
+
+		20,20,20,20,40,40,40,40,
+		20,20,20,20,20,20,80,
+		0
+};
 
 HAL_StatusTypeDef update_nvitems(void)
 {
@@ -383,6 +451,8 @@ int main(void)
   MX_I2C1_Init();
   MX_RTC_Init();
   MX_ADC1_Init();
+  MX_TIM3_Init();
+  MX_TIM2_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
@@ -482,6 +552,9 @@ static void MX_NVIC_Init(void)
   /* EXTI3_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+  /* TIM2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(TIM2_IRQn);
 }
 
 /**
@@ -706,7 +779,7 @@ static void MX_RTC_Init(void)
   */
   sAlarm.AlarmTime.Hours = 0x1;
   sAlarm.AlarmTime.Minutes = 0x0;
-  sAlarm.AlarmTime.Seconds = 0x14;
+  sAlarm.AlarmTime.Seconds = 0x45;
   sAlarm.AlarmTime.SubSeconds = 0x0;
   sAlarm.AlarmTime.TimeFormat = RTC_HOURFORMAT12_AM;
   sAlarm.AlarmTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
@@ -724,6 +797,100 @@ static void MX_RTC_Init(void)
   /* USER CODE BEGIN RTC_Init 2 */
 
   /* USER CODE END RTC_Init 2 */
+
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 8400-1;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 100-1;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 84-1;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 200-1;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 50-1;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
+  HAL_TIM_MspPostInit(&htim3);
 
 }
 
@@ -853,12 +1020,56 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+uint8_t seq = 0;
+uint8_t stop = 0;
+#define MEL_NUM 	24
+
+
+_BUZZER buzzer[MEL_NUM] = {
+		{G4, 1}, {G4, 1}, {A4, 1}, {A4, 1}, // 4
+		{G4, 1}, {G4, 1}, {E4, 2}, // 3
+		{G4, 1}, {G4, 1}, {E4, 1}, {E4, 1}, {D4, 3}, // 5
+		{G4, 1}, {G4, 1}, {A4, 1}, {A4, 1}, // 4
+		{G4, 1}, {G4, 1}, {E4, 2}, // 3
+		{G4, 1}, {E4, 1}, {D4, 1}, {E4, 1}, {C4, 3} // 5
+};
+
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc) {
 	HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
-	HAL_UART_Transmit(&huart3, (uint8_t *)&alarmTime, strlen(alarmTime), 1000);
 	printf("Alarm Callback Occurred!! \r\n");
-	HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
+	seq = 0;
+	HAL_TIM_Base_Start_IT(&htim2);
+	HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
 }
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+	uint16_t melody = (uint16_t)(1000000 / buzzer[seq].freq);
+
+	if(stop == 1){
+		TIM2->ARR = 2000;
+		HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
+		stop = 0;
+	}
+	else{
+		if(seq == MEL_NUM){
+			HAL_TIM_Base_Stop_IT(&htim2);
+			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
+			seq = 0;
+		}
+		else{
+			TIM3->ARR = melody;
+			TIM3->CCR2 = melody / 2;
+			TIM2->ARR = buzzer[seq].delay * 2000;
+			HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+			stop = 1;
+			seq++;
+		}
+	}
+	HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
+}
+
 /* USER CODE END 4 */
 
 /**

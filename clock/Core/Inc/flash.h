@@ -1,10 +1,3 @@
-/*
- * flash.h
- *
- *  Created on: Nov 7, 2023
- *      Author: 박병준
- */
-
 #ifndef INC_FLASH_H_
 #define INC_FLASH_H_
 #include "stdint.h"
