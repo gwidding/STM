@@ -11,3 +11,5 @@
 1699870974240	Delete resource 'stm32_clock'
 1699935806620	Delete resource 'timerAlarm'
 1700096315148	Delete resource 'time_dht11_LCD'
+1700182251788	Delete resource 'clock/Core/Inc/melody.h'
+1700182400640	Delete resource 'clock/Core/Inc/melody.h'

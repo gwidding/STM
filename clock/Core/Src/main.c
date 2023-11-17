@@ -25,7 +25,7 @@
 #define LCD_ADDR (0x27 << 1)
 #include "stdio.h"
 #include "flash.h"
-
+#include "melody.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,41 +50,15 @@ struct clock_state current_state;
 typedef struct {
 	int8_t music_num;
 	char music_title[16];
-}MusicTypeDef;
+	int music_length;
+} MusicTypeDef;
 
 MusicTypeDef alarm_music[] =
 {
-  {0,"Three Bears"},
-  {1,"Spring Water"}
+  {0, "Harry Potter   ", 64},
+  {1, "School Bell    ", 24}
 };
-typedef struct{
-	uint16_t freq;
-	uint16_t delay;
-}_BUZZER;
 
-#define REST 0
-#define C4 3822
-#define D4 3405
-#define E4 3033
-#define F4 2863
-#define G4 2551
-#define A4 2272
-#define B4 2024
-#define C5 1911
-#define D5 1702
-#define E5 1516
-#define F5 1431
-#define G5 1275
-#define A5 1136
-#define B5 1012
-#define C6 955
-#define D6 851
-#define E6 758
-#define F6 715
-#define G6 637
-#define A6 568
-#define B6 506
-#define C7 477
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -141,35 +115,6 @@ int __io_putchar(int ch) {
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-const unsigned int bell[] = {
-		E4, G4, C5, E4, G4, F4, A4, A4,
-		G4, B4, D5, F5, E5,D5, C5,
-
-		E4, G4, C5, E4, G4, F4, A4, A4,
-		G4, B4, D5, F5, E5, D5, C5,
-
-		C5, E5,G5,F5,E5,D5,
-		G4,B4,D5,F5,E5,D5,C5,
-
-		E4,G4,C5,E4,G4,F4,A4,A4,
-		G4,B4,D5,F5,E5,D5,C5,
-		REST
-};
-const unsigned int bell_interval[] = {
-		20,20,20,20,40,40,40,40,
-		20,20,20,20,20,20,80,
-
-		20,20,20,20,20,40,40,40,40,
-		20,20,20,20,20,20,80,
-
-		40,40,40,60,20,40,
-		40,20,20,40,60,20,40,
-
-		20,20,20,20,40,40,40,40,
-		20,20,20,20,20,20,80,
-		0
-};
 
 HAL_StatusTypeDef update_nvitems(void)
 {
@@ -261,6 +206,7 @@ void time_display(void) {
 	  LCD_SendString(LCD_ADDR, alarmTime);
   }
   else if (current_state.mode == MUSIC_SELECT) {
+	  music_select();
 	  LCD_SendCommand(LCD_ADDR, 0b10000000);
 	  LCD_SendString(LCD_ADDR, "Music Select       ");
 //	  LCD_SendCommand(LCD_ADDR, 0b11000000);
@@ -279,78 +225,85 @@ enum CLICK_STATE {
 	FIRST_PULL,
 	SECOND_PUSH,
 	SECOND_PULL
-} click_currentstate;
-enum CLICK_STATE click_currentstate = NO_CLICK;
+} click_state;
+enum CLICK_STATE click_state = NO_CLICK;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == GPIO_PIN_7) {
         level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
-        currentTime = HAL_GetTick();
-        interval = currentTime - lastTime;
-        lastTime = currentTime;
+    	if (seq > 0) {
+    		seq = alarm_music[current_state.music_num].music_length;
+    		if (level == 1) return;
+    	}
+    	else {
+			currentTime = HAL_GetTick();
+			interval = currentTime - lastTime;
+			lastTime = currentTime;
 
-        if (interval > 50) {
-//
-//            if (level == 1) {
-//                printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
-//                if (interval < 150) {
-//                	double_key_cnt++;
-//                }
-//                else if (interval <= 230) {
-//                	printf("one click \r\n");
-//                	double_key_cnt = 0;
-//                	if (current_state.mode == NORMAL_STATE) {
-//                		current_state.mode = TIME_SETTING;
-//                	}
-//                	else {
-//                		current_state.mode = NORMAL_STATE;
-//                	}
-//                }
-//                else if (interval > 1000 && current_state.mode == NORMAL_STATE) {
-//                	printf("long click \r\n");
-//                	double_key_cnt = 0;
-//                	current_state.mode = ALARM_TIME_SETTING;
-//                }
-//                if (double_key_cnt >= 2 && current_state.mode == NORMAL_STATE) {
-//                	printf("double~~~");
-//                	double_key_cnt = 0;
-//                	current_state.mode = MUSIC_SELECT;
-//                }
-//                if (double_key_cnt > 2) {
-//                	double_key_cnt = 0;
-//                }
-//            }
-			if (level == 0 && (click_currentstate == NO_CLICK || click_currentstate == SECOND_PULL)) {
-				click_currentstate = FIRST_PUSH;
-				ctime = HAL_GetTick();
-			}
-			else if (level == 1 && click_currentstate == FIRST_PUSH) {
-				click_currentstate = FIRST_PULL;
-				ltime = HAL_GetTick();
-				if (ltime - ctime > 1000 && current_state.mode == NORMAL_STATE) {
-					printf("Long click~~~~~~~~\r\n");
-					click_currentstate = NO_CLICK;
-					current_state.mode = ALARM_TIME_SETTING;
+			if (interval > 50) {
+	//
+	//            if (level == 1) {
+	//                printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
+	//                if (interval < 150) {
+	//                	double_key_cnt++;
+	//                }
+	//                else if (interval <= 230) {
+	//                	printf("one click \r\n");
+	//                	double_key_cnt = 0;
+	//                	if (current_state.mode == NORMAL_STATE) {
+	//                		current_state.mode = TIME_SETTING;
+	//                	}
+	//                	else {
+	//                		current_state.mode = NORMAL_STATE;
+	//                	}
+	//                }
+	//                else if (interval > 1000 && current_state.mode == NORMAL_STATE) {
+	//                	printf("long click \r\n");
+	//                	double_key_cnt = 0;
+	//                	current_state.mode = ALARM_TIME_SETTING;
+	//                }
+	//                if (double_key_cnt >= 2 && current_state.mode == NORMAL_STATE) {
+	//                	printf("double~~~");
+	//                	double_key_cnt = 0;
+	//                	current_state.mode = MUSIC_SELECT;
+	//                }
+	//                if (double_key_cnt > 2) {
+	//                	double_key_cnt = 0;
+	//                }
+	//            }
+				if (level == 0 && (click_state == NO_CLICK || click_state == SECOND_PULL)) {
+					click_state = FIRST_PUSH;
+					ctime = HAL_GetTick();
 				}
-				else {
-	//				printf("first pull \r\n");
+				else if (level == 1 && click_state == FIRST_PUSH) {
+					click_state = FIRST_PULL;
+					ltime = HAL_GetTick();
+					if (ltime - ctime > 1000 && current_state.mode == NORMAL_STATE) {
+						printf("Long click~~~~~~~~\r\n");
+						click_state = NO_CLICK;
+						current_state.mode = ALARM_TIME_SETTING;
+					}
+					else {
+		//				printf("first pull \r\n");
+					}
+				}
+				else if (level == 0 && click_state == FIRST_PULL) {
+					click_state = SECOND_PUSH;
+		//			printf("second_push \r\n");
+				}
+				else if (level == 1 && click_state == SECOND_PUSH) {
+					click_state = SECOND_PULL;
+		//			printf("second_pull \r\n");
+					printf("doubleeeeeeee \r\n");
+					if (current_state.mode == NORMAL_STATE) {
+						current_state.mode = MUSIC_SELECT;
+					}
+					click_state = NO_CLICK;
 				}
 			}
-			else if (level == 0 && click_currentstate == FIRST_PULL) {
-				click_currentstate = SECOND_PUSH;
-	//			printf("second_push \r\n");
-			}
-			else if (level == 1 && click_currentstate == SECOND_PUSH) {
-				click_currentstate = SECOND_PULL;
-	//			printf("second_pull \r\n");
-				printf("doubleeeeeeee \r\n");
-				if (current_state.mode == NORMAL_STATE) {
-					current_state.mode = MUSIC_SELECT;
-				}
-				click_currentstate = NO_CLICK;
-			}
-        }
+
+    	}
     }
 }
 
@@ -415,6 +368,16 @@ void setTime_Position() {
 	}
 }
 
+void music_select(void) {
+	unsigned int music_cnt = sizeof(alarm_music)/sizeof(alarm_music[0]); // total music cnt
+
+	if (XY[1] < 1500 ) current_state.music_num++;
+	if (XY[1] > 4000 ) current_state.music_num--;
+	current_state.music_num %= music_cnt;
+
+	LCD_SendCommand(LCD_ADDR, 0b11000000);
+	LCD_SendString(LCD_ADDR, alarm_music[current_state.music_num].music_title);
+}
 /* USER CODE END 0 */
 
 /**
@@ -476,15 +439,22 @@ int main(void)
 		  printf("\r\n");
 	  }
 
-	  if (click_currentstate == FIRST_PULL && (HAL_GetTick()-ltime) > 100) {
+	  if (click_state == FIRST_PULL && (HAL_GetTick()-ltime) > 100) {
 		printf("one click \r\n");
-		if (current_state.mode == NORMAL_STATE) {
-			current_state.mode = TIME_SETTING;
+		if (seq > 0 ) {
+			seq = alarm_music[current_state.music_num].music_length;
+
 		}
 		else {
-			current_state.mode = NORMAL_STATE;
+			if (current_state.mode == NORMAL_STATE) {
+				current_state.mode = TIME_SETTING;
+			}
+			else {
+				current_state.mode = NORMAL_STATE;
+			}
 		}
-		click_currentstate = NO_CLICK;
+
+		click_state = NO_CLICK;
 	 }
 
     /* USER CODE END WHILE */
@@ -1020,20 +990,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-uint8_t seq = 0;
-uint8_t stop = 0;
-#define MEL_NUM 	24
-
-
-_BUZZER buzzer[MEL_NUM] = {
-		{G4, 1}, {G4, 1}, {A4, 1}, {A4, 1}, // 4
-		{G4, 1}, {G4, 1}, {E4, 2}, // 3
-		{G4, 1}, {G4, 1}, {E4, 1}, {E4, 1}, {D4, 3}, // 5
-		{G4, 1}, {G4, 1}, {A4, 1}, {A4, 1}, // 4
-		{G4, 1}, {G4, 1}, {E4, 2}, // 3
-		{G4, 1}, {E4, 1}, {D4, 1}, {E4, 1}, {C4, 3} // 5
-};
-
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc) {
 	HAL_UART_Transmit(&huart3, (uint8_t *)&showTime, strlen(showTime), 1000);
 	printf("Alarm Callback Occurred!! \r\n");
@@ -1042,18 +998,28 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc) {
 	HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
 }
 
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
+	int selected_music_num = current_state.music_num;
+	switch(selected_music_num) {
+	case 0 :
+		buzzer = harry;
+		break;
+	case 1 :
+		buzzer = bell;
+		break;
+	}
 	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
 	uint16_t melody = (uint16_t)(1000000 / buzzer[seq].freq);
-
+	printf("music num : %d \r\n", current_state.music_num);
 	if(stop == 1){
-		TIM2->ARR = 2000;
+		TIM2->ARR = 500;
 		HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
 		stop = 0;
 	}
 	else{
-		if(seq == MEL_NUM){
+		if(seq == alarm_music[current_state.music_num].music_length){
 			HAL_TIM_Base_Stop_IT(&htim2);
 			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
 			seq = 0;
@@ -1061,7 +1027,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		else{
 			TIM3->ARR = melody;
 			TIM3->CCR2 = melody / 2;
-			TIM2->ARR = buzzer[seq].delay * 2000;
+			TIM2->ARR = buzzer[seq].delay * 1500;
 			HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
 			stop = 1;
 			seq++;

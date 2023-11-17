@@ -1,0 +1,71 @@
+/*
+ * melody.h
+ *
+ *  Created on: Nov 17, 2023
+ *      Author: okeunji
+ */
+
+#ifndef INC_MELODY_H_
+#define INC_MELODY_H_
+
+#include "stdint.h"
+#include "main.h"
+
+#define REST 0
+#define C4 261
+#define D4 293
+#define E4 329
+#define F4 349
+#define G4 392
+#define A4 440
+#define B4 494
+#define C5 523
+#define D5 587
+#define E5 659
+#define F5 698
+#define G5 783
+#define A5 880
+#define B5 988
+#define C6 1046
+#define D6 1175
+#define E6 1318
+#define F6 1396
+#define G6 1568
+#define A6 1760
+#define B6 1976
+#define C7 2093
+
+const unsigned int bell[] = {
+		E4, G4, C5, E4, G4, F4, A4, A4,
+		G4, B4, D5, F5, E5,D5, C5,
+
+		E4, G4, C5, E4, G4, F4, A4, A4,
+		G4, B4, D5, F5, E5, D5, C5,
+
+		C5, E5,G5,F5,E5,D5,
+		G4,B4,D5,F5,E5,D5,C5,
+
+		E4,G4,C5,E4,G4,F4,A4,A4,
+		G4,B4,D5,F5,E5,D5,C5,
+		REST
+};
+const unsigned int bell_interval[] = {
+		20,20,20,20,40,40,40,40,
+		20,20,20,20,20,20,80,
+
+		20,20,20,20,20,40,40,40,40,
+		20,20,20,20,20,20,80,
+
+		40,40,40,60,20,40,
+		40,20,20,40,60,20,40,
+
+		20,20,20,20,40,40,40,40,
+		20,20,20,20,20,20,80,
+		0
+};
+
+
+
+
+
+#endif /* INC_MELODY_H_ */

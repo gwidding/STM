@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Delay"/>
+		<item key="selection" value="_BUZZER"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="delay"/>
-			<item value="12"/>
-			<item value="27"/>
-			<item value="get_alarm"/>
-			<item value="set_alarm"/>
-			<item value="get_time"/>
-			<item value="set_time"/>
-			<item value="bcd"/>
-			<item value="bin"/>
-			<item value="alarmA"/>
-			<item value="HAL_RTC_AlarmAEventCallback"/>
-			<item value="hourMinSec"/>
-			<item value="time_position"/>
+			<item value="_BUZZER"/>
+			<item value="i"/>
+			<item value="bell"/>
+			<item value="ccr"/>
 			<item value="begin 4"/>
-			<item value="rtc"/>
+			<item value="begon 4"/>
+			<item value="tim3"/>
+			<item value="seq"/>
+			<item value="buzzer"/>
+			<item value="MEL_NUM"/>
+			<item value="start"/>
+			<item value="stop"/>
+			<item value="alarm"/>
+			<item value="TIM_HandleTypeDef"/>
+			<item value="delay"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="911"/>
-		<item key="DIALOG_Y_ORIGIN" value="246"/>
+		<item key="DIALOG_X_ORIGIN" value="1456"/>
+		<item key="DIALOG_Y_ORIGIN" value="196"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="389"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

@@ -1,0 +1,14 @@
+/*
+ * melody.h
+ *
+ *  Created on: Nov 17, 2023
+ *      Author: okeunji
+ */
+
+#ifndef INC_MELODY_H_
+#define INC_MELODY_H_
+
+#include "stdint.h"
+#include "main.h"
+
+#endif /* INC_MELODY_H_ */
