@@ -126,7 +126,7 @@ HAL_StatusTypeDef update_nvitems(void)
     uint8_t *ptr;
 
 	HAL_FLASH_Unlock();
-	FirstSector = FLASH_SECTOR_23;
+	FirstSector = ADDR_FLASH_SECTOR_11;
 	NbOfSectors = 1;
 
 	EraseInitStruct.TypeErase     = FLASH_TYPEERASE_SECTORS;
@@ -161,6 +161,7 @@ void LCD_SendCommand(uint8_t lcd_addr, uint8_t cmd);
 void LCD_SendString(uint8_t lcd_addr, char *str);
 int hourMinSec;
 void setTime_Position();
+void music_select();
 
 char showTime[30] = {0};
 char alarmTime[30] = {0};
@@ -209,8 +210,6 @@ void time_display(void) {
 	  music_select();
 	  LCD_SendCommand(LCD_ADDR, 0b10000000);
 	  LCD_SendString(LCD_ADDR, "Music Select       ");
-//	  LCD_SendCommand(LCD_ADDR, 0b11000000);
-//	  LCD_SendString(LCD_ADDR, alarmTime);
   }
 }
 
@@ -242,36 +241,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			lastTime = currentTime;
 
 			if (interval > 50) {
-	//
-	//            if (level == 1) {
-	//                printf("Switch pressed, cnt = %d,  %u\r\n",double_key_cnt,  interval);
-	//                if (interval < 150) {
-	//                	double_key_cnt++;
-	//                }
-	//                else if (interval <= 230) {
-	//                	printf("one click \r\n");
-	//                	double_key_cnt = 0;
-	//                	if (current_state.mode == NORMAL_STATE) {
-	//                		current_state.mode = TIME_SETTING;
-	//                	}
-	//                	else {
-	//                		current_state.mode = NORMAL_STATE;
-	//                	}
-	//                }
-	//                else if (interval > 1000 && current_state.mode == NORMAL_STATE) {
-	//                	printf("long click \r\n");
-	//                	double_key_cnt = 0;
-	//                	current_state.mode = ALARM_TIME_SETTING;
-	//                }
-	//                if (double_key_cnt >= 2 && current_state.mode == NORMAL_STATE) {
-	//                	printf("double~~~");
-	//                	double_key_cnt = 0;
-	//                	current_state.mode = MUSIC_SELECT;
-	//                }
-	//                if (double_key_cnt > 2) {
-	//                	double_key_cnt = 0;
-	//                }
-	//            }
 				if (level == 0 && (click_state == NO_CLICK || click_state == SECOND_PULL)) {
 					click_state = FIRST_PUSH;
 					ctime = HAL_GetTick();
@@ -309,7 +278,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 void setTime_Position() {
 	char blink[30] = {0};
-		RTC_TimeTypeDef* selectedTime;
+	RTC_TimeTypeDef* selectedTime;
 	if (current_state.mode == TIME_SETTING) {
 		selectedTime = &sTime;
 	} else {
@@ -336,7 +305,7 @@ void setTime_Position() {
 		sprintf(blink, "%02d", selectedTime->Hours);
 		if (XY[1] < 1500) selectedTime->Hours++;
 		if (XY[1] > 4000) selectedTime->Hours--;
-		if (selectedTime -> Hours > 250)     selectedTime->Hours = 12;
+		if (selectedTime -> Hours == 0)     selectedTime->Hours = 12;
 		else if (selectedTime-> Hours > 12 ) selectedTime->Hours = 1;
 		break;
 	case 2:
@@ -356,11 +325,15 @@ void setTime_Position() {
 		else if (selectedTime->Seconds > 59) selectedTime->Seconds = 0;
 		break;
 	}
-//	timeRange_check();
-	HAL_Delay(400);
+
+//	HAL_Delay(400);
 	LCD_SendString(LCD_ADDR, "  ");
 	if (current_state.mode == TIME_SETTING) {
 		HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+		default_nvitem.setting_time.Hours = sTime.Hours;
+		default_nvitem.setting_time.Minutes = sTime.Minutes;
+		default_nvitem.setting_time.Seconds = sTime.Seconds;
+		update_nvitems();
 	}
 	else {
 		HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
@@ -423,8 +396,32 @@ int main(void)
   I2C_Scan();
   LCD_Init(LCD_ADDR);
 
-  current_state.mode = NORMAL_STATE;
   HAL_ADC_Start_DMA(&hadc1, XY, 2);
+
+  current_state.mode = NORMAL_STATE;
+  click_state = NO_CLICK;
+  current_state.music_num = 0;
+  printf("000000000000000000000\r\n");
+
+  if(nv_items->magic_num == MAGIC_NUM) // get
+  {
+	  printf("1111111111");
+	  memcpy(&default_nvitem,nv_items,sizeof(NVitemTypeDef));
+	  printf("aa");
+	  sTime.Hours = default_nvitem.setting_time.Hours;
+	  printf("hours : %d", sTime.Hours);
+	  sTime.Minutes = default_nvitem.setting_time.Minutes;
+	  printf("Ms : %d", sTime.Minutes);
+	  sTime.Seconds = default_nvitem.setting_time.Seconds;
+	  printf("Se : %d", sTime.Seconds);
+	  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+  }
+  else // set
+  {
+	  printf("2222222222\r\n");
+	  update_nvitems();
+  }
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

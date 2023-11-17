@@ -807,3 +807,59 @@
 2023-11-17 10:56:44,679 [INFO] CADModel:165 - CPN selected for project levelSTM32F429ZIT6
 2023-11-17 10:56:44,679 [INFO] CADModel:114 - Register for checkConnection events
 2023-11-17 10:56:44,743 [INFO] OpenFileManager:328 - Restore cursor
+2023-11-17 15:43:40,629 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-17 15:43:41,998 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-17 15:43:43,792 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 375875584 Bytes (1058013184)
+2023-11-17 15:43:44,652 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 429350912 Bytes (1058013184)
+2023-11-17 15:43:48,007 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 541026304 Bytes (1058013184)
+2023-11-17 15:43:48,503 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2023-11-17 15:43:48,503 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2023-11-17 15:43:48,503 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2023-11-17 15:43:48,504 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2023-11-17 15:43:48,504 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-11-17 15:43:48,504 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2023-11-17 15:43:48,504 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RTC
+2023-11-17 15:43:48,504 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-11-17 15:43:48,504 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2023-11-17 15:43:48,504 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: DMA
+2023-11-17 15:43:48,505 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-11-17 15:43:48,505 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ETH
+2023-11-17 15:43:48,506 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.2.202309101412\\db\
+2023-11-17 15:43:48,877 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\license.tmp_save
+2023-11-17 15:43:49,442 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\license.tmp
+2023-11-17 15:43:49,555 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\gpio.tmp_save
+2023-11-17 15:43:49,793 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\gpio.tmp
+2023-11-17 15:43:50,378 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\dma.tmp_save
+2023-11-17 15:43:50,494 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\dma.tmp
+2023-11-17 15:43:50,506 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\dma_GV.tmp_save
+2023-11-17 15:43:50,616 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\dma_GV.tmp
+2023-11-17 15:43:50,666 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Src\stm32f4xx_it.c_save
+2023-11-17 15:43:50,855 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Src\stm32f4xx_it.c
+2023-11-17 15:43:50,885 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Inc\stm32f4xx_it.h_save
+2023-11-17 15:43:51,009 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Inc\stm32f4xx_it.h
+2023-11-17 15:43:51,068 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Src\stm32f4xx_hal_msp.c_save
+2023-11-17 15:43:51,257 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Src\stm32f4xx_hal_msp.c
+2023-11-17 15:43:51,277 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\system.tmp_save
+2023-11-17 15:43:51,356 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\MXTmpFiles\system.tmp
+2023-11-17 15:43:51,384 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Inc\stm32f4xx_hal_conf.h_save
+2023-11-17 15:43:51,534 [INFO] CodeEngine:335 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Inc\stm32f4xx_hal_conf.h
+2023-11-17 15:43:51,585 [WARN] IPConfigManager:3431 - IP not found : TIM
+2023-11-17 15:43:51,586 [WARN] CodeGenerator:3764 - IP not found : null
+2023-11-17 15:43:51,623 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Inc\main.h_save
+2023-11-17 15:43:51,749 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Inc\main.h
+2023-11-17 15:43:51,784 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Src\main.c_save
+2023-11-17 15:43:52,062 [INFO] CodeEngine:279 - Generated code: C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\clock\Core\Src\main.c
+2023-11-17 15:43:52,788 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 213mS.
+2023-11-17 15:43:52,795 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2023-11-17 15:43:52,980 [INFO] ConfigFileManager:1457 - The Die is : DIE419
+2023-11-17 15:43:53,013 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2023-11-17 15:43:53,026 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS
+2023-11-17 15:43:53,035 [INFO] ApiDbMcu:507 - Load IP Config File for LIBJPEG
+2023-11-17 15:43:53,048 [INFO] ApiDbMcu:507 - Load IP Config File for LWIP
+2023-11-17 15:43:53,063 [INFO] ApiDbMcu:507 - Load IP Config File for MBEDTLS
+2023-11-17 15:43:53,078 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2023-11-17 15:43:53,090 [INFO] ApiDbMcu:507 - Load IP Config File for USB_HOST
+2023-11-17 15:43:54,329 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2023-11-17 15:43:56,240 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 3444mS.
+2023-11-17 15:43:56,242 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2023-11-17 15:43:56,245 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
