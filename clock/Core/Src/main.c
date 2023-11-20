@@ -283,6 +283,9 @@ void setTime_Position() {
 		selectedTime = &sTime;
 	} else {
 		selectedTime = &(aTime.AlarmTime);
+//		get_alarm();
+		HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+		HAL_RTC_DeactivateAlarm(&hrtc, RTC_ALARM_A);
 	}
 
 	if (XY[0] < 100) hourMinSec--;
@@ -300,6 +303,7 @@ void setTime_Position() {
 		if (XY[1] < 100 ) selectedTime->TimeFormat++;
 		if (XY[1] > 4000)  selectedTime->TimeFormat--;
 		break;
+
 	case 1:
 		LCD_SendCommand(LCD_ADDR, 0b11000011);
 		sprintf(blink, "%02d", selectedTime->Hours);
@@ -308,6 +312,7 @@ void setTime_Position() {
 		if (selectedTime -> Hours == 0)     selectedTime->Hours = 12;
 		else if (selectedTime-> Hours > 12 ) selectedTime->Hours = 1;
 		break;
+
 	case 2:
 		LCD_SendCommand(LCD_ADDR, 0b11001000);
 		sprintf(blink, "%02d", selectedTime->Minutes);
@@ -316,9 +321,10 @@ void setTime_Position() {
 		if (selectedTime->Minutes > 250)     selectedTime->Minutes = 59;
 		else if (selectedTime->Minutes > 59) selectedTime->Minutes = 0;
 		break;
+
 	case 3:
 		LCD_SendCommand(LCD_ADDR, 0b11001101);
-		 sprintf(blink, "%02d", selectedTime->Seconds);
+		sprintf(blink, "%02d", selectedTime->Seconds);
 		if (XY[1] < 100) selectedTime->Seconds++;
 		if (XY[1] > 4000) selectedTime->Seconds--;
 		if (selectedTime->Seconds > 250)     selectedTime->Seconds = 59;
@@ -343,7 +349,7 @@ void setTime_Position() {
 		default_nvitem.alarm_time.Seconds = aTime.AlarmTime.Seconds;
 		HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
 		update_nvitems();
-		get_alarm();
+//		get_alarm();
 	}
 	update_nvitems();
 }
@@ -423,16 +429,17 @@ int main(void)
 	  sTime.Hours = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 5);
 	  sTime.Minutes = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 6);
 	  sTime.Seconds = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 7);
+	  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 
+	  HAL_RTC_DeactivateAlarm(&hrtc, RTC_ALARM_A);
 	  aTime.AlarmTime.TimeFormat = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 8);
 	  aTime.AlarmTime.Hours = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 9);
 	  aTime.AlarmTime.Minutes = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 10);
 	  aTime.AlarmTime.Seconds = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 11);
+	  HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
 
 	  current_state.music_num = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 12);
 
-	  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-	  HAL_RTC_SetAlarm(&hrtc, &aTime, RTC_FORMAT_BIN);
   }
   else // set
   {
@@ -447,6 +454,7 @@ int main(void)
   while (1)
   {
 	  get_time();
+	  get_alarm();
 	  time_display();
 	  if (current_state.mode == TIME_SETTING || current_state.mode == ALARM_TIME_SETTING) {
 		  setTime_Position();
