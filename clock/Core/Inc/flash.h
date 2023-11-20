@@ -6,9 +6,10 @@
 #define MAGIC_NUM 0xdeadbeef
 #define nv_items  ((NVitemTypeDef *) ADDR_FLASH_SECTOR_11)
 typedef struct {
-  int8_t hours;
-  int8_t minutes;
-  int8_t seconds;
+	int8_t TimeFormat;
+	  int8_t Hours;
+	  int8_t Minutes;
+	  int8_t Seconds;
 }TimeTypeDef;
 
 typedef struct {
@@ -21,8 +22,8 @@ typedef struct {
 NVitemTypeDef default_nvitem =
 {
   MAGIC_NUM,
-  {12, 30, 0},  // setting_time (시: 12, 분: 30, 초: 0, AM, 서브초: 0, 세밀한 초: 0, DaylightSaving 및 StoreOperation: 0)
-  {0, 0, 0, 0, 0, 0, 0, 0},  // alarm_time (알람 설정 초기화)
+  {0, 12, 30, 0},  // setting_time (시: 12, 분: 30, 초: 0, AM, 서브초: 0, 세밀한 초: 0, DaylightSaving 및 StoreOperation: 0)
+  {1, 11, 22, 33},  // alarm_time (알람 설정 초기화)
   0
 };
 

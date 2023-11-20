@@ -285,7 +285,7 @@ void setTime_Position() {
 		selectedTime = &(aTime.AlarmTime);
 	}
 
-	if (XY[0] < 1500) hourMinSec--;
+	if (XY[0] < 100) hourMinSec--;
 	if (XY[0] > 4000) hourMinSec++;
 
 	if (hourMinSec > 3) hourMinSec = 0;
@@ -297,13 +297,13 @@ void setTime_Position() {
 	case 0:
 		LCD_SendCommand(LCD_ADDR, 0b11000000);
 		sprintf(blink, "%s", ampm[selectedTime->TimeFormat]);
-		if (XY[1] < 1500 ) selectedTime->TimeFormat++;
+		if (XY[1] < 100 ) selectedTime->TimeFormat++;
 		if (XY[1] > 4000)  selectedTime->TimeFormat--;
 		break;
 	case 1:
 		LCD_SendCommand(LCD_ADDR, 0b11000011);
 		sprintf(blink, "%02d", selectedTime->Hours);
-		if (XY[1] < 1500) selectedTime->Hours++;
+		if (XY[1] < 100) selectedTime->Hours++;
 		if (XY[1] > 4000) selectedTime->Hours--;
 		if (selectedTime -> Hours == 0)     selectedTime->Hours = 12;
 		else if (selectedTime-> Hours > 12 ) selectedTime->Hours = 1;
@@ -311,7 +311,7 @@ void setTime_Position() {
 	case 2:
 		LCD_SendCommand(LCD_ADDR, 0b11001000);
 		sprintf(blink, "%02d", selectedTime->Minutes);
-		if (XY[1] < 1500) selectedTime->Minutes++;
+		if (XY[1] < 100) selectedTime->Minutes++;
 		if (XY[1] > 4000) selectedTime->Minutes--;
 		if (selectedTime->Minutes > 250)     selectedTime->Minutes = 59;
 		else if (selectedTime->Minutes > 59) selectedTime->Minutes = 0;
@@ -319,7 +319,7 @@ void setTime_Position() {
 	case 3:
 		LCD_SendCommand(LCD_ADDR, 0b11001101);
 		 sprintf(blink, "%02d", selectedTime->Seconds);
-		if (XY[1] < 1500) selectedTime->Seconds++;
+		if (XY[1] < 100) selectedTime->Seconds++;
 		if (XY[1] > 4000) selectedTime->Seconds--;
 		if (selectedTime->Seconds > 250)     selectedTime->Seconds = 59;
 		else if (selectedTime->Seconds > 59) selectedTime->Seconds = 0;
@@ -330,20 +330,22 @@ void setTime_Position() {
 	LCD_SendString(LCD_ADDR, "  ");
 	if (current_state.mode == TIME_SETTING) {
 		HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+		default_nvitem.setting_time.TimeFormat = sTime.TimeFormat;
 		default_nvitem.setting_time.Hours = sTime.Hours;
 		default_nvitem.setting_time.Minutes = sTime.Minutes;
 		default_nvitem.setting_time.Seconds = sTime.Seconds;
 		update_nvitems();
 	}
 	else {
+		default_nvitem.alarm_time.TimeFormat = aTime.AlarmTime.TimeFormat;
+		default_nvitem.alarm_time.Hours = aTime.AlarmTime.Hours;
+		default_nvitem.alarm_time.Minutes = aTime.AlarmTime.Minutes;
+		default_nvitem.alarm_time.Seconds = aTime.AlarmTime.Seconds;
 		HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
-		default_nvitem.alarm_time.AlarmTime.Hours = aTime.AlarmTime.Hours;
-		default_nvitem.alarm_time.AlarmTime.Minutes = aTime.AlarmTime.Minutes;
-		default_nvitem.alarm_time.AlarmTime.Seconds = aTime.AlarmTime.Seconds;
-		default_nvitem.alarm_time.AlarmTime.TimeFormat = aTime.AlarmTime.TimeFormat;
 		update_nvitems();
 		get_alarm();
 	}
+	update_nvitems();
 }
 
 void music_select(void) {
@@ -417,16 +419,20 @@ int main(void)
 //	  sTime.Hours = default_nvitem.setting_time.Hours;
 //	  sTime.Minutes = default_nvitem.setting_time.Minutes;
 //	  sTime.Seconds = default_nvitem.setting_time.Seconds;
-	  sTime.Hours = *(uint8_t *)(FLASH_SECTOR_11 + 4);
-	  sTime.Minutes = *(uint8_t *)(FLASH_SECTOR_11 + 5);
-	  sTime.Seconds = *(uint8_t *)(FLASH_SECTOR_11 + 6);
-	  aTime.AlarmTime.Hours = *(uint8_t *)(FLASH_SECTOR_11 + 7);
-	  aTime.AlarmTime.Minutes = *(uint8_t *)(FLASH_SECTOR_11 + 8);
-	  aTime.AlarmTime.Seconds = *(uint8_t *)(FLASH_SECTOR_11 + 9);
-	  current_state.music_num = *(uint8_t *)(FLASH_SECTOR_11 + 10);
+	  sTime.TimeFormat = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 4);
+	  sTime.Hours = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 5);
+	  sTime.Minutes = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 6);
+	  sTime.Seconds = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 7);
+
+	  aTime.AlarmTime.TimeFormat = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 8);
+	  aTime.AlarmTime.Hours = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 9);
+	  aTime.AlarmTime.Minutes = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 10);
+	  aTime.AlarmTime.Seconds = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 11);
+
+	  current_state.music_num = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 12);
 
 	  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-	  HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_MIN);
+	  HAL_RTC_SetAlarm(&hrtc, &aTime, RTC_FORMAT_BIN);
   }
   else // set
   {

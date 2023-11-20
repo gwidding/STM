@@ -1,43 +1,30 @@
-17:59:11 **** Incremental Build of configuration Debug for project clock ****
+18:55:03 **** Incremental Build of configuration Debug for project clock ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-In file included from ../Core/Src/main.c:27:
-../Core/Inc/flash.h:17:1: warning: missing braces around initializer [-Wmissing-braces]
-   17 | {
-      | ^
-......
-   20 |   {0, 0, 0, 0, 0, 0, 0, 0},  // alarm_time (?•Œ?žŒ ?„¤? • ì´ˆê¸°?™”)
-      |    {                     }
-../Core/Inc/flash.h:17:1: warning: missing braces around initializer [-Wmissing-braces]
-   17 | {
-      | ^
-......
-   20 |   {0, 0, 0, 0, 0, 0, 0, 0},  // alarm_time (?•Œ?žŒ ?„¤? • ì´ˆê¸°?™”)
-      |    {                     }
 ../Core/Src/main.c: In function 'update_nvitems':
 ../Core/Src/main.c:147:25: warning: assignment to 'uint32_t' {aka 'long unsigned int'} from 'uint8_t *' {aka 'unsigned char *'} makes integer from pointer without a cast [-Wint-conversion]
   147 |                 Address = (uint8_t*)nv_items+i;
       |                         ^
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:441:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  441 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+../Core/Src/main.c:453:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  453 |                   printf("%d, %d \r\n", XY[0], XY[1]);
       |                           ~^            ~~~~~
       |                            |              |
       |                            int            uint32_t {aka long unsigned int}
       |                           %ld
-../Core/Src/main.c:441:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  441 |                   printf("%d, %d \r\n", XY[0], XY[1]);
+../Core/Src/main.c:453:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  453 |                   printf("%d, %d \r\n", XY[0], XY[1]);
       |                               ~^               ~~~~~
       |                                |                 |
       |                                int               uint32_t {aka long unsigned int}
       |                               %ld
 In file included from ../Core/Src/main.c:27:
 ../Core/Src/main.c: At top level:
-../Core/Inc/flash.h:52:17: warning: 'GetSector' declared 'static' but never defined [-Wunused-function]
-   52 | static uint32_t GetSector(uint32_t Address);
+../Core/Inc/flash.h:58:17: warning: 'GetSector' declared 'static' but never defined [-Wunused-function]
+   58 | static uint32_t GetSector(uint32_t Address);
       |                 ^~~~~~~~~
-../Core/Inc/flash.h:54:17: warning: 'GetSectorSize' declared 'static' but never defined [-Wunused-function]
-   54 | static uint32_t GetSectorSize(uint32_t Sector);
+../Core/Inc/flash.h:60:17: warning: 'GetSectorSize' declared 'static' but never defined [-Wunused-function]
+   60 | static uint32_t GetSectorSize(uint32_t Sector);
       |                 ^~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'update_nvitems':
 ../Core/Src/main.c:157:1: warning: control reaches end of non-void function [-Wreturn-type]
@@ -49,11 +36,11 @@ Finished building target: clock.elf
 arm-none-eabi-size   clock.elf 
 arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
    text	   data	    bss	    dec	    hex	filename
-  38244	    748	   3180	  42172	   a4bc	clock.elf
+  38960	    696	   3176	  42832	   a750	clock.elf
 Finished building: default.size.stdout
  
 Finished building: clock.list
  
 
-17:59:12 Build Finished. 0 errors, 8 warnings. (took 1s.227ms)
+18:55:04 Build Finished. 0 errors, 6 warnings. (took 1s.173ms)
 
