@@ -126,7 +126,7 @@ HAL_StatusTypeDef update_nvitems(void)
     uint8_t *ptr;
 
 	HAL_FLASH_Unlock();
-	FirstSector = ADDR_FLASH_SECTOR_11;
+	FirstSector = FLASH_SECTOR_11;
 	NbOfSectors = 1;
 
 	EraseInitStruct.TypeErase     = FLASH_TYPEERASE_SECTORS;
@@ -207,9 +207,9 @@ void time_display(void) {
 	  LCD_SendString(LCD_ADDR, alarmTime);
   }
   else if (current_state.mode == MUSIC_SELECT) {
-	  music_select();
 	  LCD_SendCommand(LCD_ADDR, 0b10000000);
 	  LCD_SendString(LCD_ADDR, "Music Select       ");
+	  music_select();
   }
 }
 
@@ -337,6 +337,11 @@ void setTime_Position() {
 	}
 	else {
 		HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
+		default_nvitem.alarm_time.AlarmTime.Hours = aTime.AlarmTime.Hours;
+		default_nvitem.alarm_time.AlarmTime.Minutes = aTime.AlarmTime.Minutes;
+		default_nvitem.alarm_time.AlarmTime.Seconds = aTime.AlarmTime.Seconds;
+		default_nvitem.alarm_time.AlarmTime.TimeFormat = aTime.AlarmTime.TimeFormat;
+		update_nvitems();
 		get_alarm();
 	}
 }
@@ -350,7 +355,10 @@ void music_select(void) {
 
 	LCD_SendCommand(LCD_ADDR, 0b11000000);
 	LCD_SendString(LCD_ADDR, alarm_music[current_state.music_num].music_title);
+	default_nvitem.alarm_music_num = current_state.music_num;
+	update_nvitems();
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -401,20 +409,24 @@ int main(void)
   current_state.mode = NORMAL_STATE;
   click_state = NO_CLICK;
   current_state.music_num = 0;
-  printf("000000000000000000000\r\n");
 
   if(nv_items->magic_num == MAGIC_NUM) // get
   {
 	  printf("1111111111");
-	  memcpy(&default_nvitem,nv_items,sizeof(NVitemTypeDef));
-	  printf("aa");
-	  sTime.Hours = default_nvitem.setting_time.Hours;
-	  printf("hours : %d", sTime.Hours);
-	  sTime.Minutes = default_nvitem.setting_time.Minutes;
-	  printf("Ms : %d", sTime.Minutes);
-	  sTime.Seconds = default_nvitem.setting_time.Seconds;
-	  printf("Se : %d", sTime.Seconds);
+//	  memcpy(&default_nvitem,nv_items,sizeof(NVitemTypeDef));
+//	  sTime.Hours = default_nvitem.setting_time.Hours;
+//	  sTime.Minutes = default_nvitem.setting_time.Minutes;
+//	  sTime.Seconds = default_nvitem.setting_time.Seconds;
+	  sTime.Hours = *(uint8_t *)(FLASH_SECTOR_11 + 4);
+	  sTime.Minutes = *(uint8_t *)(FLASH_SECTOR_11 + 5);
+	  sTime.Seconds = *(uint8_t *)(FLASH_SECTOR_11 + 6);
+	  aTime.AlarmTime.Hours = *(uint8_t *)(FLASH_SECTOR_11 + 7);
+	  aTime.AlarmTime.Minutes = *(uint8_t *)(FLASH_SECTOR_11 + 8);
+	  aTime.AlarmTime.Seconds = *(uint8_t *)(FLASH_SECTOR_11 + 9);
+	  current_state.music_num = *(uint8_t *)(FLASH_SECTOR_11 + 10);
+
 	  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	  HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_MIN);
   }
   else // set
   {

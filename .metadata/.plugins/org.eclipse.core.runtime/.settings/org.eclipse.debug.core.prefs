@@ -4,4 +4,4 @@
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.postmortemLaunchType=org.eclipse.cdt.dsf.gdb.launch.coreCLaunch,debug,;
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.remoteApplicationLaunchType=org.eclipse.rse.remotecdt.dsf.debug,debug,;
 eclipse.preferences.version=1
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n    <expression enabled\="true" text\="HAL_DAC_GetValue(&amp;hdac, DAC_CHANNEL_1);"/>\r\n    <expression enabled\="true" text\="setmode"/>\r\n</watchExpressions>\r\n
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n    <expression enabled\="true" text\="HAL_DAC_GetValue(&amp;hdac, DAC_CHANNEL_1);"/>\r\n    <expression enabled\="true" text\="default_nvitem.alarm_time.AlarmTime.Hours"/>\r\n    <expression enabled\="true" text\="aTime.AlarmTime.Hours"/>\r\n    <expression enabled\="true" text\="sTime.Hours"/>\r\n    <expression enabled\="true" text\="default_nvitem.setting_time.Hours"/>\r\n    <expression enabled\="true" text\="current_state.mode"/>\r\n</watchExpressions>\r\n

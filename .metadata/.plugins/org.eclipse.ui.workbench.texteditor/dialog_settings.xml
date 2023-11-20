@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="SET"/>
+		<item key="selection" value="HAL_TIM_Base_Start_IT"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="HAL_TIM_Base_Start_IT"/>
+			<item value="music_select"/>
+			<item value="LWIP_dhcp"/>
+			<item value="LWIP_dh"/>
+			<item value="LWIP_IPV6"/>
+			<item value="FLASH_SECTOR"/>
 			<item value="set"/>
 			<item value="MAGIC_NUM"/>
 			<item value="NVitemTypeDef"/>
@@ -17,12 +23,6 @@
 			<item value="ctime"/>
 			<item value="FLASH_SECTOR_23"/>
 			<item value="mask"/>
-			<item value="ALARM_TIME_SETTING"/>
-			<item value="_currentstate"/>
-			<item value="currentstate"/>
-			<item value="NOTE_"/>
-			<item value="NOTE"/>
-			<item value="bell"/>
 		</list>
 		<list key="replacehistory">
 			<item value="_state"/>
@@ -30,8 +30,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="747"/>
-		<item key="DIALOG_Y_ORIGIN" value="223"/>
+		<item key="DIALOG_X_ORIGIN" value="785"/>
+		<item key="DIALOG_Y_ORIGIN" value="370"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="389"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
