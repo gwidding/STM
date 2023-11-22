@@ -21,8 +21,8 @@ typedef struct {
 NVitemTypeDef default_nvitem =
 {
   MAGIC_NUM,
-  {0, 12, 30, 0},   // setting_time
-  {1, 11, 22, 33},  // alarm_time
+  {0, 12, 29, 55},   // setting_time
+  {0, 12, 30, 0},  // alarm_time
   0
 };
 #define nv_items  ((NVitemTypeDef *) ADDR_FLASH_SECTOR_11)

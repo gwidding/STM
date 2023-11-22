@@ -1,4 +1,4 @@
-14:13:47 **** Incremental Build of configuration Debug for project STM32F429ZI_NUCLEO_144 ****
+16:51:45 **** Build of configuration Debug for project STM32F429ZI_NUCLEO_144 ****
 make all 
 arm-none-eabi-size   STM32F429ZI_NUCLEO_144.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   STM32F429ZI_NUCLEO_144.elf
 Finished building: default.size.stdout
  
 
-14:13:47 Build Finished. 0 errors, 0 warnings. (took 564ms)
+16:51:46 Build Finished. 0 errors, 0 warnings. (took 976ms)
 

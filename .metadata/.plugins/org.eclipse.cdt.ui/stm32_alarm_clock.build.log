@@ -1,0 +1,88 @@
+16:51:57 **** Build of configuration Debug for project stm32_alarm_clock ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -I../ -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f429zitx.d" -MT"Startup/startup_stm32f429zitx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f429zitx.o" "../Startup/startup_stm32f429zitx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/stm32f4xx_hal_msp.d" -MT"Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/stm32f4xx_it.d" -MT"Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/system_stm32f4xx.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+../Src/sysmem.c:63:1: error: unknown type name 'caddr_t'
+   63 | caddr_t _sbrk(int incr)
+      | ^~~~~~~
+../Src/sysmem.c: In function '_sbrk':
+../Src/sysmem.c:76:25: error: 'caddr_t' undeclared (first use in this function)
+   76 |                 return (caddr_t) -1;
+      |                         ^~~~~~~
+../Src/sysmem.c:76:25: note: each undeclared identifier is reported only once for each function it appears in
+../Src/sysmem.c:81:25: error: expected ';' before 'prev_heap_end'
+   81 |         return (caddr_t) prev_heap_end;
+      |                         ^~~~~~~~~~~~~~
+      |                         ;
+../Src/sysmem.c:67:15: warning: variable 'prev_heap_end' set but not used [-Wunused-but-set-variable]
+   67 |         char *prev_heap_end;
+      |               ^~~~~~~~~~~~~
+../Src/sysmem.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+   82 | }
+      | ^
+make: *** [Src/subdir.mk:34: Src/sysmem.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'update_nvitems':
+../Src/main.c:228:25: warning: assignment to 'uint32_t' {aka 'long unsigned int'} from 'uint8_t *' {aka 'unsigned char *'} makes integer from pointer without a cast [-Wint-conversion]
+  228 |                 Address = (uint8_t*)nv_items+i;
+      |                         ^
+../Src/main.c:238:1: warning: control reaches end of non-void function [-Wreturn-type]
+  238 | }
+      | ^
+../Src/main.c: In function 'time_display':
+../Src/main.c:311:5: warning: 'strncpy' output truncated before terminating nul copying 3 bytes from a string of the same length [-Wstringop-truncation]
+  311 |     strncpy(line[1],"PM ",3);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:316:5: warning: 'strncpy' output truncated before terminating nul copying 3 bytes from a string of the same length [-Wstringop-truncation]
+  316 |     strncpy(line[1],"AM ",3);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:302:48: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  302 |           sprintf(line[0],"Alarm Setting   \r\n");
+      |                                                ^
+../Src/main.c:302:11: note: 'sprintf' output 19 bytes into a destination of size 18
+  302 |           sprintf(line[0],"Alarm Setting   \r\n");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:288:48: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  288 |           sprintf(line[0],"Korea Polytech  \r\n");
+      |                                                ^
+../Src/main.c:288:11: note: 'sprintf' output 19 bytes into a destination of size 18
+  288 |           sprintf(line[0],"Korea Polytech  \r\n");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'music_select':
+../Src/main.c:426:24: warning: ' <
+   ' directive writing 4 bytes into a region of size between 3 and 18 [-Wformat-overflow=]
+  426 |     sprintf(line[0],"%s <\r\n",alarm_music[pos].music_title);
+      |                        ^~~~~~
+../Src/main.c:426:5: note: 'sprintf' output between 5 and 20 bytes into a destination of size 18
+  426 |     sprintf(line[0],"%s <\r\n",alarm_music[pos].music_title);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:427:29: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
+  427 |     sprintf(line[1],"%s \r\n",alarm_music[0].music_title);
+      |                             ^
+../Src/main.c:427:5: note: 'sprintf' output between 4 and 19 bytes into a destination of size 18
+  427 |     sprintf(line[1],"%s \r\n",alarm_music[0].music_title);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:421:24: warning: ' <
+   ' directive writing 4 bytes into a region of size between 3 and 18 [-Wformat-overflow=]
+  421 |     sprintf(line[0],"%s <\r\n",alarm_music[pos].music_title);  // "<" mark is selected music title
+      |                        ^~~~~~
+../Src/main.c:421:5: note: 'sprintf' output between 5 and 20 bytes into a destination of size 18
+  421 |     sprintf(line[0],"%s <\r\n",alarm_music[pos].music_title);  // "<" mark is selected music title
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:422:29: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
+  422 |     sprintf(line[1],"%s \r\n",alarm_music[pos+1].music_title);
+      |                             ^
+../Src/main.c:422:5: note: 'sprintf' output between 4 and 19 bytes into a destination of size 18
+  422 |     sprintf(line[1],"%s \r\n",alarm_music[pos+1].music_title);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+16:51:59 Build Failed. 5 errors, 12 warnings. (took 1s.440ms)
+

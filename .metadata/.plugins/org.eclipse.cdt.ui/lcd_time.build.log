@@ -1,4 +1,4 @@
-11:19:39 **** Build of configuration Debug for project lcd_time ****
+16:51:52 **** Build of configuration Debug for project lcd_time ****
 make -j8 all 
 arm-none-eabi-size   lcd_time.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   lcd_time.elf
 Finished building: default.size.stdout
  
 
-11:19:39 Build Finished. 0 errors, 0 warnings. (took 462ms)
+16:51:53 Build Finished. 0 errors, 0 warnings. (took 429ms)
 

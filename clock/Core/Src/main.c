@@ -285,7 +285,7 @@ void setTime_Position() {
 		selectedTime = &(aTime.AlarmTime);
 		get_alarm();
 		HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-		HAL_RTC_DeactivateAlarm(&hrtc, RTC_ALARM_A);
+//		HAL_RTC_DeactivateAlarm(&hrtc, RTC_ALARM_A);
 	}
 
 	if (XY[0] < 60) hourMinSec--;
@@ -417,6 +417,7 @@ int main(void)
   LCD_Init(LCD_ADDR);
 
   HAL_ADC_Start_DMA(&hadc1, XY, 2);
+  aTime.AlarmMask = RTC_ALARMMASK_DATEWEEKDAY;
 
   current_state.mode = NORMAL_STATE;
   click_state = NO_CLICK;
@@ -430,7 +431,8 @@ int main(void)
 	  sTime.Seconds = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 7);
 	  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 
-	  HAL_RTC_DeactivateAlarm(&hrtc, RTC_ALARM_A);
+//	  HAL_RTC_DeactivateAlarm(&hrtc, RTC_ALARM_A);
+	  printf("%d  %d:%d:%d aaaa\r\n\r\n",aTime.AlarmTime.TimeFormat, aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
 	  aTime.AlarmTime.TimeFormat = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 8);
 	  aTime.AlarmTime.Hours = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 9);
 	  aTime.AlarmTime.Minutes = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 10);
@@ -439,6 +441,7 @@ int main(void)
 	  HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
 
 	  current_state.music_num = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 12);
+	  printf("%d  %d:%d:%d dddd\r\n",aTime.AlarmTime.TimeFormat, aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
   }
   else // set
   {
@@ -453,6 +456,7 @@ int main(void)
   {
 	  get_time();
 	  time_display();
+	  printf("%d  %d:%d:%d \r\n",aTime.AlarmTime.TimeFormat, aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
 	  if (current_state.mode == TIME_SETTING || current_state.mode == ALARM_TIME_SETTING) {
 		  setTime_Position();
 //		  printf("%d, %d \r\n", XY[0], XY[1]);
@@ -537,15 +541,12 @@ void SystemClock_Config(void)
   */
 static void MX_NVIC_Init(void)
 {
-  /* EXTI9_5_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-  /* TIM2_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(TIM2_IRQn);
   /* RTC_Alarm_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(RTC_Alarm_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn);
+  /* EXTI9_5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 }
 
 /**

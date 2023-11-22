@@ -1,0 +1,16 @@
+../Src/main.c:200:19:update_nvitems	4
+../Src/main.c:245:6:HAL_TIM_PeriodElapsedCallback	7
+../Src/main.c:278:6:time_display	6
+../Src/main.c:343:6:HAL_UART_RxCpltCallback	7
+../Src/main.c:385:6:music_select	10
+../Src/main.c:434:6:stime_setting	41
+../Src/main.c:546:6:atime_setting	27
+../Src/main.c:655:6:mode_analysis	10
+../Src/main.c:701:5:main	2
+../Src/main.c:767:6:SystemClock_Config	5
+../Src/main.c:825:13:MX_RTC_Init	2
+../Src/main.c:859:13:MX_TIM2_Init	4
+../Src/main.c:904:13:MX_USART3_UART_Init	2
+../Src/main.c:937:13:MX_GPIO_Init	1
+../Src/main.c:1045:1:__io_putchar	1
+../Src/main.c:1060:6:Error_Handler	1

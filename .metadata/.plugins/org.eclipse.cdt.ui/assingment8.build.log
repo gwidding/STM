@@ -1,27 +1,10 @@
-10:21:30 **** Build of configuration Debug for project assingment8 ****
+16:51:47 **** Build of configuration Debug for project assingment8 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:138:9: warning: implicit declaration of function 'LCD_Init' [-Wimplicit-function-declaration]
-  138 |         LCD_Init(LCD_ADDR);
-      |         ^~~~~~~~
-../Core/Src/main.c:182:17: warning: implicit declaration of function 'LCD_SendCommand' [-Wimplicit-function-declaration]
-  182 |                 LCD_SendCommand(LCD_ADDR, 0b10000000);
-      |                 ^~~~~~~~~~~~~~~
-../Core/Src/main.c:183:17: warning: implicit declaration of function 'LCD_SendString' [-Wimplicit-function-declaration]
-  183 |                 LCD_SendString(LCD_ADDR, uart_buf);
-      |                 ^~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "assingment8.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\assingment8\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assingment8.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: assingment8.elf
- 
 arm-none-eabi-size   assingment8.elf 
-arm-none-eabi-objdump -h -S  assingment8.elf  > "assingment8.list"
    text	   data	    bss	    dec	    hex	filename
   39548	    476	   4052	  44076	   ac2c	assingment8.elf
 Finished building: default.size.stdout
  
-Finished building: assingment8.list
- 
 
-10:21:32 Build Finished. 0 errors, 3 warnings. (took 1s.829ms)
+16:51:48 Build Finished. 0 errors, 0 warnings. (took 478ms)
 

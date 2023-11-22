@@ -1,17 +1,10 @@
-17:29:27 **** Incremental Build of configuration Debug for project PWM_Buzzer ****
+16:51:44 **** Build of configuration Debug for project PWM_Buzzer ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "PWM_Buzzer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\PWM_Buzzer\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWM_Buzzer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWM_Buzzer.elf
- 
 arm-none-eabi-size   PWM_Buzzer.elf 
-arm-none-eabi-objdump -h -S  PWM_Buzzer.elf  > "PWM_Buzzer.list"
    text	   data	    bss	    dec	    hex	filename
   11812	    116	   1788	  13716	   3594	PWM_Buzzer.elf
 Finished building: default.size.stdout
  
-Finished building: PWM_Buzzer.list
- 
 
-17:29:28 Build Finished. 0 errors, 0 warnings. (took 926ms)
+16:51:44 Build Finished. 0 errors, 0 warnings. (took 370ms)
 
