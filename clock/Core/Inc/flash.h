@@ -2,14 +2,11 @@
 #define INC_FLASH_H_
 #include "stdint.h"
 #include "main.h"
-
-#define MAGIC_NUM 0xdeadbeef
-#define nv_items  ((NVitemTypeDef *) ADDR_FLASH_SECTOR_11)
 typedef struct {
-	int8_t TimeFormat;
-	  int8_t Hours;
-	  int8_t Minutes;
-	  int8_t Seconds;
+	uint8_t TimeFormat;
+	uint8_t Hours;
+	uint8_t Minutes;
+	uint8_t Seconds;
 }TimeTypeDef;
 
 typedef struct {
@@ -19,13 +16,17 @@ typedef struct {
   int8_t alarm_music_num;
 }NVitemTypeDef;
 
+#define MAGIC_NUM 0xdeadbeef
+
 NVitemTypeDef default_nvitem =
 {
   MAGIC_NUM,
-  {0, 12, 30, 0},  // setting_time (시: 12, 분: 30, 초: 0, AM, 서브초: 0, 세밀한 초: 0, DaylightSaving 및 StoreOperation: 0)
-  {1, 11, 22, 33},  // alarm_time (알람 설정 초기화)
+  {0, 12, 30, 0},   // setting_time
+  {1, 11, 22, 33},  // alarm_time
   0
 };
+#define nv_items  ((NVitemTypeDef *) ADDR_FLASH_SECTOR_11)
+
 
 #define ADDR_FLASH_SECTOR_0     ((uint32_t)0x08000000) /* Base @ of Sector 0, 16 Kbytes */
 #define ADDR_FLASH_SECTOR_1     ((uint32_t)0x08004000) /* Base @ of Sector 1, 16 Kbytes */
@@ -54,9 +55,5 @@ NVitemTypeDef default_nvitem =
 #define ADDR_FLASH_SECTOR_22     ((uint32_t)0x081C0000) /* Base @ of Sector 10, 128 Kbytes */
 #define ADDR_FLASH_SECTOR_23     ((uint32_t)0x081E0000) /* Base @ of Sector 11, 128 Kbytes */
 
-
-static uint32_t GetSector(uint32_t Address);
-
-static uint32_t GetSectorSize(uint32_t Sector);
 
 #endif /* INC_FLASH_H_ */

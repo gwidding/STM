@@ -1,32 +1,10 @@
-20:08:15 **** Incremental Build of configuration Debug for project clock ****
+10:32:29 **** Incremental Build of configuration Debug for project clock ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'update_nvitems':
 ../Core/Src/main.c:147:25: warning: assignment to 'uint32_t' {aka 'long unsigned int'} from 'uint8_t *' {aka 'unsigned char *'} makes integer from pointer without a cast [-Wint-conversion]
   147 |                 Address = (uint8_t*)nv_items+i;
       |                         ^
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:461:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  461 |                   printf("%d, %d \r\n", XY[0], XY[1]);
-      |                           ~^            ~~~~~
-      |                            |              |
-      |                            int            uint32_t {aka long unsigned int}
-      |                           %ld
-../Core/Src/main.c:461:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-  461 |                   printf("%d, %d \r\n", XY[0], XY[1]);
-      |                               ~^               ~~~~~
-      |                                |                 |
-      |                                int               uint32_t {aka long unsigned int}
-      |                               %ld
-In file included from ../Core/Src/main.c:27:
-../Core/Src/main.c: At top level:
-../Core/Inc/flash.h:58:17: warning: 'GetSector' declared 'static' but never defined [-Wunused-function]
-   58 | static uint32_t GetSector(uint32_t Address);
-      |                 ^~~~~~~~~
-../Core/Inc/flash.h:60:17: warning: 'GetSectorSize' declared 'static' but never defined [-Wunused-function]
-   60 | static uint32_t GetSectorSize(uint32_t Sector);
-      |                 ^~~~~~~~~~~~~
-../Core/Src/main.c: In function 'update_nvitems':
 ../Core/Src/main.c:157:1: warning: control reaches end of non-void function [-Wreturn-type]
   157 | }
       | ^
@@ -36,11 +14,11 @@ Finished building target: clock.elf
 arm-none-eabi-size   clock.elf 
 arm-none-eabi-objdump -h -S  clock.elf  > "clock.list"
    text	   data	    bss	    dec	    hex	filename
-  38672	    696	   3176	  42544	   a630	clock.elf
+  38504	    696	   3176	  42376	   a588	clock.elf
 Finished building: default.size.stdout
  
 Finished building: clock.list
  
 
-20:08:17 Build Finished. 0 errors, 6 warnings. (took 1s.222ms)
+10:32:31 Build Finished. 0 errors, 2 warnings. (took 1s.178ms)
 

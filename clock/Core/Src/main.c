@@ -22,7 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define LCD_ADDR (0x27 << 1)
 #include "stdio.h"
 #include "flash.h"
 #include "melody.h"
@@ -30,11 +29,6 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
 enum CLOCK_MODE{
 	NORMAL_STATE,
 	TIME_SETTING,
@@ -58,6 +52,12 @@ MusicTypeDef alarm_music[] =
   {0, "Harry Potter   ", 64},
   {1, "School Bell    ", 24}
 };
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+#define LCD_ADDR (0x27 << 1)
 
 /* USER CODE END PD */
 
@@ -171,7 +171,8 @@ uint32_t XY[2];
 
 RTC_TimeTypeDef sTime;
 RTC_DateTypeDef sDate;
-RTC_AlarmTypeDef aTime;
+RTC_AlarmTypeDef aTime = {0};
+
 
 void get_time(void)
 {
@@ -181,7 +182,8 @@ void get_time(void)
 }
 void get_alarm(void)
 {
-	HAL_RTC_GetAlarm(&hrtc, &aTime, RTC_CR_ALRAE, RTC_FORMAT_BIN);
+	aTime.Alarm = RTC_ALARM_A;
+	HAL_RTC_GetAlarm(&hrtc, &aTime, RTC_ALARM_A, RTC_FORMAT_BIN);
 	sprintf((char*)alarmTime, "%s %02d : %02d : %02d      ", ampm[aTime.AlarmTime.TimeFormat], aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
 }
 
@@ -198,6 +200,7 @@ void time_display(void) {
 	  LCD_SendString(LCD_ADDR, "Time Setting      ");
 	  LCD_SendCommand(LCD_ADDR, 0b11000000);
 	  LCD_SendString(LCD_ADDR, showTime);
+	  LCD_SendCommand(LCD_ADDR, 0b10001101);
   }
   else if (current_state.mode == ALARM_TIME_SETTING) {
 	  get_alarm();
@@ -205,6 +208,7 @@ void time_display(void) {
 	  LCD_SendString(LCD_ADDR, "Alarm Time       ");
 	  LCD_SendCommand(LCD_ADDR, 0b11000000);
 	  LCD_SendString(LCD_ADDR, alarmTime);
+	  LCD_SendCommand(LCD_ADDR, 0b10001101);
   }
   else if (current_state.mode == MUSIC_SELECT) {
 	  LCD_SendCommand(LCD_ADDR, 0b10000000);
@@ -229,51 +233,47 @@ enum CLICK_STATE click_state = NO_CLICK;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if (GPIO_Pin == GPIO_PIN_7) {
-        level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
-    	if (seq > 0) {
-    		seq = alarm_music[current_state.music_num].music_length;
-    		if (level == 1) return;
-    	}
-    	else {
-			currentTime = HAL_GetTick();
-			interval = currentTime - lastTime;
-			lastTime = currentTime;
+	level = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
+	if (seq > 0) { // alarm ringing...
+		seq = alarm_music[current_state.music_num].music_length;
+		if (level == 1) return;
+	}
+	else {
+		currentTime = HAL_GetTick();
+		interval = currentTime - lastTime;
+		lastTime = currentTime;
 
-			if (interval > 50) {
-				if (level == 0 && (click_state == NO_CLICK || click_state == SECOND_PULL)) {
-					click_state = FIRST_PUSH;
-					ctime = HAL_GetTick();
-				}
-				else if (level == 1 && click_state == FIRST_PUSH) {
-					click_state = FIRST_PULL;
-					ltime = HAL_GetTick();
-					if (ltime - ctime > 1000 && current_state.mode == NORMAL_STATE) {
-						printf("Long click~~~~~~~~\r\n");
-						click_state = NO_CLICK;
-						current_state.mode = ALARM_TIME_SETTING;
-					}
-					else {
-		//				printf("first pull \r\n");
-					}
-				}
-				else if (level == 0 && click_state == FIRST_PULL) {
-					click_state = SECOND_PUSH;
-		//			printf("second_push \r\n");
-				}
-				else if (level == 1 && click_state == SECOND_PUSH) {
-					click_state = SECOND_PULL;
-		//			printf("second_pull \r\n");
-					printf("doubleeeeeeee \r\n");
-					if (current_state.mode == NORMAL_STATE) {
-						current_state.mode = MUSIC_SELECT;
-					}
+		if (interval > 50) { // debouncing
+			if (level == 0 && (click_state == NO_CLICK || click_state == SECOND_PULL)) {
+				click_state = FIRST_PUSH;
+				ctime = HAL_GetTick();
+			}
+			else if (level == 1 && click_state == FIRST_PUSH) {
+				click_state = FIRST_PULL;
+				ltime = HAL_GetTick();
+				if (ltime - ctime > 1000 && current_state.mode == NORMAL_STATE) {
+					printf("Long click \r\n");
 					click_state = NO_CLICK;
+					current_state.mode = ALARM_TIME_SETTING;
+				}
+				else {
+	//				printf("first pull \r\n");
 				}
 			}
+			else if (level == 0 && click_state == FIRST_PULL) {
+				click_state = SECOND_PUSH;
+			}
+			else if (level == 1 && click_state == SECOND_PUSH) {
+				click_state = SECOND_PULL;
+				printf("double click \r\n");
+				if (current_state.mode == NORMAL_STATE) {
+					current_state.mode = MUSIC_SELECT;
+				}
+				click_state = NO_CLICK;
+			}
+		}
+	}
 
-    	}
-    }
 }
 
 void setTime_Position() {
@@ -283,88 +283,92 @@ void setTime_Position() {
 		selectedTime = &sTime;
 	} else {
 		selectedTime = &(aTime.AlarmTime);
-//		get_alarm();
+		get_alarm();
 		HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 		HAL_RTC_DeactivateAlarm(&hrtc, RTC_ALARM_A);
 	}
 
-	if (XY[0] < 100) hourMinSec--;
+	if (XY[0] < 60) hourMinSec--;
 	if (XY[0] > 4000) hourMinSec++;
 
 	if (hourMinSec > 3) hourMinSec = 0;
 	if (hourMinSec < 0) hourMinSec = 3;
 
-	printf("time_position : %d \r\n", hourMinSec);
+//	printf("time_position : %d \r\n", hourMinSec);
 
 	switch(hourMinSec) {
 	case 0:
-		LCD_SendCommand(LCD_ADDR, 0b11000000);
+//		LCD_SendCommand(LCD_ADDR, 0b11000000);
+		LCD_SendString(LCD_ADDR, "A");
 		sprintf(blink, "%s", ampm[selectedTime->TimeFormat]);
-		if (XY[1] < 100 ) selectedTime->TimeFormat++;
+		if (XY[1] < 60 ) selectedTime->TimeFormat++;
 		if (XY[1] > 4000)  selectedTime->TimeFormat--;
 		break;
 
 	case 1:
-		LCD_SendCommand(LCD_ADDR, 0b11000011);
+//		LCD_SendCommand(LCD_ADDR, 0b11000011);
+		LCD_SendString(LCD_ADDR, "H");
 		sprintf(blink, "%02d", selectedTime->Hours);
-		if (XY[1] < 100) selectedTime->Hours++;
+		if (XY[1] < 60) selectedTime->Hours++;
 		if (XY[1] > 4000) selectedTime->Hours--;
 		if (selectedTime -> Hours == 0)     selectedTime->Hours = 12;
 		else if (selectedTime-> Hours > 12 ) selectedTime->Hours = 1;
 		break;
 
 	case 2:
-		LCD_SendCommand(LCD_ADDR, 0b11001000);
+//		LCD_SendCommand(LCD_ADDR, 0b11001000);
+		LCD_SendString(LCD_ADDR, "M");
 		sprintf(blink, "%02d", selectedTime->Minutes);
-		if (XY[1] < 100) selectedTime->Minutes++;
+		if (XY[1] < 60) selectedTime->Minutes++;
 		if (XY[1] > 4000) selectedTime->Minutes--;
 		if (selectedTime->Minutes > 250)     selectedTime->Minutes = 59;
 		else if (selectedTime->Minutes > 59) selectedTime->Minutes = 0;
 		break;
 
 	case 3:
-		LCD_SendCommand(LCD_ADDR, 0b11001101);
+//		LCD_SendCommand(LCD_ADDR, 0b11001101);
+		LCD_SendString(LCD_ADDR, "S");
 		sprintf(blink, "%02d", selectedTime->Seconds);
-		if (XY[1] < 100) selectedTime->Seconds++;
+		if (XY[1] < 60) selectedTime->Seconds++;
 		if (XY[1] > 4000) selectedTime->Seconds--;
 		if (selectedTime->Seconds > 250)     selectedTime->Seconds = 59;
 		else if (selectedTime->Seconds > 59) selectedTime->Seconds = 0;
 		break;
 	}
 
-//	HAL_Delay(400);
-	LCD_SendString(LCD_ADDR, "  ");
+	HAL_Delay(400);
+//	LCD_SendString(LCD_ADDR, "  ");
 	if (current_state.mode == TIME_SETTING) {
 		HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 		default_nvitem.setting_time.TimeFormat = sTime.TimeFormat;
 		default_nvitem.setting_time.Hours = sTime.Hours;
 		default_nvitem.setting_time.Minutes = sTime.Minutes;
 		default_nvitem.setting_time.Seconds = sTime.Seconds;
-		update_nvitems();
+//		update_nvitems();
 	}
 	else {
+		aTime.Alarm = RTC_ALARM_A;
 		default_nvitem.alarm_time.TimeFormat = aTime.AlarmTime.TimeFormat;
 		default_nvitem.alarm_time.Hours = aTime.AlarmTime.Hours;
 		default_nvitem.alarm_time.Minutes = aTime.AlarmTime.Minutes;
 		default_nvitem.alarm_time.Seconds = aTime.AlarmTime.Seconds;
 		HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
-		update_nvitems();
+//		update_nvitems();
 //		get_alarm();
 	}
-	update_nvitems();
+//	update_nvitems();
 }
 
 void music_select(void) {
 	unsigned int music_cnt = sizeof(alarm_music)/sizeof(alarm_music[0]); // total music cnt
 
-	if (XY[1] < 1500 ) current_state.music_num++;
+	if (XY[1] < 60 ) current_state.music_num++;
 	if (XY[1] > 4000 ) current_state.music_num--;
 	current_state.music_num %= music_cnt;
 
 	LCD_SendCommand(LCD_ADDR, 0b11000000);
 	LCD_SendString(LCD_ADDR, alarm_music[current_state.music_num].music_title);
 	default_nvitem.alarm_music_num = current_state.music_num;
-	update_nvitems();
 }
 
 /* USER CODE END 0 */
@@ -420,11 +424,6 @@ int main(void)
 
   if(nv_items->magic_num == MAGIC_NUM) // get
   {
-	  printf("1111111111");
-//	  memcpy(&default_nvitem,nv_items,sizeof(NVitemTypeDef));
-//	  sTime.Hours = default_nvitem.setting_time.Hours;
-//	  sTime.Minutes = default_nvitem.setting_time.Minutes;
-//	  sTime.Seconds = default_nvitem.setting_time.Seconds;
 	  sTime.TimeFormat = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 4);
 	  sTime.Hours = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 5);
 	  sTime.Minutes = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 6);
@@ -436,14 +435,13 @@ int main(void)
 	  aTime.AlarmTime.Hours = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 9);
 	  aTime.AlarmTime.Minutes = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 10);
 	  aTime.AlarmTime.Seconds = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 11);
+	  aTime.Alarm = RTC_ALARM_A;
 	  HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
 
 	  current_state.music_num = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 12);
-
   }
   else // set
   {
-	  printf("2222222222\r\n");
 	  update_nvitems();
   }
 
@@ -454,19 +452,17 @@ int main(void)
   while (1)
   {
 	  get_time();
-	  get_alarm();
 	  time_display();
 	  if (current_state.mode == TIME_SETTING || current_state.mode == ALARM_TIME_SETTING) {
 		  setTime_Position();
-		  printf("%d, %d \r\n", XY[0], XY[1]);
-		  printf("\r\n");
+//		  printf("%d, %d \r\n", XY[0], XY[1]);
+//		  printf("\r\n");
 	  }
 
 	  if (click_state == FIRST_PULL && (HAL_GetTick()-ltime) > 100) {
 		printf("one click \r\n");
 		if (seq > 0 ) {
 			seq = alarm_music[current_state.music_num].music_length;
-
 		}
 		else {
 			if (current_state.mode == NORMAL_STATE) {
@@ -474,6 +470,8 @@ int main(void)
 			}
 			else {
 				current_state.mode = NORMAL_STATE;
+				update_nvitems();
+
 			}
 		}
 
@@ -542,12 +540,12 @@ static void MX_NVIC_Init(void)
   /* EXTI9_5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-  /* EXTI3_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
   /* TIM2_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(TIM2_IRQn);
+  /* RTC_Alarm_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(RTC_Alarm_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(RTC_Alarm_IRQn);
 }
 
 /**
@@ -771,8 +769,8 @@ static void MX_RTC_Init(void)
   /** Enable the Alarm A
   */
   sAlarm.AlarmTime.Hours = 0x1;
-  sAlarm.AlarmTime.Minutes = 0x0;
-  sAlarm.AlarmTime.Seconds = 0x45;
+  sAlarm.AlarmTime.Minutes = 0x5;
+  sAlarm.AlarmTime.Seconds = 0x30;
   sAlarm.AlarmTime.SubSeconds = 0x0;
   sAlarm.AlarmTime.TimeFormat = RTC_HOURFORMAT12_AM;
   sAlarm.AlarmTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
@@ -961,17 +959,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(USB_PowerSwitchOn_GPIO_Port, USB_PowerSwitchOn_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : USER_Btn_Pin */
-  GPIO_InitStruct.Pin = USER_Btn_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(USER_Btn_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : PF3 setBtn_Pin */
-  GPIO_InitStruct.Pin = GPIO_PIN_3|setBtn_Pin;
+  /*Configure GPIO pin : setBtn_Pin */
+  GPIO_InitStruct.Pin = setBtn_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+  HAL_GPIO_Init(setBtn_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LD1_Pin LD3_Pin LD2_Pin */
   GPIO_InitStruct.Pin = LD1_Pin|LD3_Pin|LD2_Pin;
