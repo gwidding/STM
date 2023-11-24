@@ -12584,3 +12584,81 @@ Binding(CTRL+INSERT,
 
 !ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-11-22 16:51:49.914
 !MESSAGE Project is null
+!SESSION 2023-11-23 09:07:32.146 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2023-11-23 09:07:39.688
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-23 09:07:57.551
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-23 09:07:57.560
+!MESSAGE Log4j2 initialized with config file C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-23 09:08:24.198
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-23 17:31:07.395 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-23 17:31:28.035
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-23 17:31:28.044
+!MESSAGE Log4j2 initialized with config file C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-23 17:31:52.030
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-23 18:25:00.610 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-23 18:25:07.622
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-23 18:25:07.624
+!MESSAGE Log4j2 initialized with config file C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-23 18:25:17.045
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-23 20:02:11.897 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-23 20:02:20.172
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-23 20:02:20.174
+!MESSAGE Log4j2 initialized with config file C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-23 20:02:29.340
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-24 10:20:25.915 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-24 10:20:54.567
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-24 10:20:54.575
+!MESSAGE Log4j2 initialized with config file C:\Users\okeunji\STM32CubeIDE\workspace_1.13.2\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-24 10:21:22.057
+!MESSAGE Started RMI Server, listening on port 41337

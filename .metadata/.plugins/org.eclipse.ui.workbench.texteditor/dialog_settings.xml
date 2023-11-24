@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="AlarmTime.Hour"/>
+		<item key="selection" value="RTC_ALARM_A"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="alarmTime.hour"/>
+			<item value="RTC_ALARM_A"/>
+			<item value=" *"/>
+			<item value="*"/>
+			<item value="write"/>
+			<item value="wirte"/>
+			<item value="HAL_RTC_DeactivateAlarm"/>
 			<item value="alarm"/>
+			<item value="alarmTime.hour"/>
 			<item value="LCD_DELAY_MS"/>
 			<item value="Callback"/>
 			<item value="Call"/>
@@ -17,12 +23,6 @@
 			<item value="set"/>
 			<item value="NORMAL_STATE"/>
 			<item value="HAL_RTC_GetAlarm"/>
-			<item value="get_time"/>
-			<item value="get_alarm"/>
-			<item value="HAL_RTC_SetAlarm_IT"/>
-			<item value="HAL_RTC_DeactivateAlarm"/>
-			<item value="update_nvitems"/>
-			<item value="delay"/>
 		</list>
 		<list key="replacehistory">
 			<item value="_state"/>

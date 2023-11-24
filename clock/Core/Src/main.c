@@ -103,12 +103,12 @@ static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
-int _write(int file, char *ptr, int len) {
-	HAL_UART_Transmit(&huart3, (uint8_t *)ptr, len, 500);
+int _write(int file, char* ptr, int len) {
+	HAL_UART_Transmit(&huart3, (uint8_t* )ptr, len, 500);
 	return len;
 }
 int __io_putchar(int ch) {
-	HAL_UART_Transmit(&huart3, (uint8_t *)&ch, 1, 1000);
+	HAL_UART_Transmit(&huart3, (uint8_t* )&ch, 1, 1000);
 	return ch;
 }
 /* USER CODE END PFP */
@@ -121,9 +121,9 @@ HAL_StatusTypeDef update_nvitems(void)
 	uint32_t FirstSector,NbOfSectors,SECTORError;
 	FLASH_EraseInitTypeDef EraseInitStruct;
 	HAL_StatusTypeDef error= HAL_OK;
-    uint32_t Address,i;
-    uint64_t Data;
-    uint8_t *ptr;
+	uint32_t Address,i;
+	uint64_t Data;
+	uint8_t* ptr;
 
 	HAL_FLASH_Unlock();
 	FirstSector = FLASH_SECTOR_11;
@@ -140,12 +140,12 @@ HAL_StatusTypeDef update_nvitems(void)
 		return error;
 	}
 
-	ptr = (uint8_t*)&default_nvitem;
+	ptr = (uint8_t* )&default_nvitem;
 
-	for(i=0;i<sizeof(NVitemTypeDef);i++)
+	for(i = 0; i < sizeof(NVitemTypeDef); i++)
 	{
-		Address = (uint8_t*)nv_items+i;
-		Data = *((uint8_t*)ptr+ i);
+		Address = (uint8_t* )nv_items + i;
+		Data = *((uint8_t* )ptr+ i);
 		error = HAL_FLASH_Program(FLASH_TYPEPROGRAM_BYTE,Address,Data);
 		if(error != HAL_OK)
 		{
@@ -178,13 +178,13 @@ void get_time(void)
 {
 	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
-	sprintf((char*)showTime, "%s %02d : %02d : %02d      ", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
+	sprintf((char* )showTime, "%s %02d : %02d : %02d      ", ampm[sTime.TimeFormat], sTime.Hours, sTime.Minutes, sTime.Seconds);
 }
 void get_alarm(void)
 {
 	aTime.Alarm = RTC_ALARM_A;
 	HAL_RTC_GetAlarm(&hrtc, &aTime, RTC_ALARM_A, RTC_FORMAT_BIN);
-	sprintf((char*)alarmTime, "%s %02d : %02d : %02d      ", ampm[aTime.AlarmTime.TimeFormat], aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
+	sprintf((char* )alarmTime, "%s %02d : %02d : %02d      ", ampm[aTime.AlarmTime.TimeFormat], aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
 }
 
 void time_display(void) {
@@ -309,7 +309,7 @@ void setTime_Position() {
 //		LCD_SendCommand(LCD_ADDR, 0b11000011);
 		LCD_SendString(LCD_ADDR, "H");
 		sprintf(blink, "%02d", selectedTime->Hours);
-		if (XY[1] < 60) selectedTime->Hours++;
+		if (XY[1] < 60)   selectedTime->Hours++;
 		if (XY[1] > 4000) selectedTime->Hours--;
 		if (selectedTime -> Hours == 0)     selectedTime->Hours = 12;
 		else if (selectedTime-> Hours > 12 ) selectedTime->Hours = 1;
@@ -417,7 +417,7 @@ int main(void)
   LCD_Init(LCD_ADDR);
 
   HAL_ADC_Start_DMA(&hadc1, XY, 2);
-  aTime.AlarmMask = RTC_ALARMMASK_DATEWEEKDAY;
+  aTime.AlarmMask = RTC_ALARMMASK_DATEWEEKDAY; // So, mask = 1,0,0,0
 
   current_state.mode = NORMAL_STATE;
   click_state = NO_CLICK;
@@ -432,7 +432,6 @@ int main(void)
 	  HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 
 //	  HAL_RTC_DeactivateAlarm(&hrtc, RTC_ALARM_A);
-	  printf("%d  %d:%d:%d aaaa\r\n\r\n",aTime.AlarmTime.TimeFormat, aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
 	  aTime.AlarmTime.TimeFormat = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 8);
 	  aTime.AlarmTime.Hours = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 9);
 	  aTime.AlarmTime.Minutes = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 10);
@@ -441,7 +440,6 @@ int main(void)
 	  HAL_RTC_SetAlarm_IT(&hrtc, &aTime, RTC_FORMAT_BIN);
 
 	  current_state.music_num = *(uint8_t *)(ADDR_FLASH_SECTOR_11 + 12);
-	  printf("%d  %d:%d:%d dddd\r\n",aTime.AlarmTime.TimeFormat, aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
   }
   else // set
   {
@@ -456,7 +454,6 @@ int main(void)
   {
 	  get_time();
 	  time_display();
-	  printf("%d  %d:%d:%d \r\n",aTime.AlarmTime.TimeFormat, aTime.AlarmTime.Hours, aTime.AlarmTime.Minutes, aTime.AlarmTime.Seconds);
 	  if (current_state.mode == TIME_SETTING || current_state.mode == ALARM_TIME_SETTING) {
 		  setTime_Position();
 //		  printf("%d, %d \r\n", XY[0], XY[1]);
