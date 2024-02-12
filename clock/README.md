@@ -74,4 +74,4 @@
 
 
 ### 상세설명
-[상세 설명 및 작동 영상상](https://silvow94.tistory.com/entry/STM32-LCD-%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1-RTC-%EB%B6%80%EC%A0%80-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8B%9C%EA%B3%84-%EB%A7%8C%EB%93%A4%EA%B8%B0)
+[상세 설명 및 작동 영상](https://silvow94.tistory.com/entry/STM32-LCD-%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1-RTC-%EB%B6%80%EC%A0%80-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8B%9C%EA%B3%84-%EB%A7%8C%EB%93%A4%EA%B8%B0)
