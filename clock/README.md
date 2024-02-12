@@ -72,3 +72,6 @@
 ## 회로 구성
 ![회로연결](https://github.com/gwidding/STM/assets/135992700/107a9e04-d9fc-4a27-9ee7-4c2ec581aef0)
 
+
+### 상세설명
+[프로젝트 상세 설명](https://silvow94.tistory.com/entry/STM32-LCD-%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1-RTC-%EB%B6%80%EC%A0%80-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%8B%9C%EA%B3%84-%EB%A7%8C%EB%93%A4%EA%B8%B0)
